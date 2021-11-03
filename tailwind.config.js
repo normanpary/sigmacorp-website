@@ -7,6 +7,10 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      width: {
+        interior: '80%',
+      },
+
       spacing: {
         '9/16': '56.25%',
       },
@@ -17,9 +21,16 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
+        mulish: ['Mulish', ...defaultTheme.fontFamily.sans],
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
+        violeta: {
+          DEFAULT: '#2D315F',
+        },
+        rosa: {
+          DEFAULT: '#B3227D',
+        },
         primary: colors.teal,
         gray: colors.trueGray,
       },

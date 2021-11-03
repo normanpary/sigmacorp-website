@@ -17,7 +17,7 @@ const projectsData = {
       href: '/blog/the-time-machine',
     },
   ],
-  fr: [
+  es: [
     {
       title: 'Un moteur de recherche',
       description: `Et si vous pouviez rechercher n'importe quelle information dans le monde ? Pages web, images, vidéos

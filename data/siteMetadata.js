@@ -1,7 +1,7 @@
 const siteMetadata = {
-  title: { en: 'Next.js Starter Blog', fr: 'Starter de blog NextJs' },
-  author: 'Tails Azimuth',
-  headerTitle: { en: 'TailwindBlog', fr: 'blog Tailwind' },
+  title: { en: 'Sigmacorp, Nueva web ', fr: 'Starter de blog NextJs' },
+  author: 'Strategic',
+  headerTitle: { en: 'Sigmacorp', fr: 'blog Tailwind' },
   // description: 'A blog created with Next.js and Tailwind.css',
   description: { en: 'en description', fr: 'Description en fr' },
   language: 'en-us',
