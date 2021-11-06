@@ -40,6 +40,7 @@ export default function Home({ posts, locale, availableLocales }) {
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
+            console.log(slug)
             return (
               <li key={slug} className="py-12">
                 <article>

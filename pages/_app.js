@@ -8,7 +8,11 @@ import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
 import RSS from '@/components/Rss'
 
-export default function App({ Component, pageProps }) {
+//code wil
+import wrapper from '../redux/store'
+import withReduxSaga from 'next-redux-saga'
+
+function App({ Component, pageProps, store }) {
   return (
     <ThemeProvider attribute="class">
       <Head>
@@ -18,7 +22,10 @@ export default function App({ Component, pageProps }) {
       <LayoutWrapper>
         <Component {...pageProps} />
       </LayoutWrapper>
+
       <RSS />
     </ThemeProvider>
   )
 }
+
+export default wrapper.withRedux(withReduxSaga(App))
