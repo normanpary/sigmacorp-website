@@ -1,6 +1,8 @@
+import Link from 'next/link'
+
 const Category = ({ category }) => {
   return (
-    <div>
+    <Link href="/categories/[_id]" as={`/categories/${category._id}`}>
       <div className="relative flex flex-wrap mx-auto justify-center">
         <div className="relative max-w-xs cursor-pointer">
           <div className="relative max-w-xs">
@@ -20,7 +22,7 @@ const Category = ({ category }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 export default Category
