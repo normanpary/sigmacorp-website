@@ -4,10 +4,20 @@ let categoryController = {
   //obtiene categorias PARENT
   getCategories: async (req, res) => {
     try {
-      const categories = await Category.find({ IS_PARENT: true })
-      return res.status(200).send(categories)
+      console.log(req.params)
+      let lang = req.params.lang
+      Category.aggregate([
+        {
+          $match: { IS_PARENT: true },
+        },
+        { $addFields: { NAME: `$NAME.${lang}` } },
+      ]).exec((err, categories) => {
+        if (err) return res.status(400).send(err)
+        return res.status(200).send(categories)
+      })
     } catch (err) {
-      return res.status(400).send(null)
+      console.log(err)
+      return res.status(400).send(err)
     }
   },
 
