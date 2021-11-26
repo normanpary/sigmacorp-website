@@ -2,6 +2,9 @@
   "blog": "Blog",
   "tags": "Tags",
   "projects": "Projects",
+  "categories": "Categories",
+  "home": "Home",
   "about": "About",
-  "categories": "Categories"
+  "maquila": "Maquila",
+  "contacts": "Contacts"
 }

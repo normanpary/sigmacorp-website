@@ -2,14 +2,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 const Product = ({ category_name, product }) => {
   const router = useRouter()
-  const { _id } = router.query
-  console.log('ID:' + _id)
+  const { slug } = router.query
 
   return (
     <Link
       href={{
-        pathname: '/categories/[_id]/[_id_product]',
-        query: { _id: `${_id}`, _id_product: `${product._id}` },
+        pathname: '/categories/[slug]/[slug_product]',
+        query: { slug: `${slug}`, slug_product: `${product.SLUG}` },
       }}
     >
       <div className="max-w-xs cursor-pointer py-6">

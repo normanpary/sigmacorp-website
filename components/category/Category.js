@@ -2,19 +2,19 @@ import Link from 'next/link'
 
 const Category = ({ category }) => {
   return (
-    <Link href="/categories/[_id]" as={`/categories/${category._id}`}>
+    <Link href="/categories/[slug]" as={`/categories/${category.SLUG}`}>
       <div className="relative flex flex-wrap mx-auto justify-center">
         <div className="relative max-w-xs cursor-pointer">
           <div className="relative max-w-xs">
             <img
-              className="h-auto w-full object-cover"
-              src={`/static/images/categories/${category.URL_IMG}.png`}
+              className="h-auto w-full object-cover rounded-[36px]"
+              src={`/static/images/categories/${category.URL_IMG}.jpg`}
             />
-            <div className="absolute left-0 top-0 h-full w-full rounded-[36px] bg-pink-900 opacity-20"></div>
+            <div className="absolute left-0 top-0 h-full w-full rounded-[36px] bg-pink-900 opacity-20" />
           </div>
 
           <img
-            className="absolute left-0 top-0 w-14 h-auto rounded-3xl"
+            className="absolute left-0 top-0 w-14 h-auto rounded-[36px]"
             src={`/static/images/categories/${category.URL_ICON}.png`}
           />
           <div className="my-4 flex justify-center ">

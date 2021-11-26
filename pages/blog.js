@@ -26,7 +26,7 @@ export default function Blog({ posts, initialDisplayPosts, pagination, locale, a
   return (
     <>
       <PageSEO
-        title={`Blog - ${siteMetadata.author}`}
+        title={`${t('headerNavLinks:blog')} - ${siteMetadata.author}`}
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
