@@ -14,7 +14,6 @@
       "maquila",
       "contacts"
     ],
-    "/projects": ["projects"],
     "/categories": ["headerNavLinks"]
   }
 }

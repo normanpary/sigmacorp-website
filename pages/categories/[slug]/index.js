@@ -12,9 +12,7 @@ export default function CategoryPage({ category }) {
 
 export async function getServerSideProps(context) {
   const { query, locale } = context
-  const response = await axios.get(
-    'http://localhost:5000/sigmacorp/products/' + query.slug + '/' + locale
-  )
+  const response = await axios.get('http://localhost:1337/category/' + query.slug + '/' + locale)
 
   if (response.status === 200) {
     return {

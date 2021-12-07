@@ -9,9 +9,8 @@ export default function ProductPage({ product }) {
 
 export async function getServerSideProps(context) {
   const { query, locale } = context
-  console.log(query)
   const response = await axios.get(
-    'http://localhost:5000/sigmacorp/get-product/' + query.slug_product + '/' + locale
+    'http://localhost:1337/product/' + query.slug_product + '/' + locale
   )
   if (response.status === 200) {
     return {

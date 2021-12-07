@@ -38,6 +38,7 @@ module.exports = {
         fondo: "url('/static/images/fondo.png')",
         fondo_reverse: "url('/static/images/fondo_reverse.png')",
         fondo_footer: "url('/static/images/fondo_footer.png')",
+        fondo_img: "url('/static/images/fondo_img.png')",
       },
 
       typography: (theme) => ({

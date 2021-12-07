@@ -36,16 +36,32 @@ export default function About() {
         </div>
       </div>
 
-      <div className="relative">
-        <img src="/static/images/about/proposito.png" />
-        <div className="absolute p-10 top-0 left-0 md:left-2/4">
-          <p className="text-xl md:text-3xl  text-pink-700 font-extrabold">{t('about:nuestros')}</p>
-          <p className="text-xl md:text-3xl  text-blue-800 font-extrabold">
-            {t('about:proposito')}
-          </p>
-          <p className="mt-2 md:mt-4 text-sm text-justify md:pr-8">{t('about:proposito_text')}</p>
+      {/**IMAGEN y TEXT interior */}
+      <div
+        className="bg-cover"
+        style={{
+          backgroundImage: 'url(/static/images/about/proposito.png)',
+        }}
+      >
+        <div className="relative w-full h-full bg-fondo_img bg-no-repeat bg-right-top">
+          <div className="absolute h-full w-full bg-white opacity-30"></div>
+          <div className="grid md:grid-cols-2">
+            <div></div>
+            <div className="p-10 z-10">
+              <p className="text-xl md:text-3xl  text-pink-700 font-extrabold">
+                {t('about:nuestros')}
+              </p>
+              <p className="text-xl md:text-3xl  text-blue-800 font-extrabold">
+                {t('about:proposito')}
+              </p>
+              <p className="mt-2 md:mt-4 text-sm text-justify md:pr-8">
+                {t('about:proposito_text')}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+      {/**cultura organizacional */}
       <div className="bg-fondo bg-no-repeat bg-left-top space-y-6 mt-6">
         <p className="font-extrabold pl-8 text-gray-500">{t('about:valores')}</p>
         <div className="pl-8 pr-8">

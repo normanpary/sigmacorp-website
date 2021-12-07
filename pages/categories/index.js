@@ -19,7 +19,7 @@ export default function CategoriesPage({ categories_parents, locale, availableLo
 }
 
 export async function getServerSideProps({ locale, locales }) {
-  const response = await axios.get('http://localhost:5000/sigmacorp/categories/' + locale)
+  const response = await axios.get('http://localhost:1337/categories?_locale=' + locale)
   if (response.status === 200) {
     return {
       props: { categories_parents: response.data, locale, availableLocales: locales },

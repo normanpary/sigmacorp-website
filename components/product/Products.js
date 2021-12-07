@@ -21,7 +21,7 @@ export default function Products({ category }) {
               </p>
             )}
 
-            <img className="w-10 h-10" src={`/static/images/categories/${category.URL_ICON}.png`} />
+            <img className="w-10 h-10" src={`/static/images/categories/${category.URL_ICON}`} />
           </div>
           <div className="flex justify-center content-center w-full">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 sm:gap-4 md:gap-8 space-y-0 space-x-0 my-3">
