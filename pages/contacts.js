@@ -85,7 +85,7 @@ export default function Maquila() {
 
       <div className="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center gap-8">
         {biofarmas.map((item) => (
-          <ItemDepto item={item} />
+          <ItemDepto item={item} key={item} />
         ))}
       </div>
 
@@ -95,7 +95,7 @@ export default function Maquila() {
       </p>
       <div className="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center gap-8">
         {nutraceuticos.map((item) => (
-          <ItemDepto item={item} />
+          <ItemDepto item={item} key={item} />
         ))}
       </div>
       {/**contactanos */}

@@ -1,4 +1,4 @@
-import config_backend from '@/data/api/config'
+import { URL_BASE } from '@/data/api/config'
 import ProductDetailFooter from './ProductDetailFooter'
 import { connect } from 'react-redux'
 
@@ -19,7 +19,7 @@ const ProductDetail = ({ product }) => {
               {product.IMAGE !== undefined ? (
                 <img
                   className="h-auto w-full object-contain"
-                  src={`${config_backend.URL_BASE}${product.IMAGE.url}`}
+                  src={`${URL_BASE}${product.IMAGE.url}`}
                 />
               ) : (
                 <img className="h-32 w-32 object-contain" src={`/static/images/imageNot.png`} />
@@ -61,15 +61,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleProductsUpdate: (products) => {
-      dispatch(productsUpdate(products))
-    },
-    handleProductsClear: () => {
-      dispatch(productsClear())
-    },
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail)
+export default connect(mapStateToProps, null)(ProductDetail)

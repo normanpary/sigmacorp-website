@@ -14,7 +14,12 @@ module.exports = {
     'next/core-web-vitals',
   ],
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     'react/react-in-jsx-scope': 'off',
     'jsx-a11y/anchor-is-valid': [
       'error',
@@ -27,5 +32,6 @@ module.exports = {
     'react/prop-types': 0,
     'no-unused-vars': 0,
     'react/no-unescaped-entities': 0,
+    '@next/next/no-document-import-in-page': 'off',
   },
 }

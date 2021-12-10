@@ -67,7 +67,7 @@ class Carousel extends Component {
         <div className="absolute w-full flex  left-20 inset-y-9/16">
           {carouselData.map((element, index) => {
             return (
-              <div
+              <button
                 className={
                   index === this.state.currentSlide
                     ? 'h-2 w-6 bg-pink-700 rounded-full mx-2 mb-2 cursor-pointer'
@@ -77,22 +77,22 @@ class Carousel extends Component {
                 onClick={() => {
                   this.setCurrentSlide(index)
                 }}
-              ></div>
+              />
             )
           })}
         </div>
-        <div
+        <button
           className="absolute w-8 h-8 left-2 md:left-6 inset-y-1/2 rounded-full bg-gray-200 cursor-pointer"
           onClick={this.prevSlide}
         >
           <Back />
-        </div>
-        <div
+        </button>
+        <button
           className="absolute w-8 h-8 right-2 md:right-6 inset-y-1/2 rounded-full bg-gray-200 cursor-pointer"
           onClick={this.nextSlide}
         >
           <Next />
-        </div>
+        </button>
       </div>
     )
   }

@@ -9,7 +9,7 @@ import Next from '/public/static/images/home/Next.svg'
 export default class BlogCarousel extends Component {
   render() {
     const posts = this.props.posts
-    console.log(posts)
+    console.log('POSTS length: ' + posts.length)
 
     let settings
 
@@ -84,8 +84,8 @@ export default class BlogCarousel extends Component {
     return (
       <>
         <Slider {...settings}>
-          {posts.map((post) => (
-            <BlogCarouselItem post={post} />
+          {posts.map((post, index) => (
+            <BlogCarouselItem post={post} key={index} />
           ))}
         </Slider>
       </>
