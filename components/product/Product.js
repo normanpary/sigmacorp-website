@@ -9,7 +9,7 @@ const Product = ({ category_name, product, index, handleChangeIndexSelected }) =
   return (
     <Link
       href={{
-        pathname: '/categories/[slug]/[slug_product]',
+        pathname: '/products/[slug]/[slug_product]',
         query: { slug: `${slug}`, slug_product: `${product.SLUG}` },
       }}
     >

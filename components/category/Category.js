@@ -3,7 +3,7 @@ import { URL_BASE } from '@/data/api/config'
 
 const Category = ({ category }) => {
   return (
-    <Link href="/categories/[slug]" as={`/categories/${category.SLUG}`}>
+    <Link href="/products/[slug]" as={`/products/${category.SLUG}`}>
       <div className="relative flex flex-wrap mx-auto justify-center">
         <div className="relative max-w-xs cursor-pointer">
           <div className="relative max-w-xs">

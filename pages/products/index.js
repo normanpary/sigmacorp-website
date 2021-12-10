@@ -10,7 +10,7 @@ export default function CategoriesPage({ categories_parents, locale, availableLo
   return (
     <>
       <PageSEO
-        title={`${t('headerNavLinks:categories')} - ${siteMetadata.author}`}
+        title={`${t('headerNavLinks:products')} - ${siteMetadata.author}`}
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
