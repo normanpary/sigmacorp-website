@@ -28,6 +28,7 @@
     "next": "11.1.2",
     "next-redux-saga": "^4.1.2",
     "next-redux-wrapper": "^7.0.5",
+    "next-remote-watch": "^1.0.0",
     "next-themes": "^0.0.14",
     "next-translate": "^1.0.7",
     "postcss": "^8.3.5",
@@ -70,7 +71,6 @@
     "husky": "^6.0.0",
     "inquirer": "^8.1.1",
     "lint-staged": "^11.0.0",
-    "next-remote-watch": "^1.0.0",
     "prettier": "2.2.1",
     "redux-devtools-extension": "^2.13.9"
   },
