@@ -3,6 +3,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { PageSEO } from '@/components/SEO'
 import useTranslation from 'next-translate/useTranslation'
 import axios from 'axios'
+import config_backend from '@/data/api/config'
 
 export default function CategoriesPage({ categories_parents, locale, availableLocales }) {
   const { t } = useTranslation()
@@ -19,7 +20,7 @@ export default function CategoriesPage({ categories_parents, locale, availableLo
 }
 
 export async function getServerSideProps({ locale, locales }) {
-  const response = await axios.get('http://localhost:1337/categories?_locale=' + locale)
+  const response = await axios.get(config_backend.URL_CATEGORIES + locale)
   if (response.status === 200) {
     return {
       props: { categories_parents: response.data, locale, availableLocales: locales },

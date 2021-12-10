@@ -1,6 +1,7 @@
 import Product from './Product'
+import { URL_BASE } from '@/data/api/config'
 
-export default function Products({ category }) {
+const Products = ({ category }) => {
   return (
     <div className="bg-fondo bg-no-repeat">
       {category !== null && (
@@ -21,12 +22,19 @@ export default function Products({ category }) {
               </p>
             )}
 
-            <img className="w-10 h-10" src={`/static/images/categories/${category.URL_ICON}`} />
+            {category.ICON !== undefined && (
+              <img className="w-10 h-10" src={`${URL_BASE}${category.ICON.url}`} />
+            )}
           </div>
           <div className="flex justify-center content-center w-full">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 sm:gap-4 md:gap-8 space-y-0 space-x-0 my-3">
-              {category.PRODUCTS.map((product) => (
-                <Product key={product._id} product={product} category_name={category.NAME} />
+              {category.PRODUCTS.map((product, index) => (
+                <Product
+                  key={product._id}
+                  product={product}
+                  category_name={category.NAME}
+                  index={index}
+                />
               ))}
             </div>
           </div>
@@ -35,3 +43,5 @@ export default function Products({ category }) {
     </div>
   )
 }
+
+export default Products

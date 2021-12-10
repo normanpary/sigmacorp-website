@@ -14,28 +14,6 @@ export const items_card = [
   },
 ]
 
-export const items_social = [
-  {
-    img: 'donacion_militar',
-    title: 'donacion_militar',
-    sub_title: 'donacion_militar_text',
-    date: 'donacion_militar_date',
-  },
-
-  {
-    img: 'donacion_alimento',
-    title: 'donacion_alimento',
-    sub_title: 'donacion_alimento_text',
-    date: 'donacion_alimento_date',
-  },
-  {
-    img: 'donacion_manzana',
-    title: 'donacion_manzana',
-    sub_title: 'donacion_manzana_text',
-    date: 'donacion_manzana_date',
-  },
-]
-
 export const carouselData = [
   {
     image: '/static/images/home/home_full.png',

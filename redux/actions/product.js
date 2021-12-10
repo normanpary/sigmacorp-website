@@ -1,5 +1,13 @@
-const { PRODUCTS_GET_START } = require('../constants/product')
+const { PRODUCTS_UPDATE, PRODUCTS_CLEAR, CHANGE_INDEX_SELECTED } = require('../constants/product')
 
-export const startGetProducts = (_id) => {
-  return { type: PRODUCTS_GET_START, _id }
+export const productsUpdate = (products) => {
+  return { type: PRODUCTS_UPDATE, products }
+}
+
+export const productsClear = () => {
+  return { type: PRODUCTS_CLEAR }
+}
+
+export const indexChange = (index) => {
+  return { type: CHANGE_INDEX_SELECTED, index }
 }

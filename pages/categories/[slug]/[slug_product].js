@@ -1,24 +1,45 @@
 import ProductDetail from '@/components/product/ProductDetail'
 import axios from 'axios'
+import { URL_CATEGORY, URL_DETAIL_PRODUCT } from 'data/api/config'
+import { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { productsUpdate } from 'redux/actions/product'
 
-export default function ProductPage({ product }) {
-  console.log(product)
+const ProductDetailPage = ({ products, handleProductsUpdate }) => {
+  console.log(products)
 
-  return <ProductDetail product={product} />
+  useEffect(() => {
+    handleProductsUpdate(products)
+    return () => {
+      //handleProductsClear()
+    }
+  }, [products])
+
+  return <ProductDetail />
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleProductsUpdate: (products) => {
+      dispatch(productsUpdate(products))
+    },
+  }
+}
+
+export default connect(null, mapDispatchToProps)(ProductDetailPage)
 
 export async function getServerSideProps(context) {
   const { query, locale } = context
-  const response = await axios.get(
-    'http://localhost:1337/product/' + query.slug_product + '/' + locale
-  )
-  if (response.status === 200) {
+
+  const response_category = await axios.get(URL_CATEGORY + query.slug + '/' + locale)
+  console.log(locale)
+  if (response_category.status === 200) {
     return {
-      props: { product: response.data },
+      props: { products: response_category.data.PRODUCTS },
     }
   } else {
     return {
-      props: { product: null },
+      props: { products: [] },
     }
   }
 }

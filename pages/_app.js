@@ -12,7 +12,16 @@ import RSS from '@/components/Rss'
 import wrapper from '../redux/store'
 import withReduxSaga from 'next-redux-saga'
 
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+
 function App({ Component, pageProps, store }) {
+  const router = useRouter()
+
+  useEffect(() => {
+    router.push(router.asPath, router.asPath, { locale: 'es' })
+  }, [])
+
   return (
     <ThemeProvider attribute="class">
       <Head>
@@ -27,5 +36,4 @@ function App({ Component, pageProps, store }) {
     </ThemeProvider>
   )
 }
-
 export default wrapper.withRedux(withReduxSaga(App))
