@@ -43,8 +43,7 @@ const LayoutWrapper = ({ children }) => {
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
       return {
         ...styles,
-        backgroundColor: isDisabled ? 'red' : '#FFF',
-        //backgroundColor: isFocused ? '#D3D8E3' : '#FFF',
+        backgroundColor: isFocused ? '#D3D8E3' : '#FFF',
         color: '#000',
         fontSize: '10px',
         cursor: isDisabled ? 'not-allowed' : 'default',
