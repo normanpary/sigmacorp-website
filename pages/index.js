@@ -13,6 +13,7 @@ import axios from 'axios'
 
 export default function HomePage({ posts, locale, availableLocales }) {
   const { t } = useTranslation()
+
   return (
     <>
       <PageSEO
@@ -77,13 +78,12 @@ export default function HomePage({ posts, locale, availableLocales }) {
 }
 
 export async function getServerSideProps({ locale, locales }) {
-  const response = await axios.get(URL_BLOG_POSTS + locale)
-  console.log(response)
-  if (response.status === 200) {
+  try {
+    const response = await axios.get(URL_BLOG_POSTS + locale)
     return {
       props: { posts: response.data, locale, availableLocales: locales },
     }
-  } else {
+  } catch (error) {
     return {
       props: { posts: [], locale, availableLocales: locales },
     }

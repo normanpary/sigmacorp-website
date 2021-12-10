@@ -15,13 +15,12 @@ export default ProductsPage
 
 export async function getServerSideProps(context) {
   const { query, locale } = context
-  const response = await axios.get(URL_CATEGORY + query.slug + '/' + locale)
-
-  if (response.status === 200) {
+  try {
+    const response = await axios.get(URL_CATEGORY + query.slug + '/' + locale)
     return {
       props: { category: response.data },
     }
-  } else {
+  } catch (error) {
     return {
       props: { category: null },
     }

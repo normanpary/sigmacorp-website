@@ -20,12 +20,12 @@ export default function CategoriesPage({ categories_parents, locale, availableLo
 }
 
 export async function getServerSideProps({ locale, locales }) {
-  const response = await axios.get(config_backend.URL_CATEGORIES + locale)
-  if (response.status === 200) {
+  try {
+    const response = await axios.get(config_backend.URL_CATEGORIES + locale)
     return {
       props: { categories_parents: response.data, locale, availableLocales: locales },
     }
-  } else {
+  } catch (error) {
     return {
       props: { categories_parents: [], locale, availableLocales: locales },
     }

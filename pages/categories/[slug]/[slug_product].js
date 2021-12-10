@@ -30,14 +30,12 @@ export default connect(null, mapDispatchToProps)(ProductDetailPage)
 
 export async function getServerSideProps(context) {
   const { query, locale } = context
-
-  const response_category = await axios.get(URL_CATEGORY + query.slug + '/' + locale)
-  console.log(locale)
-  if (response_category.status === 200) {
+  try {
+    const response_category = await axios.get(URL_CATEGORY + query.slug + '/' + locale)
     return {
       props: { products: response_category.data.PRODUCTS },
     }
-  } else {
+  } catch (error) {
     return {
       props: { products: [] },
     }

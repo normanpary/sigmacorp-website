@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
+//import { composeWithDevTools } from 'redux-devtools-extension'
 
 import rootSaga from '../sagas'
 import createSagaMiddleware from 'redux-saga'
@@ -10,7 +10,8 @@ import appTodo from '../reducers'
 
 const makeStore = (context) => {
   const sagaMiddleware = createSagaMiddleware()
-  const store = createStore(appTodo, composeWithDevTools(applyMiddleware(sagaMiddleware)))
+  //const store = createStore(appTodo, composeWithDevTools(applyMiddleware(sagaMiddleware)))
+  const store = createStore(appTodo, compose(applyMiddleware(sagaMiddleware)))
 
   store.sagaTask = sagaMiddleware.run(rootSaga)
 
