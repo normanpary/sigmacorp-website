@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-onchange */
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 //import Logo from '@/data/logo.svg'
