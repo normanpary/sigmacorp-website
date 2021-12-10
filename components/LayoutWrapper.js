@@ -51,13 +51,6 @@ const LayoutWrapper = ({ children }) => {
     },
   }
 
-  /*
-  const options = [
-    { value: 'chocolate', label: <div className="inline"><img className = "inline pr-2" src="static/images/espanol.png" />English</div> },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
-  */
   const options = []
   var idioma = ''
   locales.map((e) => {
