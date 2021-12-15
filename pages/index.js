@@ -79,16 +79,12 @@ export default function HomePage({ posts, locale, availableLocales }) {
 
 export async function getServerSideProps({ locale, locales }) {
   {
-    /**
-     try {
-    const response = await axios.get(URL_BLOG_POSTS + locale)
-    return {
-      props: { posts: response.data, locale, availableLocales: locales },
-    }
-  } catch (error) {
-   
-  }
-   */
+    try {
+      const response = await axios.get(URL_BLOG_POSTS + locale)
+      return {
+        props: { posts: response.data, locale, availableLocales: locales },
+      }
+    } catch (error) {}
   }
   return {
     props: { posts: [], locale, availableLocales: locales },
