@@ -6,7 +6,6 @@
     "start": "next-remote-watch",
     "dev": "next dev",
     "build": "next build",
-    "heroku-postbuild": "npm run build",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
