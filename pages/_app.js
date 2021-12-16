@@ -15,7 +15,7 @@ import withReduxSaga from 'next-redux-saga'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
-function App({ Component, pageProps, store }) {
+function App({ Component, pageProps }) {
   const router = useRouter()
 
   useEffect(() => {

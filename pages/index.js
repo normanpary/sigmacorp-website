@@ -84,9 +84,10 @@ export async function getServerSideProps({ locale, locales }) {
       return {
         props: { posts: response.data, locale, availableLocales: locales },
       }
-    } catch (error) {}
-  }
-  return {
-    props: { posts: [], locale, availableLocales: locales },
+    } catch (error) {
+      return {
+        props: { posts: [], locale, availableLocales: locales },
+      }
+    }
   }
 }
