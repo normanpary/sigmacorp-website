@@ -6,6 +6,7 @@
     "start": "next start -p $PORT",
     "dev": "next dev",
     "build": "next build",
+    "heroku-postbuild": "npm run build",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
@@ -80,5 +81,6 @@
     "*.+(js|jsx|ts|tsx|json|css|md|mdx)": [
       "prettier --write"
     ]
-  }
+  },
+  "cacheDirectories": [".next/cache"]
 }
