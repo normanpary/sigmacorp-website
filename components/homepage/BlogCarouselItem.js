@@ -11,7 +11,7 @@ export default function BlogCarouselItem({ post }) {
         <img
           className="h-40 w-60 rounded-t-md"
           src={URL_BASE + `${post.IMAGE.url}`}
-          alt="image carousel"
+          alt="Carousel"
         />
         <div className="relative p-4 w-auto h-44">
           <span className="absolute bg-violeta rounded-full py-1 px-4 w-auto text-xs text-white -mt-7">
