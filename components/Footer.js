@@ -10,6 +10,7 @@ import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social-icons'
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
+import headerNavLinks from '@/data/headerNavLinks'
 
 export default function Footer() {
   const { t } = useTranslation()
@@ -89,37 +90,15 @@ export default function Footer() {
             <p className="font-bold text-white text-base">{t('footer:empresa')}</p>
             <div className="w-1/4 h-0.5 bg-rosa" />
           </div>
+          {headerNavLinks.map((link) => (
+            <Link key={link.title} href={link.href} className="text-white text-xs">
+              <div className="flex flex-row space-x-6 mt-4 items-center ">
+                <LogoArrowRight className="mr-4 hover:text-rosa" />
 
-          <div className="flex flex-row space-x-6">
-            <div className="mt-1">
-              <LogoArrowRight />
-            </div>
-            <p className="text-xs text-white">{t('footer:inicio')}</p>
-          </div>
-          <div className="flex flex-row space-x-6">
-            <div className="mt-1">
-              <LogoArrowRight />
-            </div>
-            <p className="text-xs text-white">{t('footer:nosotros')}</p>
-          </div>
-          <div className="flex flex-row space-x-6">
-            <div className="mt-1">
-              <LogoArrowRight />
-            </div>
-            <p className="text-xs text-white">{t('footer:productos')}</p>
-          </div>
-          <div className="flex flex-row space-x-6">
-            <div className="mt-1">
-              <LogoArrowRight />
-            </div>
-            <p className="text-xs text-white">{t('footer:maquila')}</p>
-          </div>
-          <div className="flex flex-row space-x-6">
-            <div className="mt-1">
-              <LogoArrowRight />
-            </div>
-            <p className="text-xs text-white">{t('footer:contactos')}</p>
-          </div>
+                {t(`headerNavLinks:${link.title.toLowerCase()}`)}
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </footer>

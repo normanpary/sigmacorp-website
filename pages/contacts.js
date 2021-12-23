@@ -9,7 +9,10 @@ export default function Maquila() {
   return (
     <>
       <div className="relative">
-        <img src="/static/images/contacts/fondo.png" />
+        <img
+          className="h-48 object-cover sm:h-auto sm:object-contain"
+          src="/static/images/contacts/fondo.png"
+        />
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white" />
         <div className="absolute top-4 left-8 md:top-8">
           <p className="text-pink-700 text-xl md:text-5xl  font-extrabold">

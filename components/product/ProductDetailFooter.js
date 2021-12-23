@@ -37,7 +37,7 @@ const ProductDetailFooter = ({ products, index_selected, handleChangeIndexSelect
   return (
     <>
       {products.length > 0 && index_selected < products.length && (
-        <div className="flex flex-col gap-4 sm:flex-row sm:justify-between p-8">
+        <div className="flex flex-col sm:flex-row sm:justify-between p-8 pt-0">
           {index_selected === 0 ? (
             <div></div>
           ) : (
@@ -56,7 +56,7 @@ const ProductDetailFooter = ({ products, index_selected, handleChangeIndexSelect
             <div></div>
           ) : (
             <button
-              className="pr-4 pl-8 py-1 bg-pink-700 rounded-full text-white font-bold flex flex-row items-center"
+              className="pr-4 pl-8 py-1 mt-4 sm:mt-0 bg-pink-700 rounded-full text-white font-bold flex justify-end"
               onClick={() => changeProductSelected('next')}
             >
               {products[index_selected + 1].NAME}

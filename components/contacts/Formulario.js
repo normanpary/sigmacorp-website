@@ -3,7 +3,7 @@ export default function Formulario() {
   const { t } = useTranslation()
   return (
     <div className="mt-8 flex sm:justify-center">
-      <form className="bg-gray-200 p-8 rounded-lg space-y-4 w-full md:w-2/3 ">
+      <form className="bg-gray-200 p-4 md:p-8 rounded-lg space-y-4 w-full md:w-2/3 ">
         <input
           type="text"
           className="w-full px-2 py-2 border-2 border-gray-200 rounded-xl hover:border-gray-300 focus:outline-none focus:border-blue-500 transition-colors"

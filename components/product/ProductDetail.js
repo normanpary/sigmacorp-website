@@ -7,7 +7,7 @@ const ProductDetail = ({ product }) => {
   return (
     <>
       {product !== null && product !== undefined && (
-        <div className="bg-fondo_reverse bg-no-repeat bg-right-top flex w-full justify-center p-3 md:pt-6">
+        <div className="bg-fondo_reverse bg-no-repeat bg-right-top flex w-full justify-center p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full md:w-9/12 md:gap-10">
             <div className="pb-3 md:hidden">
               <p className="text-xl text-center font-extrabold text-pink-700 ">

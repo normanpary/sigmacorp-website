@@ -9,8 +9,6 @@ import Next from '/public/static/images/home/Next.svg'
 export default class BlogCarousel extends Component {
   render() {
     const posts = this.props.posts
-    console.log('POSTS length: ' + posts.length)
-
     let settings
 
     if (posts.length > 2) {

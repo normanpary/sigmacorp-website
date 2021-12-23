@@ -9,7 +9,11 @@ export default function About() {
   return (
     <>
       <div className="relative">
-        <img src="/static/images/about/fondo.png" />
+        <img
+          className="h-48 object-cover sm:h-full sm:object-contain"
+          src="/static/images/about/fondo.png"
+          alt="sobre nosotros"
+        />
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white" />
         <div className="absolute top-4 left-8 md:top-8">
           <div className="flex flex-row font-extrabold text-xl md:text-5xl">
