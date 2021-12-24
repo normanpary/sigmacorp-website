@@ -20,13 +20,12 @@ export default function Footer() {
       <div className="flex w-full justify-center mb-8">
         <Logo />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8  md:gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 xl:flex xl:gap-x-16">
         <div className="space-y-8">
           <div className="grid grid-cols-1">
             <p className="font-bold text-white text-base">{t('footer:contacto')}</p>
-            <div className="w-1/4 h-0.5 bg-rosa" />
+            <div className="w-1/4 h-0.5 bg-rosa xl:w-16" />
           </div>
-
           <div className="flex flex-row space-x-6">
             <div className="mt-1">
               <LogoLocation />
@@ -49,7 +48,7 @@ export default function Footer() {
         <div className="space-y-8">
           <div className="grid grid-cols-1">
             <p className="font-bold text-white text-base">{t('footer:suscribirse')}</p>
-            <div className="w-1/4 h-0.5 bg-rosa" />
+            <div className="w-1/4 h-0.5 bg-rosa xl:w-16" />
           </div>
           <div className="flex flex-row space-x-6">
             <p className="text-xs text-white">{t('footer:suscribirse_text')}</p>
@@ -61,7 +60,6 @@ export default function Footer() {
                 className="w-full px-4 py-1 text-gray-900 rounded-full  focus:ring-transparent focus:border-0 border-0"
                 placeholder={t('footer:correo')}
               />
-
               <div>
                 <button
                   type="submit"
@@ -76,7 +74,7 @@ export default function Footer() {
         <div className="space-y-8">
           <div className="grid grid-cols-1">
             <p className="font-bold text-white text-base">{t('footer:redes_sociales')}</p>
-            <div className="w-1/4 h-0.5 bg-rosa" />
+            <div className="w-1/4 h-0.5 bg-rosa xl:w-16" />
           </div>
           <div className="flex space-x-4 justify-center">
             <SocialIcon kind="facebook" href={siteMetadata.facebook} size="8" />
@@ -88,7 +86,7 @@ export default function Footer() {
         <div className="space-y-4">
           <div className="grid grid-cols-1">
             <p className="font-bold text-white text-base">{t('footer:empresa')}</p>
-            <div className="w-1/4 h-0.5 bg-rosa" />
+            <div className="w-1/4 h-0.5 bg-rosa xl:w-16" />
           </div>
           {headerNavLinks.map((link) => (
             <Link key={link.title} href={link.href} className="text-white text-xs">

@@ -10,6 +10,7 @@ import { PageSEO } from '@/components/SEO'
 import BlogCarousel from '@/components/homepage/BlogCarousel'
 import { URL_BLOG_POSTS } from '@/data/api/config'
 import axios from 'axios'
+import CarouselOWL from '@/components/homepage/CarouselOWL'
 
 export default function HomePage({ posts, locale, availableLocales }) {
   const { t } = useTranslation()
@@ -21,7 +22,9 @@ export default function HomePage({ posts, locale, availableLocales }) {
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
-      <Carousel />
+
+      <CarouselOWL />
+      {/**<Carousel />*/}
       <div className="p-4 flex justify-center">
         <div className="grid grid-cols-2 gap-4 md:gap-3 sm:grid-cols-3 md:grid-cols-4 lg:flex lg:flex-row  lg:-mt-40">
           {items_card.map((item, index) => (

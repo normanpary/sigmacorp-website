@@ -16,18 +16,18 @@ export const items_card = [
 
 export const carouselData = [
   {
-    image: '/static/images/home/home_full.png',
+    image: '/static/images/home/farmaceuticos-slider.jpg',
     title: 'FARMACEÚTICOS',
     sub_title: 'Conoce nuestros productos farmaceúticos',
   },
   {
-    image: '/static/images/home/home_full.png',
-    title: 'AUTOS',
-    sub_title: 'Conoce nuestros autos',
+    image: '/static/images/home/nutraceuticos-slider.jpg',
+    title: 'NUTRACEÚTICOS',
+    sub_title: 'Conoce nuestros nutraceÚticos',
   },
   {
-    image: '/static/images/home/home_full.png',
-    title: 'GEL',
-    sub_title: 'Conoce nuestros productos de gel',
+    image: '/static/images/home/dolencias-slider.jpg',
+    title: 'DOLENCIAS',
+    sub_title: 'Conoce nuestros productos para dolencias',
   },
 ]

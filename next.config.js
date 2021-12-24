@@ -12,7 +12,7 @@ module.exports = nextTranslate(
       dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
     },
     experimental: { esmExternals: true },
-    webpack: (config, { dev, isServer }) => {
+    webpack: (config, { dev, isServer, webpack }) => {
       config.module.rules.push({
         test: /\.(png|jpe?g|gif|mp4)$/i,
         use: [
@@ -39,6 +39,13 @@ module.exports = nextTranslate(
           'react-dom': 'preact/compat',
         })
       }
+      config.plugins.push(
+        new webpack.ProvidePlugin({
+          $: 'jquery',
+          jQuery: 'jquery',
+          'window.jQuery': 'jquery',
+        })
+      )
 
       return config
     },
