@@ -21,10 +21,10 @@ const MobileNav = () => {
   }
 
   return (
-    <div className="sm:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
-        className="w-8 h-8 ml-1 mr-1 rounded"
+        className="w-8 h-8 ml-4 mr-1 rounded"
         aria-label="Toggle Menu"
         onClick={onToggleNav}
       >
@@ -50,7 +50,7 @@ const MobileNav = () => {
         </svg>
       </button>
       <div
-        className={`fixed w-full h-full top-24 right-0 bg-gray-200 dark:bg-gray-800 opacity-95 z-10 transform ease-in-out duration-300 ${
+        className={`fixed w-full h-full top-0 right-0 mt-[156px] bg-gray-200 dark:bg-gray-800 opacity-95 z-10 transform ease-in-out duration-300 ${
           navShow ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

@@ -1,6 +1,10 @@
 {
   "blog": "Blog",
   "tags": "Tags",
-  "projects": "Projets",
-  "about": "À Propos"
+  "projects": "Proyectos",
+  "products": "Productos",
+  "home": "Inicio",
+  "about": "Nosotros",
+  "maquila": "Maquila",
+  "contacts": "Contactos"
 }

@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-onchange */
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 //import Logo from '@/data/logo.svg'
@@ -14,7 +13,7 @@ import ThemeSwitch from './ThemeSwitch'
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
 
-import { Component } from 'react'
+import { Component, useState } from 'react'
 import Select from 'react-select'
 
 const LayoutWrapper = ({ children }) => {
@@ -23,16 +22,8 @@ const LayoutWrapper = ({ children }) => {
   const { locale, locales, defaultLocale } = router
 
   const changeLanguage = (e) => {
-    console.log(e)
     const locale = e.value
     router.push(router.asPath, router.asPath, { locale })
-    var idioma = ''
-    if (e == 'es') {
-      idioma = 'Español'
-    }
-    if (e == 'en') {
-      idioma = 'English'
-    }
   }
   const customStyles = {
     control: (styles) => ({
@@ -51,7 +42,6 @@ const LayoutWrapper = ({ children }) => {
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
       return {
         ...styles,
-        backgroundColor: isDisabled ? 'red' : '#FFF',
         backgroundColor: isFocused ? '#D3D8E3' : '#FFF',
         color: '#000',
         fontSize: '10px',
@@ -60,13 +50,6 @@ const LayoutWrapper = ({ children }) => {
     },
   }
 
-  /*
-  const options = [
-    { value: 'chocolate', label: <div className="inline"><img className = "inline pr-2" src="static/images/espanol.png" />English</div> },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
-  */
   const options = []
   var idioma = ''
   locales.map((e) => {
@@ -81,7 +64,7 @@ const LayoutWrapper = ({ children }) => {
       value: e,
       label: (
         <div className="inline">
-          <img className="inline pr-2" src={'static/images/' + e + '.png'} />
+          <img className="inline pr-2" src={'/static/images/' + e + '.png'} />
           {idioma}
         </div>
       ),
@@ -99,8 +82,8 @@ const LayoutWrapper = ({ children }) => {
         value: locale,
         label: (
           <div className="inline">
-            <img className="inline pr-2" src={'static/images/' + locale + '.png'} />
-            {idioma}
+            <img className="inline pr-2" src={'/static/images/' + locale + '.png'} />
+            {locale === 'es' ? 'Español' : 'English'}
           </div>
         ),
       }}
@@ -128,24 +111,24 @@ const LayoutWrapper = ({ children }) => {
               </Link>
             </div>
           </div>
-          <div className="flex items-center  h-[78px]">
-            <div className="flex w-interior mx-auto justify-between items-center">
-              <div className="hidden sm:block">
+          <div className="flex items-center h-[78px]">
+            <div className="flex  mx-auto justify-between items-center">
+              <div className="hidden lg:block">
                 {headerNavLinks.map((link) => (
                   <Link
                     key={link.title}
                     href={link.href}
-                    className=" font-normal text-gray-400 sm:px-10 dark:text-gray-100 hover:text-rosa hover:font-extrabold text-lg"
+                    className="font-normal lg:px-4 dark:text-gray-100 hover:text-rosa hover:font-extrabold text-lg"
                   >
                     {t(`headerNavLinks:${link.title.toLowerCase()}`)}
                   </Link>
                 ))}
               </div>
               <div className="flex justify-between items-center">
-                <div className="pr-12">
+                <div className="px-4 hidden sm:block">
                   <div className="relative mx-auto items-center">
                     <input
-                      className=" text-white focus:border-0 border-0 bg-rosa placeholder-white font-extrabold h-8  pl-4 pr-1 rounded-full text-s "
+                      className="lg:w-40 text-white focus:border-0 border-0 bg-rosa placeholder-white font-extrabold h-8  pl-4 pr-8 rounded-full text-s "
                       type="text"
                       name="search"
                       placeholder="Buscar"
@@ -156,7 +139,7 @@ const LayoutWrapper = ({ children }) => {
                   </div>
                 </div>
                 <div className="flex divide-x divide-gray-300 justify-items-stretch">
-                  <div className="flex px-6 self-center">
+                  <div className="flex px-3 self-center">
                     <UserIcon className="" />
                   </div>
                   <div className="px-3">
@@ -174,7 +157,7 @@ const LayoutWrapper = ({ children }) => {
                       ))}
                       </select>*/}
                   </div>
-                  <div className="pl-3 self-center">
+                  <div className="self-center">
                     <ThemeSwitch />
                   </div>
                   <MobileNav />

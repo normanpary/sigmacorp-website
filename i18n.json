@@ -1,8 +1,19 @@
 {
   "locales": ["en", "es"],
-  "defaultLocale": "en",
+  "defaultLocale": "es",
   "pages": {
-    "*": ["common", "headerNavLinks", "newsletter", "404", "SEO"],
-    "/projects": ["projects"]
+    "*": [
+      "common",
+      "headerNavLinks",
+      "newsletter",
+      "404",
+      "SEO",
+      "footer",
+      "home",
+      "about",
+      "maquila",
+      "contacts"
+    ],
+    "/products": ["headerNavLinks"]
   }
 }
