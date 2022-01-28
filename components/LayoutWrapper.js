@@ -23,15 +23,14 @@ const LayoutWrapper = ({ children }) => {
   const { locale, locales, defaultLocale } = router
 
   const changeLanguage = (e) => {
-    console.log(e)
     const locale = e.value
     router.push(router.asPath, router.asPath, { locale })
-    var idioma = ''
+    var language = ''
     if (e == 'es') {
-      idioma = 'Español'
+      language = 'Español'
     }
     if (e == 'en') {
-      idioma = 'English'
+      language = 'English'
     }
   }
   const customStyles = {
@@ -68,13 +67,22 @@ const LayoutWrapper = ({ children }) => {
   ]
   */
   const options = []
-  var idioma = ''
+  var language = ''
+  var currentLanguage = ''
+  if (locale == 'es') {
+    currentLanguage = 'Español'
+  }
+  if (locale == 'en') {
+    currentLanguage = 'English'
+  }
+
   locales.map((e) => {
+
     if (e == 'es') {
-      idioma = 'Español'
+      language = 'Español'
     }
     if (e == 'en') {
-      idioma = 'English'
+      language = 'English'
     }
 
     options.push({
@@ -82,7 +90,7 @@ const LayoutWrapper = ({ children }) => {
       label: (
         <div className="inline">
           <img className="inline pr-2" src={'static/images/' + e + '.png'} />
-          {idioma}
+          {language}
         </div>
       ),
     })
@@ -100,7 +108,7 @@ const LayoutWrapper = ({ children }) => {
         label: (
           <div className="inline">
             <img className="inline pr-2" src={'static/images/' + locale + '.png'} />
-            {idioma}
+            {currentLanguage}
           </div>
         ),
       }}
@@ -135,7 +143,7 @@ const LayoutWrapper = ({ children }) => {
                   <Link
                     key={link.title}
                     href={link.href}
-                    className=" font-normal text-gray-400 sm:px-10 dark:text-gray-100 hover:text-rosa hover:font-extrabold text-lg"
+                    className=" font-bold text-gray-400 sm:px-10 dark:text-gray-100 hover:text-rosa hover:font-bold text-lg"
                   >
                     {t(`headerNavLinks:${link.title.toLowerCase()}`)}
                   </Link>
