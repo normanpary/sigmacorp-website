@@ -10,7 +10,7 @@ export default function BlogCarouselItem({ post }) {
       <div className="h-auto w-60 bg-white mx-2 rounded-md">
         <img
           className="h-40 w-60 rounded-t-md"
-          src={URL_BASE + `${post.IMAGE.url}`}
+          //src={URL_BASE + `${post.IMAGE.url}`}
           alt="Carousel"
         />
         <div className="relative p-4 w-auto h-44">
