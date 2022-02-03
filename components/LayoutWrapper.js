@@ -118,7 +118,7 @@ const LayoutWrapper = ({ children }) => {
                   <Link
                     key={link.title}
                     href={link.href}
-                    className="font-normal lg:px-4 dark:text-gray-100 hover:text-rosa hover:font-extrabold text-lg"
+                    className="font-bold lg:px-4 dark:text-gray-100 hover:text-rosa hover:font-bold text-lg"
                   >
                     {t(`headerNavLinks:${link.title.toLowerCase()}`)}
                   </Link>

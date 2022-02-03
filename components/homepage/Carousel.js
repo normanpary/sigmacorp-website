@@ -36,22 +36,66 @@ export default class Carousel extends Component {
   render() {
     let settings = {
       dots: false,
-      infinite: true,
+      infinite: false,
       speed: 500,
+      swipeToSlide: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 5000,
       arrows: false,
+      vertical:false,
+      verticalSwiping:true,
       afterChange: (index) => this.setCurrentSlide(index),
     }
 
     return (
+      
       <div className="relative">
         <Slider {...settings} ref={(c) => (this.slider = c)}>
-          {carouselData.map((item, index) => (
+          {/*carouselData.map((item, index) => (
             <CarouselItem item={item} key={index} />
-          ))}
+          ))*/}
+          <div className='sticky'>
+            <div className="snap-start bg-cover bg-center min-h-screen p-10 grid grid-cols-2" style={{backgroundImage:"url(static/images/home/farmaceuticos-slider.jpg)"}}>
+              
+                <div className='flex flex-col justify-center'>
+                  <div className="font-mulish uppercase text-rosa tracking-wider text-xl font-black pb-1 sm:text-4xl xl:text-8xl">Farmaceuticós</div>
+                  <div className="font-mulish text-gray-800 tracking-wider font-semibold pb-10 sm:text-4xl xl:text-3xl">Conoce nuestros productos farmaceuticós</div>
+                  <div>
+                    <button className="bg-violeta hover:bg-indigo-800 text-white font-black py-2 px-10 rounded-full text-xl">
+                    Conocélos
+                    </button>
+                  </div>
+                  
+                </div>
+                <div className=''>
+                  <img className='scale-75' src={"static/images/bote.png"}></img>
+                </div>
+             
+              
+
+            </div>
+            <div className="snap-start bg-cover bg-center min-h-screen p-10 grid grid-cols-2" style={{backgroundImage:"url(static/images/home/farmaceuticos-slider.jpg)"}}>
+              
+                <div className='flex flex-col justify-center'>
+                  <div className="font-mulish uppercase text-rosa tracking-wider text-xl font-black pb-1 sm:text-4xl xl:text-8xl">Farmaceuticós</div>
+                  <div className="font-mulish text-gray-800 tracking-wider font-semibold pb-10 sm:text-4xl xl:text-3xl">Conoce nuestros productos farmaceuticós</div>
+                  <div>
+                    <button className="bg-violeta hover:bg-indigo-800 text-white font-black py-2 px-10 rounded-full text-xl">
+                    Conocélos
+                    </button>
+                  </div>
+                  
+                </div>
+                <div className=''>
+                  <img className='scale-75' src={"static/images/bote.png"}></img>
+                </div>
+             
+              
+
+            </div>
+          </div>   
         </Slider>
         <button
           className="absolute w-8 h-8 left-2 md:left-6 inset-y-1/2 rounded-full bg-gray-200 cursor-pointer"
