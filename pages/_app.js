@@ -61,7 +61,7 @@ function App({ Component, pageProps }) {
           }
         `}</style>
         <div className="z-20 w-screen h-screen bg-white flex justify-center items-center">
-          <div class="w-48 h-48 border-b-2 border-rosa rounded-full animate-spin"></div>
+          <div className="w-48 h-48 border-b-2 border-rosa rounded-full animate-spin"></div>
         </div>
       </div>
     )

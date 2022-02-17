@@ -30,12 +30,12 @@ export default class Carousel extends Component {
       this.slider.slickPrev()
     )*/
   }
-  componentWillMount() {
-    //window.addEventListener('wheel', (e) => {
-    //  console.log('wheel');
-    //this.slide(e.wheelDelta);
-    //})
-  }
+  //componentWillMount() {
+  //window.addEventListener('wheel', (e) => {
+  //  console.log('wheel');
+  //this.slide(e.wheelDelta);
+  //})
+  //}
 
   next() {
     this.slider.slickNext()
