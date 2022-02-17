@@ -31,6 +31,9 @@ module.exports = {
         rosa: {
           DEFAULT: '#B3227D',
         },
+        azul: {
+          DEFAULT: '#3C4F9A',
+        },
         primary: colors.teal,
         gray: colors.trueGray,
       },
