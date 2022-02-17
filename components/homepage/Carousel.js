@@ -7,17 +7,11 @@ import Next from '/public/static/images/home/Next.svg'
 import CarouselItem from './CarouselItem'
 import { carouselData } from '@/data/homepage'
 import { useEffect } from 'react'
-import Fade from 'react-reveal/Fade';
-import { Parallax } from 'react-scroll-parallax';
-import { motion } from "framer-motion"
-
-
+import Fade from 'react-reveal/Fade'
+import { Parallax } from 'react-scroll-parallax'
+import { motion } from 'framer-motion'
 
 export default class Carousel extends Component {
-
-
-
-
   constructor(props) {
     super(props)
     this.next = this.next.bind(this)
@@ -26,12 +20,10 @@ export default class Carousel extends Component {
     this.state = {
       currentSlide: 0,
     }
-    this.slide = this.slide.bind(this);
-
-
-
+    this.slide = this.slide.bind(this)
   }
-  slide(y) {/*
+  slide(y) {
+    /*
     y > 0 ? (
       this.slider.slickNext()
     ) : (
@@ -39,15 +31,11 @@ export default class Carousel extends Component {
     )*/
   }
   componentWillMount() {
-
     //window.addEventListener('wheel', (e) => {
     //  console.log('wheel');
     //this.slide(e.wheelDelta);
     //})
   }
-
-
-
 
   next() {
     this.slider.slickNext()
@@ -81,20 +69,11 @@ export default class Carousel extends Component {
       draggable: true,
       pauseOnHover: true,
 
-
       afterChange: (index) => this.setCurrentSlide(index),
-
-
     }
 
-
-
-
     return (
-
-      <div className='' onWheel={(e) => this.slide(e.deltaY)}>
-
-
+      <div className="" onWheel={(e) => this.slide(e.deltaY)}>
         <Slider {...settings} ref={(c) => (this.slider = c)}>
           {/*<Slider {...settings} ref={(c) => (this.slider = c)}>
           {/*carouselData.map((item, index) => (
@@ -102,13 +81,16 @@ export default class Carousel extends Component {
           ))*/}
 
           {/**SLIDE 01 */}
-          <div className=''>
-            <div className="bg-cover bg-center p-20 grid grid-cols-2" style={{ backgroundImage: "url(static/images/home/farmaceuticos-slider.jpg)" }}>
-              <div className='max-h-[600px] flex flex-col justify-center'>
+          <div className="">
+            <div
+              className="bg-cover bg-center p-20 grid grid-cols-2"
+              style={{ backgroundImage: 'url(static/images/home/farmaceuticos-slider.jpg)' }}
+            >
+              <div className="max-h-[600px] flex flex-col justify-center">
                 <motion.div
                   initial={{ opacity: 0, x: 1000 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, ease: 'easeIn', }}
+                  transition={{ duration: 0.5, ease: 'easeIn' }}
                 >
                   <div className="transition-transform font-mulish uppercase text-rosa tracking-wider text-xl font-black pb-1 sm:text-4xl xl:text-8xl">
                     Farmaceuticós
@@ -117,7 +99,6 @@ export default class Carousel extends Component {
                 <motion.div
                   initial={{ opacity: 0, x: 1000 }}
                   whileInView={{ opacity: 1, x: 0 }}
-
                   transition={{ duration: 0.5, ease: 'easeIn', delay: 0.1 }}
                 >
                   <div className="font-mulish text-gray-800 tracking-wider font-semibold pb-10 sm:text-4xl xl:text-3xl">
@@ -127,7 +108,6 @@ export default class Carousel extends Component {
                 <motion.div
                   initial={{ opacity: 0, x: 1000 }}
                   whileInView={{ opacity: 1, x: 0 }}
-
                   transition={{ duration: 0.5, ease: 'easeIn', delay: 0.3 }}
                 >
                   <div>
@@ -140,31 +120,30 @@ export default class Carousel extends Component {
               <motion.div
                 initial={{ opacity: 0, x: 400 }}
                 whileInView={{ opacity: 1, x: 0 }}
-
                 transition={{ duration: 0.5, ease: 'easeIn', delay: 0.3 }}
                 whileHover={{
-
-
                   scale: 1.05,
-                  transition: { repeatType: "reverse", repeat: Infinity, duration: 2 },
+                  transition: { repeatType: 'reverse', repeat: Infinity, duration: 2 },
                 }}
               >
-                <div className='max-h-[700px] flex flex-col justify-center'>
-                  <img className='scale-50' src={"static/images/caja1.png"}></img>
+                <div className="max-h-[700px] flex flex-col justify-center">
+                  <img className="scale-50" src={'static/images/caja1.png'}></img>
                 </div>
               </motion.div>
             </div>
           </div>
 
           {/**SLIDE 02 */}
-          <div className=' '>
-            <div className="bg-cover bg-center p-20 grid grid-cols-2" style={{ backgroundImage: "url(static/images/home/nutraceuticos-slider.jpg)" }}>
-              <div className='max-h-[700px] flex flex-col justify-center'>
+          <div className=" ">
+            <div
+              className="bg-cover bg-center p-20 grid grid-cols-2"
+              style={{ backgroundImage: 'url(static/images/home/nutraceuticos-slider.jpg)' }}
+            >
+              <div className="max-h-[700px] flex flex-col justify-center">
                 <motion.div
                   initial={{ opacity: 0, x: 1000 }}
                   whileInView={{ opacity: 1, x: 0 }}
-
-                  transition={{ duration: 0.5, ease: 'easeIn', }}
+                  transition={{ duration: 0.5, ease: 'easeIn' }}
                 >
                   <div className="transition-transform font-mulish uppercase text-rosa tracking-wider text-xl font-black pb-1 sm:text-4xl xl:text-8xl">
                     Nutraceuticós
@@ -173,7 +152,6 @@ export default class Carousel extends Component {
                 <motion.div
                   initial={{ opacity: 0, x: 1000 }}
                   whileInView={{ opacity: 1, x: 0 }}
-
                   transition={{ duration: 0.5, ease: 'easeIn', delay: 0.1 }}
                 >
                   <div className="font-mulish text-gray-800 tracking-wider font-semibold pb-10 sm:text-4xl xl:text-3xl">
@@ -183,7 +161,6 @@ export default class Carousel extends Component {
                 <motion.div
                   initial={{ opacity: 0, x: 1000 }}
                   whileInView={{ opacity: 1, x: 0 }}
-
                   transition={{ duration: 0.5, ease: 'easeIn', delay: 0.3 }}
                 >
                   <div>
@@ -196,30 +173,30 @@ export default class Carousel extends Component {
               <motion.div
                 initial={{ opacity: 0, x: 400 }}
                 whileInView={{ opacity: 1, x: 0 }}
-
                 transition={{ duration: 0.5, ease: 'easeIn', delay: 0.3 }}
                 whileHover={{
-
-
                   scale: 1.05,
-                  transition: { repeatType: "reverse", repeat: Infinity, duration: 2 },
+                  transition: { repeatType: 'reverse', repeat: Infinity, duration: 2 },
                 }}
               >
-                <div className='max-h-[700px] flex flex-col justify-center'>
-                  <img className='scale-50' src={"static/images/carmelo1.png"}></img>
+                <div className="max-h-[700px] flex flex-col justify-center">
+                  <img className="scale-50" src={'static/images/carmelo1.png'}></img>
                 </div>
               </motion.div>
             </div>
           </div>
-          
+
           {/**SLIDE 03*/}
-          <div className=''>
-            <div className="bg-cover bg-bottom p-20 grid grid-cols-2" style={{ backgroundImage: "url(static/images/home/maquila-slider.jpg)" }}>
-              <div className='max-h-[600px] flex flex-col justify-center'>
+          <div className="">
+            <div
+              className="bg-cover bg-bottom p-20 grid grid-cols-2"
+              style={{ backgroundImage: 'url(static/images/home/maquila-slider.jpg)' }}
+            >
+              <div className="max-h-[600px] flex flex-col justify-center">
                 <motion.div
                   initial={{ opacity: 0, x: 1000 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, ease: 'easeIn', }}
+                  transition={{ duration: 0.5, ease: 'easeIn' }}
                 >
                   <div className="transition-transform font-mulish uppercase text-rosa tracking-wider text-xl font-black pb-1 sm:text-4xl xl:text-8xl">
                     Maquila
@@ -228,7 +205,6 @@ export default class Carousel extends Component {
                 <motion.div
                   initial={{ opacity: 0, x: 1000 }}
                   whileInView={{ opacity: 1, x: 0 }}
-
                   transition={{ duration: 0.5, ease: 'easeIn', delay: 0.1 }}
                 >
                   <div className="font-mulish text-gray-800 tracking-wider font-semibold pb-10 sm:text-4xl xl:text-3xl">
@@ -238,7 +214,6 @@ export default class Carousel extends Component {
                 <motion.div
                   initial={{ opacity: 0, x: 1000 }}
                   whileInView={{ opacity: 1, x: 0 }}
-
                   transition={{ duration: 0.5, ease: 'easeIn', delay: 0.3 }}
                 >
                   <div>
@@ -251,22 +226,18 @@ export default class Carousel extends Component {
               <motion.div
                 initial={{ opacity: 0, x: 400 }}
                 whileInView={{ opacity: 1, x: 100 }}
-
                 transition={{ duration: 0.5, ease: 'easeIn', delay: 0.3 }}
                 whileHover={{
-
-
                   scale: 1.05,
-                  transition: { repeatType: "reverse", repeat: Infinity, duration: 2 },
+                  transition: { repeatType: 'reverse', repeat: Infinity, duration: 2 },
                 }}
               >
-                <div className='max-h-[700px] flex flex-col justify-center'>
-                  <img className='scale-50' src={"static/images/home/iconos-maquila.png"}></img>
+                <div className="max-h-[700px] flex flex-col justify-center">
+                  <img className="scale-50" src={'static/images/home/iconos-maquila.png'}></img>
                 </div>
               </motion.div>
             </div>
           </div>
-
         </Slider>
         <button
           className="absolute w-8 h-8 left-2 md:left-6 inset-y-1/2 rounded-full bg-gray-200 cursor-pointer"
@@ -297,8 +268,6 @@ export default class Carousel extends Component {
             )
           })}
         </div>
-
-
       </div>
     )
   }
