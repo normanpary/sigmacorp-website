@@ -61,7 +61,7 @@ export default class Carousel extends Component {
       swipeToSlide: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 5000,
       arrows: false,
       vertical: false,
@@ -126,8 +126,23 @@ export default class Carousel extends Component {
                   transition: { repeatType: 'reverse', repeat: Infinity, duration: 2 },
                 }}
               >
-                <div className="max-h-[700px] flex flex-col justify-center">
-                  <img className="scale-50" src={'static/images/caja1.png'}></img>
+                <div className="max-h-[700px] flex flex-col justify-center content-center ">
+                  <Slider
+                    arrows={false}
+                    autoplay={true}
+                    fade={true}
+                    speed={1500}
+                    easing={true}
+                    pauseOnFocus={false}
+                    pauseOnHover={false}
+                    adaptiveHeight={false}
+                    infinite={true}
+                    autoplaySpeed={3000}
+                  >
+                    <img className="scale-50 " src={'static/images/caja1.png'}></img>
+                    {/*<img className="scale-90 rotate-45 mt-40 " src={'static/images/clorex.png'}></img>
+                  <img className="scale-50 mt-80 " src={'static/images/sigmavir.png'}></img>*/}
+                  </Slider>
                 </div>
               </motion.div>
             </div>
@@ -180,7 +195,26 @@ export default class Carousel extends Component {
                 }}
               >
                 <div className="max-h-[700px] flex flex-col justify-center">
-                  <img className="scale-50" src={'static/images/carmelo1.png'}></img>
+                  <Slider
+                    arrows={false}
+                    autoplay={true}
+                    fade={true}
+                    speed={1500}
+                    easing={true}
+                    pauseOnFocus={false}
+                    pauseOnHover={false}
+                    adaptiveHeight={false}
+                    infinite={true}
+                    autoplaySpeed={3000}
+                  >
+                    <img
+                      className="scale-50 mt-40"
+                      src={'static/images/suprelac-gestacion.png'}
+                    ></img>
+                    <img className="scale-50 mt-40" src={'static/images/suprelac-niños.png'}></img>
+                    <img className="scale-75 mt-40" src={'static/images/chispitas.png'}></img>
+                    <img className="scale-50" src={'static/images/carmelo1.png'}></img>
+                  </Slider>
                 </div>
               </motion.div>
             </div>
