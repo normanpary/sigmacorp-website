@@ -212,7 +212,7 @@ export default class Carousel extends Component {
                       src={'static/images/suprelac-gestacion.png'}
                     ></img>
                     <img className="scale-50 mt-40" src={'static/images/suprelac-niños.png'}></img>
-                    <img className="scale-75 mt-40" src={'static/images/chispitas.png'}></img>
+                    <img className="scale-75 mt-40" src={'static/images/chispitas-1.png'}></img>
                     <img className="scale-50" src={'static/images/carmelo1.png'}></img>
                   </Slider>
                 </div>
