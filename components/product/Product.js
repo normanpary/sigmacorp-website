@@ -14,13 +14,13 @@ const Product = ({ category_name, product, index, handleChangeIndexSelected }) =
       }}
     >
       <button onClick={() => handleChangeIndexSelected(index)}>
-        <div className="max-w-xs cursor-pointer py-6">
-          <p className="text-lg font-extrabold text-primary-900 ">{product.NAME.toUpperCase()}</p>
+        <div className="cursor-pointer py-6">
+          <p className="text-3xl font-extrabold text-primary-900 text-left" >{product.NAME.toUpperCase()}</p>
           <div className="flex mt-2">
-            <img className="h-11 w-auto" src={`/static/images/two_icons.png`} />
+            <img className="h-12 w-auto" src={`/static/images/two_icons.png`} />
             <div className="max-h-full">
-              <p className="text-xs font-bold text-primary-900 mt-0.5 ml-2">{product.TYPE_SALES}</p>
-              <p className="text-xs font-bold text-blue-400 mt-2 ml-2">{category_name}</p>
+              <p className="text-lg font-bold text-primary-900 -mt-1 ml-2 text-left">{product.TYPE_SALES}</p>
+              <p className="text-lg font-bold text-blue-400 mt-1 ml-2 text-left">{category_name}</p>
             </div>
           </div>
         </div>

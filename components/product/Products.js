@@ -5,14 +5,14 @@ const Products = ({ category }) => {
   return (
     <div className="bg-fondo bg-no-repeat">
       {category !== null && (
-        <>
+        <div className='container mx-auto'>
           <div className="flex w-full p-3 md:p-6 justify-center">
             {category.NAME.includes('/') ? (
               <div className="flex-grow">
-                <p className="text-xl sm:text-2xl md:text-3xl text-pink-700 font-extrabold flex-grow">
+                <p className="text-xl sm:text-2xl md:text-6xl text-pink-700 font-extrabold flex-grow">
                   {category.NAME.split('/')[0].toUpperCase()}
                 </p>
-                <p className="text-xl sm:text-2xl md:text-3xl text-blue-800 font-extrabold flex-grow">
+                <p className="text-xl sm:text-2xl md:text-6xl text-blue-800 font-extrabold flex-grow">
                   {category.NAME.split('/')[1].toUpperCase()}
                 </p>
               </div>
@@ -23,10 +23,10 @@ const Products = ({ category }) => {
             )}
 
             {category.ICON !== undefined && (
-              <img className="w-10 h-10" src={`${URL_BASE}${category.ICON.url}`} />
+              <img className="w-20 h-20" src={`${URL_BASE}${category.ICON.url}`} />
             )}
           </div>
-          <div className="flex justify-center content-center w-full">
+          <div className="flex justify-center content-center w-full my-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 sm:gap-4 md:gap-8 space-y-0 space-x-0 my-3">
               {category.PRODUCTS.map((product, index) => (
                 <Product
@@ -38,7 +38,7 @@ const Products = ({ category }) => {
               ))}
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   )

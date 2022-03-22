@@ -6,14 +6,14 @@ import useTranslation from 'next-translate/useTranslation'
 
 const videos = [
   {
-    img: '/static/images/about/vid.png',
+    img: '/static/images/about/about01.png',
     url: 'https://www.youtube.com/watch?v=QFmMNfbsi6k&t=8s',
-    height: 'full',
+    align: 'justify-end',
   },
   {
-    img: '/static/images/about/vid1.png',
+    img: '/static/images/about/responsabilidad.jpg',
     url: 'https://www.youtube.com/watch?v=aFbfiILZg8g',
-    height: '1/2',
+    align: 'justify-center',
   },
 ]
 
@@ -22,12 +22,12 @@ function LightBox({ video }) {
   const [toggler, setToggler] = useState(false)
 
   return (
-    <div>
+    <div className={"flex " + videos[video].align +" w-full"}>
       <div className="relative">
         {video == 0 ? (
           <img className="h-full w-auto" src={videos[video].img} />
         ) : (
-          <img className="h-auto w-full md:h-72 md:w-auto" src={videos[video].img} />
+          <img className="" src={videos[video].img} />
         )}
 
         <button

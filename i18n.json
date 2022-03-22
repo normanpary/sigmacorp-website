@@ -12,7 +12,8 @@
       "home",
       "about",
       "maquila",
-      "contacts"
+      "contacts",
+      "news"
     ],
     "/products": ["headerNavLinks"]
   }

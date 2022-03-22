@@ -3,7 +3,17 @@ import ItemDepto from '@/components/contacts/ItemDepto'
 import Formulario from '@/components/contacts/Formulario'
 
 import { biofarmas, nutraceuticos } from '@/data/contacts'
+import { dehydrate, QueryClient, useQuery } from 'react-query'
 
+export async function getStaticProps({ locale }) {
+  const queryClient = new QueryClient()
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  }
+}
 export default function Maquila() {
   const { t } = useTranslation()
   return (

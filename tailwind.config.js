@@ -34,6 +34,12 @@ module.exports = {
         azul: {
           DEFAULT: '#3C4F9A',
         },
+        gris: {
+          DEFAULT: '#7B7E87',
+        },
+        gris_claro: {
+          DEFAULT: '#E6E6E6',
+        },
         primary: colors.teal,
         gray: colors.trueGray,
       },
@@ -42,7 +48,12 @@ module.exports = {
         fondo_reverse: "url('/static/images/fondo_reverse.png')",
         fondo_footer: "url('/static/images/fondo_footer.png')",
         fondo_img: "url('/static/images/fondo_img.png')",
+        about: "url('/static/images/about/fondo.png')",
+        hexagon: "url('/static/images/fondo.png')",
+        hexagon_reverse: "url('/static/images/fondo_reverse.png')",
+        
       },
+      
 
       typography: (theme) => ({
         DEFAULT: {

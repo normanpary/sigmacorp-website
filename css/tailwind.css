@@ -17,3 +17,57 @@ input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition: background-color 600000s 0s, color 600000s 0s;
 }
+.cursor {
+    display: block;
+    position: fixed;
+    border-radius: 50%;
+    contain: layout style size;
+    pointer-events: none;
+    transition: opacity .6s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+    z-index:990;
+}
+
+
+.cursor-text {
+    z-index: 100005;
+    display: block;
+    position: fixed;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    line-height: 16px!important;
+    top: -40px;
+    left: -40px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    transition: opacity .3s ease-in-out,background-color .3s ease-in-out,-webkit-transform .3s ease-in-out;
+    transition: opacity .3s ease-in-out,background-color .3s ease-in-out,transform .3s ease-in-out;
+    transition: opacity .3s ease-in-out,background-color .3s ease-in-out,transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
+    pointer-events: none;
+    margin: 0 auto;
+    color: #FFF;
+    display : flex;
+ align-items : center;
+ justify-content : center;
+ text-align:center;
+}
+.cursor-drag, .cursor-dragging, .cursor-text {
+    font: 400 16px ;
+    color: #fff;
+}
+.cursor-spotlight {
+    display: block;
+    position: fixed;
+    border-radius: 50%;
+    height: 280px;
+    width: 280px;
+    line-height: 280px!important;
+    top: -140px;
+    left: -140px;
+    transition: opacity .3s ease-in-out,background-color .3s ease-in-out;
+    pointer-events: none;
+    margin: 0 auto;
+}

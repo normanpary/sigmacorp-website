@@ -2,9 +2,17 @@
   "blog": "Blog",
   "tags": "Tags",
   "projects": "Projects",
-  "products": "Products",
   "home": "Home",
   "about": "About",
+  "products": "Products",
   "maquila": "Maquila",
-  "contacts": "Contacts"
+  "resources": "Resources",
+  "biosecurity": "Biosecurity",
+  "nutraceutics": "Nutraceutics",
+  "pharmaceutics": "Pharmaceutics",
+  "contact": "Contact Us",
+  "events": "Events",
+  "news": "News",
+  "csr": "CSR",
+  "pharmacovigilance": "Pharmacovigilance"
 }

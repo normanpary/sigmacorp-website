@@ -96,7 +96,7 @@ export default function HomePage({ posts, locale, availableLocales }) {
       {/**FIN CAJAS VALORES */}
 
       {/**QUIENES SOMOS */}
-      <div className="bg-fondo_reverse bg-no-repeat bg-right-top mt-20">
+      <div className="bg-fondo_reverse bg-no-repeat bg-right-top mt-20 slider" data-cursortextdrag="Somos Sigma" data-cursortextdragging="Dragging">
         <div className=" container mx-auto space-y-6 md:space-y-0  grid grid-cols-1 md:grid-cols-2 md:gap-6 md:px-8 lg:px-28 ">
           <motion.div
             initial={{ opacity: 0, x: 100 }}

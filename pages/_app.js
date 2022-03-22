@@ -18,14 +18,20 @@ import { useEffect, useState } from 'react'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import FloatingWhatsApp from 'react-floating-whatsapp'
 
+import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
+import React from 'react'
+
+import Cursor from '../common/Cursor';
 function App({ Component, pageProps }) {
   const router = useRouter()
-
+  const [queryClient] = React.useState(() => new QueryClient())
+/*
   useEffect(() => {
     router.push(router.asPath, router.asPath, { locale: 'es' })
   }, [])
-
-  const [loading, setLoading] = useState(true)
+*/
+/*  
+const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,6 +39,9 @@ function App({ Component, pageProps }) {
     }, 1000)
     return () => clearInterval(interval)
   }, [])
+  */
+  
+  const loading = false
 
   if (loading) {
     return (
@@ -67,12 +76,17 @@ function App({ Component, pageProps }) {
     )
   } else {
     return (
+      
+      <QueryClientProvider client={queryClient}>
+        {console.log(pageProps)}
+        <Hydrate state={pageProps.dehydratedState}>
       <ThemeProvider attribute="class">
         <ParallaxProvider>
           <Head>
             <meta content="width=device-width, initial-scale=1" name="viewport" />
           </Head>
           <Analytics />
+          <Cursor/>
           <LayoutWrapper>
             <Component {...pageProps} />
           </LayoutWrapper>
@@ -90,6 +104,8 @@ function App({ Component, pageProps }) {
           <RSS />
         </ParallaxProvider>
       </ThemeProvider>
+      </Hydrate>
+      </QueryClientProvider>
     )
   }
 }

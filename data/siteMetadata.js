@@ -1,10 +1,10 @@
 const siteMetadata = {
-  title: { en: 'Sigmacorp, Nueva web ', fr: 'Starter de blog NextJs' },
+  title: { en: 'Sigmacorp, Nueva web ', es: 'Starter de blog NextJs' },
   author: 'Strategic',
-  headerTitle: { en: 'Sigmacorp', fr: 'blog Tailwind' },
+  headerTitle: { en: 'Sigmacorp', es: 'blog Tailwind' },
   // description: 'A blog created with Next.js and Tailwind.css',
-  description: { en: 'en description', fr: 'Description en fr' },
-  language: 'en-us',
+  description: { en: 'en description', es: 'Description en fr' },
+  language: 'es',
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/static/images/logo.png',
@@ -17,7 +17,7 @@ const siteMetadata = {
   email: 'address@yoursite.com',
   github: 'https://github.com',
   linkedin: 'https://www.linkedin.com',
-  locale: 'en-US',
+  locale: 'es',
   analytics: {
     // supports plausible, simpleAnalytics or googleAnalytics
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app

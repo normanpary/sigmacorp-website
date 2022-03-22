@@ -18,7 +18,7 @@ const ProductDetail = ({ product }) => {
             <div className="flex w-full justify-center items-center">
               {product.IMAGE !== undefined ? (
                 <img
-                  className="h-auto w-full object-contain"
+                  className="h-[460px] w-[460px] object-contain"
                   src={`${URL_BASE}${product.IMAGE.url}`}
                 />
               ) : (
@@ -28,12 +28,12 @@ const ProductDetail = ({ product }) => {
 
             <div>
               <div className="hidden md:block">
-                <p className="text-xl font-extrabold text-pink-700 ">
+                <p className="text-3xl font-extrabold text-pink-700 ">
                   {product.NAME.toUpperCase()}
                 </p>
                 <div className="w-full h-[1px] mt-1 bg-pink-700" />
               </div>
-              <p className="my-8">{product.DESCRIPTION}</p>
+              <p className="my-8 text-lg">{product.DESCRIPTION}</p>
               <p className="font-bold mt-2">{'Acción terapeútica'}</p>
               <p>{'ANTIACIDO - ANTIINFLATORIO'}</p>
               <p className="font-bold mt-2">{'Composición'}</p>

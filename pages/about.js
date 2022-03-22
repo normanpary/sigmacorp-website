@@ -4,133 +4,280 @@ import ItemCard from '@/components/homepage/ItemCard'
 import useTranslation from 'next-translate/useTranslation'
 import LightBox from '@/components/about/LightBox'
 
-export default function About() {
+import dynamic from 'next/dynamic'
+
+const Jarallax = dynamic(() => import('../components/Jarallax'), { ssr: false })
+import JarallaxImage from '../components/JarallaxImage'
+
+import { motion } from 'framer-motion'
+
+import { dehydrate, QueryClient, useQuery } from 'react-query';
+
+export async function getStaticProps({locale}) {
+  const queryClient = new QueryClient()
+ 
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  }
+}
+
+export default function About({ posts, locale, availableLocales }) {
   const { t } = useTranslation()
   return (
     <>
-      <div className="relative">
-        <img
-          className="h-48 object-cover sm:h-full sm:object-contain"
-          src="/static/images/about/fondo.png"
-          alt="sobre nosotros"
-        />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white" />
-        <div className="absolute top-4 left-8 md:top-8">
-          <div className="flex flex-row font-extrabold text-xl md:text-5xl">
-            <p className="text-pink-700">{t('about:sobre')}</p>
-            <p className="text-violeta">{t('about:nosotros')}</p>
+      {/**BANNER */}
+      <div className="bg-[url('/static/images/about/fondo.png')] bg-cover bg-center h-96">
+        <Jarallax
+          className="h-96 mb-20"
+          videoEndTime={10}
+          videoLoop={false}
+          speed={1.6}
+          videoSrc="https://youtu.be/xUifNB1SeAI"
+        >
+          <div className="bg-gradient-to-r from-white/80 to-white/0 h-96">
+            <motion.div
+              initial={{ opacity: 0, x: -200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, ease: 'easeIn' }}
+              viewport={{ margin: '0px' }}
+            >
+              <div className="container mx-auto pt-24">
+                <div className="flex flex-row font-extrabold text-5xl">
+                  <div className="text-pink-700 ">{t('about:sobre')}</div>
+                  <div className="text-violeta">{t('about:nosotros')}</div>
+                </div>
+                <div className="">
+                  <a href="#" className="hover:text-pink-700 font-bold">
+                    Inicio
+                  </a>{' '}
+                  / Sobre nosotros
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </Jarallax>
+      </div>
+      {/*FIN BANNER*/}
+
+      {/*QUIENES SOMOS*/}
+      <div className="bg-hexagon bg-no-repeat bg-left-top">
+        <div className="container mx-auto py-14  grid grid-cols-2 gap-16">
+          <motion.div
+            initial={{ opacity: 0, x: -200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: 'easeIn', delay: 0 }}
+            viewport={{ margin: '-300px' }}
+          >
+            <div>
+              <LightBox video={0} />
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: 'easeIn', delay: 0 }}
+            viewport={{ margin: '-300px' }}
+          >
+            <div className="pr-36">
+              <p className="font-extrabold text-gray-500 pb-4 text-lg">
+                {t('about:quienes_somos')}
+              </p>
+              <p className="text-xl sm:text-2xl md:text-6xl text-pink-700 font-extrabold">
+                {t('about:sigma')}
+              </p>
+              <p className="text-xl sm:text-2xl md:text-6xl text-blue-800 font-extrabold pb-8">
+                {t('about:corp')}
+              </p>
+              <p className="text-lg font-bold pb-4 ">{t('about:establecidos')}</p>
+              <p className="text-lg text-gray-600 pb-8">{t('about:cuidamos')}</p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+      {/*FIN QUIENES SOMOS*/}
+      {/*NUESTROS PROPOSITOS*/}
+      <div className="bg-[url('/static/images/about/proposito.png')] bg-cover bg-top">
+        <div className="bg-gradient-to-r from-white/0 to-white/90 ">
+          <div className="container mx-auto py-14  grid grid-cols-2 gap-16">
+            <div></div>
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: 'easeIn' }}
+              viewport={{ margin: '-200px' }}
+            >
+              <div className="pr-36">
+                <p className="text-xl md:text-6xl text-pink-700 font-extrabold">
+                  {t('about:nuestros')}
+                </p>
+                <p className="text-xl md:text-6xl pt-3 text-blue-800 font-extrabold">
+                  {t('about:proposito')}
+                </p>
+                <p className="mt-2 md:mt-4 text-lg line md:pr-8 leading-8">
+                  {t('about:proposito_text')}
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
-
-      <div className="p-8 flex flex-col bg-fondo bg-no-repeat bg-left-top md:flex-row-reverse md:gap-6 md:justify-center md:px-28 lg:px-40">
-        <div className="md:w-1/2">
-          <p className="font-extrabold text-gray-500 pb-4">{t('about:quienes_somos')}</p>
-          <p className="text-xl sm:text-2xl md:text-3xl text-pink-700 font-extrabold">
-            {t('about:sigma')}
-          </p>
-          <p className="text-xl sm:text-2xl md:text-3xl text-blue-800 font-extrabold pb-8">
-            {t('about:corp')}
-          </p>
-          <p className="text-xs font-bold pb-4">{t('about:establecidos')}</p>
-          <p className="text-xs text-gray-600 pb-8">{t('about:cuidamos')}</p>
-        </div>
-        <div className="md:w-1/2">
-          <LightBox video={0} />
+      {/*FIN NUESTROS PROPOSITOS*/}
+      {/*CULTURA ORGANIZACIONAL*/}
+      <div className="bg-[url('/static/images/about/culture.jpg')] bg-cover bg-center">
+        <div className="bg-hexagon bg-no-repeat">
+          <div className="container mx-auto py-14  grid grid-cols-2 gap-16">
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: 'easeIn' }}
+              viewport={{ margin: '-200px' }}
+            >
+              <div>
+                <p className="font-extrabold pl-8 text-gray-500">{t('about:valores')}</p>
+                <div className="pl-8 pr-8">
+                  <p className="text-xl md:text-6xl text-pink-700 font-extrabold">
+                    {t('about:cultura')}
+                  </p>
+                  <p className="text-xl md:text-6xl text-blue-800 font-extrabold">
+                    {t('about:organizacional')}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+            <div></div>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, ease: 'easeIn' }}
+            viewport={{ margin: '-200px' }}
+          >
+            <div className="container mx-auto px-16  grid grid-cols-2 gap-16">
+              <div className="space-y-4">
+                <p className="text-lg md:text-3xl text-pink-700 font-black">
+                  {t('about:integridad')}
+                </p>
+                <p className="text-lg pl-6 text-gray-600"> {t('about:integridad_text')}</p>
+              </div>
+              <div className="space-y-4">
+                <p className="text-lg md:text-3xl text-pink-700 font-black">{t('about:etica')}</p>
+                <p className="text-lg pl-6 text-gray-600"> {t('about:etica_text')}</p>
+              </div>
+              <div className="space-y-4">
+                <p className="text-lg md:text-3xl text-pink-700 font-black">
+                  {t('about:eficacia')}
+                </p>
+                <p className="text-lg pl-6 text-gray-600"> {t('about:eficacia_text')}</p>
+              </div>
+              <div className="space-y-4">
+                <p className="text-lg md:text-3xl text-pink-700 font-black">
+                  {t('about:compromiso')}
+                </p>
+                <p className="text-lg pl-6 text-gray-600"> {t('about:compromiso_text')}</p>
+              </div>
+              <div className="space-y-4">
+                <p className="text-lg md:text-3xl text-pink-700 font-black">
+                  {t('about:honestidad')}
+                </p>
+                <p className="text-lg pl-6 text-gray-600"> {t('about:honestidad_text')}</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
+      {/*FIN CULTURA ORGANIZACIONAL*/}
+      {/*RESPONSABILIDAD SOCIAL*/}
+      <div className="bg-hexagon_reverse bg-right bg-no-repeat">
+        <div className="container mx-auto py-14">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, ease: 'easeIn' }}
+            viewport={{ margin: '-200px' }}
+          >
+            <p className="sm:text-right text-xl md:text-6xl text-pink-700 font-extrabold">
+              {t('about:responsabilidad')}
+            </p>
+            <p className="sm:text-right text-xl md:text-6xl text-blue-800 font-extrabold">
+              {t('about:social')}
+            </p>
 
-      {/**IMAGEN y TEXT interior */}
-      <div
-        className="bg-cover"
-        style={{
-          backgroundImage: 'url(/static/images/about/proposito.png)',
-        }}
-      >
-        <div className="relative w-full h-full bg-fondo_img bg-no-repeat bg-right-top">
-          <div className="absolute h-full w-full bg-white opacity-30"></div>
-          <div className="grid md:grid-cols-2">
-            <div></div>
-            <div className="p-10 z-10">
-              <p className="text-xl md:text-3xl  text-pink-700 font-extrabold">
-                {t('about:nuestros')}
+            <LightBox video={1} />
+          </motion.div>
+        </div>
+      </div>
+      {/*FIN RESPONSABILIDAD SOCIAL*/}
+
+      {/**CAJAS VALORES */}
+      <div className="bg-gray-200">
+        <div className="container mx-auto py-14 ">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, ease: 'easeIn' }}
+            viewport={{ margin: '-200px' }}
+          >
+            <div className="flex flex-col sm:flex-row justify-center pb-14">
+              <p className="text-xl  md:text-6xl text-pink-700 font-extrabold">
+                {t('about:marcamos')}
               </p>
-              <p className="text-xl md:text-3xl  text-blue-800 font-extrabold">
-                {t('about:proposito')}
-              </p>
-              <p className="mt-2 md:mt-4 text-sm text-justify md:pr-8">
-                {t('about:proposito_text')}
+              <p className="text-xl md:text-6xl text-blue-800 font-extrabold pl-2">
+                {t('about:diferencia')}
               </p>
             </div>
-          </div>
-        </div>
-      </div>
-      {/**cultura organizacional */}
-      <div className="bg-fondo bg-no-repeat bg-left-top space-y-6 mt-6">
-        <p className="font-extrabold pl-8 text-gray-500">{t('about:valores')}</p>
-        <div className="pl-8 pr-8">
-          <p className="text-xl md:text-3xl text-pink-700 font-extrabold">{t('about:cultura')}</p>
-          <p className="text-xl md:text-3xl text-blue-800 font-extrabold">
-            {t('about:organizacional')}
-          </p>
-        </div>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 px-8 md:pl-20 md:pr-20 ">
-          <div className="space-y-4">
-            <p className="text-lg md:text-2xl text-pink-700 font-extrabold">
-              {t('about:integridad')}
-            </p>
-            <p className="text-xs pl-6"> {t('about:integridad_text')}</p>
-          </div>
-          <div className="space-y-4">
-            <p className="text-lg md:text-2xl text-pink-700 font-extrabold">{t('about:etica')}</p>
-            <p className="text-xs  pl-6"> {t('about:etica_text')}</p>
-          </div>
-          <div className="space-y-4">
-            <p className="text-lg md:text-2xl text-pink-700 font-extrabold">
-              {t('about:eficacia')}
-            </p>
-            <p className="text-xs  pl-6"> {t('about:eficacia_text')}</p>
-          </div>
-          <div className="space-y-4">
-            <p className="text-lg md:text-2xl text-pink-700 font-extrabold">
-              {t('about:compromiso')}
-            </p>
-            <p className="text-xs  pl-6"> {t('about:compromiso_text')}</p>
-          </div>
-          <div className="space-y-4">
-            <p className="text-lg md:text-2xl text-pink-700 font-extrabold">
-              {t('about:honestidad')}
-            </p>
-            <p className="text-xs  pl-6"> {t('about:honestidad_text')}</p>
-          </div>
-        </div>
-      </div>
-      {/**Responsabilidad social */}
-      <div className="p-8 w-full bg-fondo_footer bg-no-repeat bg-right-top">
-        <p className="sm:text-right text-xl md:text-3xl text-pink-700 font-extrabold">
-          {t('about:responsabilidad')}
-        </p>
-        <p className="sm:text-right text-xl md:text-3xl text-blue-800 font-extrabold">
-          {t('about:social')}
-        </p>
-        <div className="flex justify-center items-center content-center mt-8">
-          <LightBox video={1} />
-        </div>
-      </div>
 
-      <div className="p-8 bg-gray-200">
-        <div className="flex flex-col sm:flex-row justify-center">
-          <p className="text-xl  md:text-3xl text-pink-700 font-extrabold">{t('about:marcamos')}</p>
-          <p className="text-xl md:text-3xl text-blue-800 font-extrabold pl-2">
-            {t('about:diferencia')}
-          </p>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 justify-center gap-2 md:gap-4 md:flex md:flex-row  mt-8">
-          {items_card.map((item, index) => (
-            <ItemCard item={item} key={index} index={index} />
-          ))}
+            <div className="container relative mb-10 mx-auto max-w-[60%] grid grid-cols-4 gap-6 z-10">
+              <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-10 py-8 rounded-xl flex flex-col items-center">
+                <div className="min-h-[80px] flex flex-col-reverse">
+                  <img
+                    className="relative inset-x-0 bottom-0"
+                    src={'static/images/home/innovacion.png'}
+                  />
+                </div>
+                <div className="text-center font-black text-xl uppercase pt-4">Innovación</div>
+                <div className="text-center pt-4 text-sm">
+                  SIGMA Corp. fue pionero en la producción de Complementos Nutricionales
+                </div>
+              </div>
+
+              <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-10 py-8 rounded-xl flex flex-col items-center">
+                <div className="min-h-[80px] flex flex-col-reverse">
+                  <img className="" src={'static/images/home/crecimiento.png'} />
+                </div>
+                <div className="text-center font-black text-xl uppercase pt-4">Crecimiento</div>
+                <div className="text-center pt-4 text-sm">
+                  Por su constante crecimiento adquirió una moderna infraestructura que cuenta con
+                  más de 15.000 m2.
+                </div>
+              </div>
+
+              <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-10 py-8 rounded-xl flex flex-col items-center">
+                <div className="min-h-[80px] flex flex-col-reverse">
+                  <img className="" src={'static/images/home/desarrollo.png'} />
+                </div>
+                <div className="text-center font-black text-xl uppercase pt-4">Desarrollo</div>
+                <div className="text-center pt-4 text-sm">
+                  Anualmente se incrementan medicamentos para cubrir diferentes patologías.
+                </div>
+              </div>
+
+              <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-10 py-8 rounded-xl flex flex-col items-center">
+                <div className="min-h-[80px] flex flex-col-reverse">
+                  <img className="" src={'static/images/home/proyeccion.png'} />
+                </div>
+                <div className="text-center font-black text-xl uppercase pt-4">Proyección</div>
+                <div className="text-center pt-4 text-sm">
+                  Se tiene proyectado duplicar la producción actual e incursionar en las áreas de
+                  Cosmética y Veterinaria.
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
+      {/**FIN CAJAS VALORES */}
     </>
   )
 }

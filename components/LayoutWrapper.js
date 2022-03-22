@@ -16,6 +16,7 @@ import { useRouter } from 'next/router'
 import { Component, useState } from 'react'
 import Select from 'react-select'
 
+
 const LayoutWrapper = ({ children }) => {
   const { t } = useTranslation()
   const router = useRouter()
@@ -63,7 +64,7 @@ const LayoutWrapper = ({ children }) => {
     options.push({
       value: e,
       label: (
-        <div className="inline">
+        <div className="inline text-sm">
           <img className="inline pr-2" src={'/static/images/' + e + '.png'} />
           {idioma}
         </div>
@@ -81,21 +82,23 @@ const LayoutWrapper = ({ children }) => {
       defaultValue={{
         value: locale,
         label: (
-          <div className="inline">
+          <div className="inline text-sm">
             <img className="inline pr-2" src={'/static/images/' + locale + '.png'} />
-            {locale === 'es' ? 'Español' : 'English'}
+            <span className='text-sm'>{locale === 'es' ? 'Español' : 'English'}</span>
           </div>
         ),
       }}
     />
   )
   return (
+    
     <SectionContainer>
+      
       <div className="flex flex-col justify-between h-screen">
         <header className=" flex flex-col">
           <div className="flex bg-violeta h-[78px]">
             <div className="w-interior mx-auto p-2">
-              <Link href="/" aria-label="Tailwind CSS Blog">
+              <Link href="/" aria-label="Sigmacorp Website">
                 <div className="flex items-center justify-between">
                   <div className="mr-3">
                     <Logo />
@@ -111,18 +114,111 @@ const LayoutWrapper = ({ children }) => {
               </Link>
             </div>
           </div>
-          <div className="flex items-center h-[78px]">
+          <div className="flex items-center h-[78px] bg-white">
             <div className="flex  mx-auto justify-between items-center">
-              <div className="hidden lg:block">
-                {headerNavLinks.map((link) => (
-                  <Link
+              <div className="hidden lg:block ">
+                <div className="flex flex-row">
+                  <div>
+                    <Link
+                      key="home"
+                      href="/"
+                      className="font-bold lg:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
+                    >
+                      {t('headerNavLinks:home')}
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      key="about"
+                      href="/about"
+                      className="font-bold lg:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
+                    >
+                      {t('headerNavLinks:about')}
+                    </Link>
+                  </div>
+                  <div class="relative group">
+                    <Link
+                      key="products"
+                      href="/products"
+                      className="font-bold lg:px-6 text-gris fill-gris hover:text-rosa hover:fill-rosa hover:font-bold text-lg "
+                    >
+                      {t('headerNavLinks:products')}&nbsp;
+                      <svg
+                        className="inline"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
+                      </svg>
+                    </Link>
+                    <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-auto z-50">
+                    <Link href="/biosecurity" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
+                      {t('headerNavLinks:biosecurity')}
+                      </Link>
+                      <Link href="/nutraceutics" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
+                      {t('headerNavLinks:nutraceutics')}
+                      </Link>
+                      <Link href="/products" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
+                      {t('headerNavLinks:pharmaceutics')}
+                      </Link>
+                    </div>
+                  </div>
+                  <div>
+                    <Link
+                      key="maquila"
+                      href="/maquila"
+                      className="font-bold lg:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
+                    >
+                      {t('headerNavLinks:maquila')}
+                    </Link>
+                  </div>
+                  <div class="relative group">
+                    <Link
+                      key="resources"
+                      href="#"
+                      className="font-bold lg:px-6 text-gris fill-gris hover:text-rosa hover:fill-rosa hover:font-bold text-lg "
+                    >
+                      {t('headerNavLinks:resources')}&nbsp;
+                      <svg
+                        className="inline"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
+                      </svg>
+                    </Link>
+                    <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-auto z-50">
+                    <Link href="/contact" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
+                      {t('headerNavLinks:contact')}
+                      </Link>
+                      <Link href="/events" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
+                      {t('headerNavLinks:events')}
+                      </Link>
+                      <Link key="news" href="/news" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
+                      {t('headerNavLinks:news')}
+                      </Link>
+                      <Link href="/csr" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
+                      {t('headerNavLinks:csr')}
+                      </Link>
+                      <Link href="/pharmacovigilance" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
+                      {t('headerNavLinks:pharmacovigilance')}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                {/*headerNavLinks.map((link) => (
+                  <Link 
                     key={link.title}
                     href={link.href}
                     className="font-bold lg:px-4 dark:text-gray-100 hover:text-rosa hover:font-bold text-lg"
                   >
                     {t(`headerNavLinks:${link.title.toLowerCase()}`)}
                   </Link>
-                ))}
+                ))*/}
               </div>
               <div className="flex justify-between items-center">
                 <div className="px-4 hidden sm:block">
@@ -142,7 +238,7 @@ const LayoutWrapper = ({ children }) => {
                   <div className="flex px-3 self-center">
                     <UserIcon className="" />
                   </div>
-                  <div className="px-3">
+                  <div className="px-3 text-sm">
                     <MyComponent />
                     {/*<select
                       onChange={changeLanguage}

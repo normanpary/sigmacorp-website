@@ -6,6 +6,7 @@ import { URL_CATEGORY } from '@/data/api/config'
 const ProductsPage = ({ category }) => {
   return (
     <>
+        
       <Products category={category} />
     </>
   )
