@@ -21,7 +21,7 @@ import FloatingWhatsApp from 'react-floating-whatsapp'
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
 import React from 'react'
 
-import Cursor from '../common/Cursor';
+import Cursor from '../common/cursor';
 function App({ Component, pageProps }) {
   const router = useRouter()
   const [queryClient] = React.useState(() => new QueryClient())
