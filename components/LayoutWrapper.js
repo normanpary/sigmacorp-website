@@ -160,7 +160,7 @@ const LayoutWrapper = ({ children }) => {
                       <Link href="/nutraceutics" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
                       {t('headerNavLinks:nutraceutics')}
                       </Link>
-                      <Link href="/products" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
+                      <Link href="/pharmaceutics" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
                       {t('headerNavLinks:pharmaceutics')}
                       </Link>
                     </div>

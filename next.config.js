@@ -50,7 +50,7 @@ module.exports = nextTranslate(
       return config
     },
     images: {
-      domains: ["localhost"],
+      domains: ["localhost", "164.92.66.171"],
     },
   })
 )

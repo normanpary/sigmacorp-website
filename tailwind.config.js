@@ -34,6 +34,12 @@ module.exports = {
         azul: {
           DEFAULT: '#3C4F9A',
         },
+        azul_claro: {
+          DEFAULT: '#29ABE2',
+        },
+        azul_oscuro: {
+          DEFAULT: '#2B3260',
+        },
         gris: {
           DEFAULT: '#7B7E87',
         },

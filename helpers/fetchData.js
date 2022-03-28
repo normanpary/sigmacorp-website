@@ -1,3 +1,4 @@
+//const graphQLAPI = process.env.NEXT_PUBLIC_GRAPHQL
 const graphQLAPI = process.env.NEXT_PUBLIC_GRAPHQL
 
 const fetchData = async (query, { variables = {} }) => {
@@ -15,7 +16,8 @@ const fetchData = async (query, { variables = {} }) => {
     })
    
     const json = await res.json()
-    console.log("CONSULTANDO")
+    //console.log("RESULTADO")
+    //console.log(json)
     if (json.errors) {
         throw new Error(json.errors)
     }

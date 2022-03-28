@@ -186,6 +186,8 @@ export default function HomePage({ posts, locale, availableLocales }) {
           </motion.div>
           <div className="p-4 sm:p-8 justify-center">
             {/**<BlogCarousel posts={posts} />*/}
+
+            
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -19,12 +19,16 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 import FloatingWhatsApp from 'react-floating-whatsapp'
 
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
-import React from 'react'
+
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 import Cursor from '../common/cursor';
+
+
 function App({ Component, pageProps }) {
+  const [queryClient] = useState(() => new QueryClient())
   const router = useRouter()
-  const [queryClient] = React.useState(() => new QueryClient())
+  //const [queryClient] = React.useState(() => new QueryClient())
 /*
   useEffect(() => {
     router.push(router.asPath, router.asPath, { locale: 'es' })
@@ -78,8 +82,7 @@ const [loading, setLoading] = useState(true)
     return (
       
       <QueryClientProvider client={queryClient}>
-        {console.log(pageProps)}
-        <Hydrate state={pageProps.dehydratedState}>
+       <Hydrate state={pageProps.dehydratedState}>
       <ThemeProvider attribute="class">
         <ParallaxProvider>
           <Head>
@@ -104,8 +107,9 @@ const [loading, setLoading] = useState(true)
           <RSS />
         </ParallaxProvider>
       </ThemeProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
       </Hydrate>
-      </QueryClientProvider>
+     </QueryClientProvider>
     )
   }
 }

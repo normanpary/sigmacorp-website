@@ -1,9 +1,11 @@
 import useTranslation from 'next-translate/useTranslation'
 import Formulario from '@/components/contacts/Formulario'
 import { motion } from 'framer-motion'
-import { dehydrate, QueryClient, useQuery } from 'react-query'
+
 import Script from 'next/script'
 import HomeParticlesAnimation from '../components/HomeParticlesAnimation';
+
+import { dehydrate, QueryClient, useQuery } from 'react-query'
 
 export async function getStaticProps({ locale }) {
   const queryClient = new QueryClient()

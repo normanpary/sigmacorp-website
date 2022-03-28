@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "next start",
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
