@@ -21,6 +21,7 @@ export default function Maquila() {
   return (
     <>
      <HomeParticlesAnimation />
+     <Script src="/static/js/text-particles/script.js" />
 
       <div className="bg-[url('/static/images/dna.png')] bg-cover bg-center h-[600px]">
         <div className="bg-gradient-to-r from-white/80 to-white/50 h-[600px]">
@@ -28,7 +29,7 @@ export default function Maquila() {
           <input className="hidden" id="copy" type="text" value="NUTRACÉUTICOS" />
         </div>
       </div>
-      <Script src="/static/js/script.js" />
+      
 
       {/**BANNER */}
       <div className="-mt-[650px]">
