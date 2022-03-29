@@ -1,9 +1,9 @@
 const siteMetadata = {
-  title: { en: 'Sigmacorp, Nueva web ', es: 'Starter de blog NextJs' },
+  title: { en: 'Sigmacorp, NEW WEBSITE ', es: 'Sigmacorp, NUEVO SITIO WEB' },
   author: 'Strategic',
-  headerTitle: { en: 'Sigmacorp', es: 'blog Tailwind' },
+  headerTitle: { en: 'Sigmacorp', es: 'Sigmacorp' },
   // description: 'A blog created with Next.js and Tailwind.css',
-  description: { en: 'en description', es: 'Description en fr' },
+  description: { en: 'en description', es: 'Description en es' },
   language: 'es',
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
