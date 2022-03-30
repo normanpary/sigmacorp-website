@@ -49,7 +49,7 @@ export default function Pharmaceutics() {
               FARMACÉUTICOS
            </div>
            <div className='text-2xl text-center text-white font-extralight '>
-              Los pacientes son el centro de lo que hacemos
+              Las enfermadades siguen evolucionando, nuestros productos tambíen.
            </div>
             </div>
       </div>
