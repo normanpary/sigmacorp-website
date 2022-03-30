@@ -1,5 +1,5 @@
-var canvas = document.querySelector("#scene"),
-  ctx = canvas.getContext("2d"),
+var canvastext = document.querySelector("#scene"),
+  ctx = canvastext.getContext("2d"),
   particles = [],
   amount = 0,
   mouse = {x:0,y:0},
@@ -9,8 +9,8 @@ var colors = ["#A42F7C","#B3227D", "#B3227D","#A42F7C", "#A42F7C"];
 
 var copy = document.querySelector("#copy");
 
-var ww = canvas.width = window.innerWidth;
-var wh = canvas.height = window.innerHeight;
+var ww = canvastext.width = window.innerWidth;
+var wh = canvastext.height = window.innerHeight;
 
 function Particle(x,y){
   this.x =  Math.random()*ww;
@@ -78,17 +78,17 @@ mouse.y = -9999;
 }
 
 function initScene(){
-  ww = canvas.width = window.innerWidth;
-  wh = canvas.height = window.innerHeight;
+  ww = canvastext.width = window.innerWidth;
+  wh = canvastext.height = window.innerHeight;
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvastext.width, canvastext.height);
 
   ctx.font = "bold "+(ww/10)+"px sans-serif";
   ctx.textAlign = "center";
   ctx.fillText(copy.value, ww/2, wh/2);
 
   var data  = ctx.getImageData(0, 0, ww, wh).data;
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvastext.width, canvastext.height);
   ctx.globalCompositeOperation = "screen";
 
   particles = [];
@@ -112,7 +112,7 @@ function onMouseClick(){
 
 function render(a) {
   requestAnimationFrame(render);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvastext.width, canvastext.height);
   for (var i = 0; i < amount; i++) {
     particles[i].render();
   }

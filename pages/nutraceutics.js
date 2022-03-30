@@ -20,9 +20,24 @@ export default function Maquila() {
   const { t } = useTranslation()
   return (
     <>
+     <div className='relative'>
+     <div className='absolute w-full top-1/4'>
+     <div className="flex justify-center pb-10"> 
+      <img className="" src='/static/images/logo-sigmacorp.png'/>
+    </div>
+          <div className='text-2xl text-center text-white font-extralight  '>
+              Sigmacorp investiga, desarrolla y comercializa nutracéuticos de alta calidad.
+           </div>
+           <div className='text-8xl text-center text-white font-extrabold py-5'>
+              NUTRACÉUTICOS
+           </div>
+           <div className='text-2xl text-center text-white font-extralight '>
+              Los pacientes son el centro de lo que hacemos
+           </div>
+            </div>
      <HomeParticlesAnimation />
      <Script src="/static/js/text-particles/script.js" />
-
+     </div>
       <div className="bg-[url('/static/images/dna.png')] bg-cover bg-center h-[600px]">
         <div className="bg-gradient-to-r from-white/80 to-white/50 h-[600px]">
           <canvas className="mx-auto last:w-[1620px] h-[600px]" id="scene"></canvas>
