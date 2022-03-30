@@ -7,7 +7,7 @@ console.log(id)
   const data = await fetchData(
       `
       query {
-        categories (locale:"${language}"){
+        categories (sort: "name:asc", pagination: { start: 1, limit: 100 }, locale:"${language}") {
           data {
             attributes
             {
@@ -46,7 +46,7 @@ export const getPharmaceuticProducts = async (language, slug) => {
     const data = await fetchData(
         `
         query {
-          pharmaceuticsProducts  (filters:{pharmaceutics_category:{slug:{eq:"${slug}"}} }, locale:"${language}"){
+          pharmaceuticsProducts  (filters:{pharmaceutics_category:{slug:{eq:"${slug}"}} }, locale:"${language}", pagination: { start: 1, limit: 100 }){
             data {  
               attributes{
                 title
