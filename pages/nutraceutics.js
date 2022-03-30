@@ -20,7 +20,7 @@ export default function Maquila() {
   const { t } = useTranslation()
   return (
     <>
-     <div className='relative'>
+     <div className='relative pointer-events-none'>
      <div className='absolute w-full top-1/4'>
      <div className="flex justify-center pb-10"> 
       <img className="" src='/static/images/logo-sigmacorp.png'/>
