@@ -7,7 +7,7 @@ console.log(id)
   const data = await fetchData(
       `
       query {
-        categories (sort: "name:asc", pagination: { start: 1, limit: 100 }, locale:"${language}") {
+        categories (sort: "name:asc", pagination: { start: 0, limit: 100 }, locale:"${language}") {
           data {
             attributes
             {
@@ -46,11 +46,18 @@ export const getPharmaceuticProducts = async (language, slug) => {
     const data = await fetchData(
         `
         query {
-          pharmaceuticsProducts  (filters:{pharmaceutics_category:{slug:{eq:"${slug}"}} }, locale:"${language}", pagination: { start: 1, limit: 100 }){
+          pharmaceuticsProducts  (filters:{pharmaceutics_category:{slug:{eq:"${slug}"}} }, locale:"${language}", pagination: { start: 0, limit: 100 }){
             data {  
               attributes{
                 title
                 slug
+                image{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
                 type_of_sale{
                   data{
                     attributes{
@@ -109,11 +116,29 @@ export const getPharmaceuticProducts = async (language, slug) => {
                     }
                   }
                 }
+                type_of_sale{
+                  data{
+                    attributes{
+                      title
+                    }
+                  }
+                }
+                
                 pharmaceutics_category{
                   data{
                     attributes{
                       name
                       slug
+
+                      icon{
+                        data{
+                          attributes{
+                            url
+                          }
+                        }
+
+                      }
+                      
                     }
                   }
                 }
@@ -127,26 +152,7 @@ export const getPharmaceuticProducts = async (language, slug) => {
         }
     )
    
-    console.log(`
-    query {
-      pharmaceuticsProducts  (filters:{slug:{eq:"${slug}"} }, locale:"${language}"){
-        data {  
-          attributes{
-            title
-            slug
-            pharmaceutics_category{
-              data{
-                attributes{
-                  name
-                  slug 
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    `)
+    
 
 
 
@@ -202,4 +208,104 @@ export const getNoticias = async (locale, id) => {
         }
     )
     return data.data.noticias
+}
+
+export const getNutraceuticProducts = async (language) => {
+      
+  const data = await fetchData(
+      `
+      query {
+        nutraceutics  (locale:"${language}", pagination: { start: 0, limit: 100 }){
+          data {  
+            attributes{
+              title
+              slug
+              image{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+              
+              
+            }
+          }
+        }
+      }
+      `,
+      {
+          variables: {}
+      }
+  )
+ 
+  return data.data.nutraceutics
+}
+
+export const getNutraceuticDetails = async (language, slug) => {
+      
+  const data = await fetchData(
+      `
+      query {
+        nutraceutics  (filters:{slug:{eq:"${slug}"} }, locale:"${language}"){
+          data {  
+            attributes{
+              title
+              slug
+
+              image{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+              banner{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+
+              description
+              short_description
+              energy
+              proteins
+              total_fat
+              cholesterol
+              carbohydrates
+              technical_description
+              ingredients
+              preparation
+              duration
+              indications
+              nutritional_table{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+
+
+              
+              
+              
+            }
+          }
+        }
+      }
+      `,
+      {
+          variables: {}
+      }
+  )
+ 
+  
+
+
+
+
+  return data.data.nutraceutics
 }

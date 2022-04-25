@@ -157,18 +157,27 @@ const LayoutWrapper = ({ children }) => {
                     <Link href="/biosecurity" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
                       {t('headerNavLinks:biosecurity')}
                       </Link>
-                      <Link href="/nutraceutics" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
+                      <a
+                      href="/nutraceutics" 
+                      replace={true}
+                      prefetch = {false}
+                      class="px-4 py-2 block text-gris hover:text-rosa text-lg">
                       {t('headerNavLinks:nutraceutics')}
-                      </Link>
-                      <Link href="/pharmaceutics" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
+                      </a>
+                      <a 
+                      href="/pharmaceutics" 
+                      replace={true}
+                      prefetch = {false}
+                      class="px-4 py-2 block text-gris hover:text-rosa text-lg">
                       {t('headerNavLinks:pharmaceutics')}
-                      </Link>
+                      </a>
                     </div>
                   </div>
                   <div>
                     <Link
                       key="maquila"
                       href="/maquila"
+                      
                       className="font-bold lg:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
                     >
                       {t('headerNavLinks:maquila')}

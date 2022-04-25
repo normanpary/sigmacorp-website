@@ -1,6 +1,6 @@
 var canvastext = document.querySelector("#scene"),
   ctx = canvastext.getContext("2d"),
-  particles = [],
+  particlesText = [],
   amount = 0,
   mouse = {x:0,y:0},
   radius = 1.8;
@@ -91,15 +91,15 @@ function initScene(){
   ctx.clearRect(0, 0, canvastext.width, canvastext.height);
   ctx.globalCompositeOperation = "screen";
 
-  particles = [];
+  particlesTextText = [];
   for(var i=0;i<ww;i+=Math.round(ww/250)){
     for(var j=0;j<wh;j+=Math.round(ww/250)){
       if(data[ ((i + j*ww)*4) + 3] > 150){
-        particles.push(new Particle(i,j));
+        particlesText.push(new Particle(i,j));
       }
     }
   }
-  amount = particles.length;
+  amount = particlesText.length;
 
 }
 
@@ -114,7 +114,7 @@ function render(a) {
   requestAnimationFrame(render);
   ctx.clearRect(0, 0, canvastext.width, canvastext.height);
   for (var i = 0; i < amount; i++) {
-    particles[i].render();
+    particlesText[i].render();
   }
 };
 

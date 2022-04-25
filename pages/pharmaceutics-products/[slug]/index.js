@@ -73,6 +73,7 @@ export default function ProductsList() {
                   title={product.attributes.title}
                   type_of_sale={product.attributes.type_of_sale.data.attributes.title}
                   slugProduct={product.attributes.slug}
+                  image={product.attributes.image.data.attributes.url}
                   slugCategory={product.attributes.pharmaceutics_category.data.attributes.slug}
                   category={product.attributes.pharmaceutics_category.data.attributes.name}
                 />

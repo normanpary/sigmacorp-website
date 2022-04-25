@@ -7,9 +7,19 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      
+      backgroundSize: {
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+        '100%': '100%',
+        '140%': '140%',
+        '16': '4rem',
+      },
       width: {
         interior: '80%',
       },
+
 
       spacing: {
         '9/16': '56.25%',

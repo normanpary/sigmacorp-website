@@ -224,11 +224,11 @@ const TrailingCursor = ({
     const spotlights = document.querySelectorAll('div.spotlight');
     const mainMenu = document.querySelectorAll('div.big-menu');
     const clickables = document.querySelectorAll(
-      'a.insightLink[data-cursortext], div.insightImg[data-cursortext]'
+      'a.insightLink[data-cursortext], div.insightImg[data-cursortext], div.puntero[data-cursortext] '
       //div.slider[data-cursortext],
     );
     const draggables = document.querySelectorAll(
-      'div.slider[data-cursortextdrag]'
+      'div.slider[data-cursortextdrag], div.punteroicono[data-cursortextdrag]'
     );
 
     // const footers = document.querySelectorAll(

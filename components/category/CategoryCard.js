@@ -1,15 +1,22 @@
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 const assetsUrl = process.env.NEXT_PUBLIC_ASSETS_URL
 
 const CategoryCard = ({ key, name, slug, image, icon }) => {
   return (
-    
+    <motion.div
+    initial={{ opacity: 0, y: 100 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, ease: 'easeIn' }}
+    viewport={{ margin: '-10px' }}
+  >
+    <div>
       <Link href={`pharmaceutics-products/${slug}`}>
         <a>
-        <div className='mb-4 transition hover:-translate-y-2' >      
+        <div className='mb-4 transition duration-500 hover:-translate-y-2 hover:-translate-x-2'   >      
           <div
-            className="h-80 bg-cover rounded-[40px]"
+            className="h-80 bg-cover bg-100% bg-center rounded-[40px] transition-all  duration-500 hover:bg-140% puntero" data-cursortext="<div class='cursor-icono'>+</div>"
             style={{ backgroundImage: `url(${assetsUrl}${image})` }}
           >
             <div>
@@ -21,7 +28,8 @@ const CategoryCard = ({ key, name, slug, image, icon }) => {
           </div>
         </a>
       </Link>
-    
+      </div>
+      </motion.div>
   )
 }
 

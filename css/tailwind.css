@@ -55,7 +55,7 @@ input:-webkit-autofill:focus {
  text-align:center;
 }
 .cursor-drag, .cursor-dragging, .cursor-text {
-    font: 400 16px ;
+    font-size:14px;
     color: #fff;
 }
 .cursor-spotlight {
@@ -70,4 +70,9 @@ input:-webkit-autofill:focus {
     transition: opacity .3s ease-in-out,background-color .3s ease-in-out;
     pointer-events: none;
     margin: 0 auto;
+}
+.cursor-icono{
+  font-size: 48px!important;
+  font-weight: lighter;
+  margin-top:-5px;
 }
