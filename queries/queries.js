@@ -1,11 +1,11 @@
-import fetchData from "../helpers/fetchData";
-import {useRouter} from "next/router"
+import fetchData from '../helpers/fetchData'
+import { useRouter } from 'next/router'
 
 export const getPharmaceuticCategories = async (language, id) => {
-console.log(id)
-    
+  console.log(id)
+
   const data = await fetchData(
-      `
+    `
       query {
         categories (sort: "name:asc", pagination: { start: 0, limit: 100 }, locale:"${language}") {
           data {
@@ -32,19 +32,17 @@ console.log(id)
         }
       }
       `,
-      {
-          variables: {}
-      }
+    {
+      variables: {},
+    }
   )
   //console.log(data.data)
   return data.data.categories
 }
 
-
 export const getPharmaceuticProducts = async (language, slug) => {
-      
-    const data = await fetchData(
-        `
+  const data = await fetchData(
+    `
         query {
           pharmaceuticsProducts  (filters:{pharmaceutics_category:{slug:{eq:"${slug}"}} }, locale:"${language}", pagination: { start: 0, limit: 100 }){
             data {  
@@ -86,19 +84,17 @@ export const getPharmaceuticProducts = async (language, slug) => {
           }
         }
         `,
-        {
-            variables: {}
-        }
-    )
-   
-    return data.data.pharmaceuticsProducts
-  }
-  
+    {
+      variables: {},
+    }
+  )
 
-  export const getProductDetails = async (language, slug) => {
-      
-    const data = await fetchData(
-        `
+  return data.data.pharmaceuticsProducts
+}
+
+export const getProductDetails = async (language, slug) => {
+  const data = await fetchData(
+    `
         query {
           pharmaceuticsProducts  (filters:{slug:{eq:"${slug}"} }, locale:"${language}"){
             data {  
@@ -147,24 +143,16 @@ export const getPharmaceuticProducts = async (language, slug) => {
           }
         }
         `,
-        {
-            variables: {}
-        }
-    )
-   
-    
+    {
+      variables: {},
+    }
+  )
 
-
-
-
-    return data.data.pharmaceuticsProducts
-  }
-  
-
+  return data.data.pharmaceuticsProducts
+}
 
 export const getNoticias = async (locale, id) => {
-    
-    /*
+  /*
     const data = await fetchData(
         `
         query {
@@ -191,8 +179,8 @@ export const getNoticias = async (locale, id) => {
         }
     )
     */
-    const data = await fetchData(
-        `
+  const data = await fetchData(
+    `
         query {
             noticias(locale:"${locale}"){
               titulo
@@ -203,17 +191,16 @@ export const getNoticias = async (locale, id) => {
             }
           }
         `,
-        {
-            variables: {}
-        }
-    )
-    return data.data.noticias
+    {
+      variables: {},
+    }
+  )
+  return data.data.noticias
 }
 
 export const getNutraceuticProducts = async (language) => {
-      
   const data = await fetchData(
-      `
+    `
       query {
         nutraceutics  (locale:"${language}", pagination: { start: 0, limit: 100 }){
           data {  
@@ -234,18 +221,17 @@ export const getNutraceuticProducts = async (language) => {
         }
       }
       `,
-      {
-          variables: {}
-      }
+    {
+      variables: {},
+    }
   )
- 
+
   return data.data.nutraceutics
 }
 
 export const getNutraceuticDetails = async (language, slug) => {
-      
   const data = await fetchData(
-      `
+    `
       query {
         nutraceutics  (filters:{slug:{eq:"${slug}"} }, locale:"${language}"){
           data {  
@@ -287,9 +273,82 @@ export const getNutraceuticDetails = async (language, slug) => {
                   }
                 }
               }
+            }
+          }
+        }
+      }
+      `,
+    {
+      variables: {},
+    }
+  )
+
+  return data.data.nutraceutics
+}
 
 
-              
+export const getEvents = async (language) => {
+  const data = await fetchData(
+    `
+    query {
+      events (locale:"${language}", pagination: { start: 0, limit: 100 }){
+        data {  
+          attributes{
+            title
+            slug
+            date
+            description
+            main_image{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+            gallery{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+      `,
+    {
+      variables: {},
+    }
+  )
+
+  return data.data.events
+}
+
+export const getEventDetails = async (language, slug) => {
+  const data = await fetchData(
+    `
+      query {
+        events  (filters:{slug:{eq:"${slug}"} }, locale:"${language}"){
+          data {  
+            attributes{
+              title
+              slug
+              description
+              main_image{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+              gallery{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
               
               
             }
@@ -297,15 +356,164 @@ export const getNutraceuticDetails = async (language, slug) => {
         }
       }
       `,
-      {
-          variables: {}
-      }
+    {
+      variables: {},
+    }
   )
- 
-  
 
+  return data.data.events
+}
 
+export const getRseEvents = async (language) => {
+  const data = await fetchData(
+    `
+    query {
+      rses (locale:"${language}", pagination: { start: 0, limit: 100 }){
+        data {  
+          attributes{
+            title
+            slug
+            date
+            description
+            main_image{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+            gallery{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+      `,
+    {
+      variables: {},
+    }
+  )
 
+  return data.data.rses
+}
 
-  return data.data.nutraceutics
+export const getRseEventDetails = async (language, slug) => {
+  const data = await fetchData(
+    `
+      query {
+        rses  (filters:{slug:{eq:"${slug}"} }, locale:"${language}"){
+          data {  
+            attributes{
+              title
+              slug
+              description
+              main_image{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+              gallery{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+              
+              
+            }
+          }
+        }
+      }
+      `,
+    {
+      variables: {},
+    }
+  )
+
+  return data.data.rses
+}
+
+export const getNews = async (language) => {
+  const data = await fetchData(
+    `
+    query {
+      news (locale:"${language}", pagination: { start: 0, limit: 100 }){
+        data {  
+          attributes{
+            title
+            slug
+            date
+            description
+            main_image{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+            gallery{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+      `,
+    {
+      variables: {},
+    }
+  )
+
+  return data.data.news
+}
+
+export const getNewDetails = async (language, slug) => {
+  const data = await fetchData(
+    `
+      query {
+        news  (filters:{slug:{eq:"${slug}"} }, locale:"${language}"){
+          data {  
+            attributes{
+              title
+              slug
+              description
+              main_image{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+              gallery{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+              
+              
+            }
+          }
+        }
+      }
+      `,
+    {
+      variables: {},
+    }
+  )
+
+  return data.data.news
 }

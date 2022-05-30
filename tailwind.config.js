@@ -56,6 +56,13 @@ module.exports = {
         gris_claro: {
           DEFAULT: '#E6E6E6',
         },
+        teal:{
+          DEFAULT: '#7B7E87',
+        },
+        negro:{
+          DEFAULT: '#4D4D4D',
+        },
+        
         primary: colors.teal,
         gray: colors.trueGray,
       },
@@ -74,7 +81,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.700'),
+            color: theme('colors.primary.700'),
             a: {
               color: theme('colors.primary.500'),
               '&:hover': {

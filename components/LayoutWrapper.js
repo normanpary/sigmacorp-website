@@ -16,7 +16,6 @@ import { useRouter } from 'next/router'
 import { Component, useState } from 'react'
 import Select from 'react-select'
 
-
 const LayoutWrapper = ({ children }) => {
   const { t } = useTranslation()
   const router = useRouter()
@@ -84,16 +83,14 @@ const LayoutWrapper = ({ children }) => {
         label: (
           <div className="inline text-sm">
             <img className="inline pr-2" src={'/static/images/' + locale + '.png'} />
-            <span className='text-sm'>{locale === 'es' ? 'Español' : 'English'}</span>
+            <span className="text-sm">{locale === 'es' ? 'Español' : 'English'}</span>
           </div>
         ),
       }}
     />
   )
   return (
-    
     <SectionContainer>
-      
       <div className="flex flex-col justify-between h-screen">
         <header className=" flex flex-col">
           <div className="flex bg-violeta h-[78px]">
@@ -139,7 +136,7 @@ const LayoutWrapper = ({ children }) => {
                   <div class="relative group">
                     <Link
                       key="products"
-                      href="/products"
+                      href="#"
                       className="font-bold lg:px-6 text-gris fill-gris hover:text-rosa hover:fill-rosa hover:font-bold text-lg "
                     >
                       {t('headerNavLinks:products')}&nbsp;
@@ -154,22 +151,27 @@ const LayoutWrapper = ({ children }) => {
                       </svg>
                     </Link>
                     <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-auto z-50">
-                    <Link href="/biosecurity" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
-                      {t('headerNavLinks:biosecurity')}
-                      </Link>
+                      {/*<Link
+                        href="/biosecurity"
+                        class="px-4 py-2 block text-gris hover:text-rosa text-lg"
+                      >
+                        {t('headerNavLinks:biosecurity')}
+                  </Link>*/}
                       <a
-                      href="/nutraceutics" 
-                      replace={true}
-                      prefetch = {false}
-                      class="px-4 py-2 block text-gris hover:text-rosa text-lg">
-                      {t('headerNavLinks:nutraceutics')}
+                        href="/nutraceutics"
+                        replace={true}
+                        prefetch={false}
+                        class="px-4 py-2 block text-gris hover:text-rosa text-lg"
+                      >
+                        {t('headerNavLinks:nutraceutics')}
                       </a>
-                      <a 
-                      href="/pharmaceutics" 
-                      replace={true}
-                      prefetch = {false}
-                      class="px-4 py-2 block text-gris hover:text-rosa text-lg">
-                      {t('headerNavLinks:pharmaceutics')}
+                      <a
+                        href="/pharmaceutics"
+                        replace={true}
+                        prefetch={false}
+                        class="px-4 py-2 block text-gris hover:text-rosa text-lg"
+                      >
+                        {t('headerNavLinks:pharmaceutics')}
                       </a>
                     </div>
                   </div>
@@ -177,7 +179,6 @@ const LayoutWrapper = ({ children }) => {
                     <Link
                       key="maquila"
                       href="/maquila"
-                      
                       className="font-bold lg:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
                     >
                       {t('headerNavLinks:maquila')}
@@ -201,20 +202,33 @@ const LayoutWrapper = ({ children }) => {
                       </svg>
                     </Link>
                     <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-auto z-50">
-                    <Link href="/contact" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
-                      {t('headerNavLinks:contact')}
+                      <Link
+                        href="/recursos/contacto"
+                        class="px-4 py-2 block text-gris hover:text-rosa text-lg"
+                      >
+                        {t('headerNavLinks:contact')}
                       </Link>
-                      <Link href="/events" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
-                      {t('headerNavLinks:events')}
+                      <Link
+                        href="/eventos"
+                        class="px-4 py-2 block text-gris hover:text-rosa text-lg"
+                      >
+                        {t('headerNavLinks:events')}
                       </Link>
-                      <Link key="news" href="/news" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
-                      {t('headerNavLinks:news')}
+                      <Link
+                        key="news"
+                        href="/noticias"
+                        class="px-4 py-2 block text-gris hover:text-rosa text-lg"
+                      >
+                        {t('headerNavLinks:news')}
                       </Link>
-                      <Link href="/csr" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
-                      {t('headerNavLinks:csr')}
+                      <Link href="/rse" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
+                        {t('headerNavLinks:csr')}
                       </Link>
-                      <Link href="/pharmacovigilance" class="px-4 py-2 block text-gris hover:text-rosa text-lg">
-                      {t('headerNavLinks:pharmacovigilance')}
+                      <Link
+                        href="/recursos/farmacovigilancia"
+                        class="px-4 py-2 block text-gris hover:text-rosa text-lg"
+                      >
+                        {t('headerNavLinks:pharmacovigilance')}
                       </Link>
                     </div>
                   </div>
@@ -236,7 +250,7 @@ const LayoutWrapper = ({ children }) => {
                       className="lg:w-40 text-white focus:border-0 border-0 bg-rosa placeholder-white font-extrabold h-8  pl-4 pr-8 rounded-full text-s "
                       type="text"
                       name="search"
-                      placeholder="Buscar"
+                      placeholder={t('headerNavLinks:search')}
                     />
                     <button type="submit" className="absolute right-0 top-0 mt-2 mr-4">
                       <SearchIcon className="h-5 " />
@@ -245,7 +259,7 @@ const LayoutWrapper = ({ children }) => {
                 </div>
                 <div className="flex divide-x divide-gray-300 justify-items-stretch">
                   <div className="flex px-3 self-center">
-                    <UserIcon className="" />
+                    <a href="http://164.92.66.171:1337/admin" target="_blank"><UserIcon className="" /></a>
                   </div>
                   <div className="px-3 text-sm">
                     <MyComponent />
@@ -263,7 +277,7 @@ const LayoutWrapper = ({ children }) => {
                       </select>*/}
                   </div>
                   <div className="self-center">
-                    <ThemeSwitch />
+                    {/*<ThemeSwitch />*/}
                   </div>
                   <MobileNav />
                 </div>

@@ -54,9 +54,9 @@ export default function HomePage({ posts, locale, availableLocales }) {
                 src={'static/images/home/innovacion.png'}
               />
             </div>
-            <div className="text-center font-black text-xl uppercase pt-4">Innovación</div>
+            <div className="text-center font-black text-xl uppercase pt-4">{t('home:innovacion')}</div>
             <div className="text-center pt-4 text-sm">
-              SIGMA Corp. fue pionero en la producción de Complementos Nutricionales
+            {t('home:innovacion_text')}
             </div>
           </div>
 
@@ -64,10 +64,9 @@ export default function HomePage({ posts, locale, availableLocales }) {
             <div className="min-h-[80px] flex flex-col-reverse">
               <img className="" src={'static/images/home/crecimiento.png'} />
             </div>
-            <div className="text-center font-black text-xl uppercase pt-4">Crecimiento</div>
+            <div className="text-center font-black text-xl uppercase pt-4">{t('home:crecimiento')}</div>
             <div className="text-center pt-4 text-sm">
-              Por su constante crecimiento adquirió una moderna infraestructura que cuenta con más
-              de 15.000 m2.
+            {t('home:crecimiento_text')}
             </div>
           </div>
 
@@ -75,9 +74,9 @@ export default function HomePage({ posts, locale, availableLocales }) {
             <div className="min-h-[80px] flex flex-col-reverse">
               <img className="" src={'static/images/home/desarrollo.png'} />
             </div>
-            <div className="text-center font-black text-xl uppercase pt-4">Desarrollo</div>
+            <div className="text-center font-black text-xl uppercase pt-4">{t('home:desarrollo')}</div>
             <div className="text-center pt-4 text-sm">
-              Anualmente se incrementan medicamentos para cubrir diferentes patologías.
+            {t('home:desarrollo_text')}
             </div>
           </div>
 
@@ -85,10 +84,9 @@ export default function HomePage({ posts, locale, availableLocales }) {
             <div className="min-h-[80px] flex flex-col-reverse">
               <img className="" src={'static/images/home/proyeccion.png'} />
             </div>
-            <div className="text-center font-black text-xl uppercase pt-4">Proyección</div>
+            <div className="text-center font-black text-xl uppercase pt-4">{t('home:proyeccion')}</div>
             <div className="text-center pt-4 text-sm">
-              Se tiene proyectado duplicar la producción actual e incursionar en las áreas de
-              Cosmética y Veterinaria.
+            {t('home:proyeccion_text')}
             </div>
           </div>
         </div>
@@ -112,8 +110,8 @@ export default function HomePage({ posts, locale, availableLocales }) {
               <p className="text-xl sm:text-2xl md:text-5xl text-violeta font-extrabold pb-8">
                 {t('home:sigma')}
               </p>
-              <p className="text-lg font-bold pb-4">{t('home:ofrecemos')}</p>
-              <p className="text-lg text-gray-600 pb-8">{t('home:proporcionamos')}</p>
+              <p className="text-lg font-bold pb-4">{t('home:ofrecemos_text')}</p>
+              <p className="text-lg text-gray-600 pb-8">{t('home:proporcionar_text')}</p>
               <p className="text-lg underline font-black text-violeta">{t('home:leer_mas')}</p>
             </div>
           </motion.div>
@@ -206,16 +204,13 @@ export default function HomePage({ posts, locale, availableLocales }) {
                     </div>
                     <div className="relative p-4 w-auto h-54">
                       <span className="absolute bg-violeta rounded-full py-1 px-4 w-auto text-xs text-white font-bold  -mt-7">
-                        07 Febrero
+                      {t('home:new01_date')}
                       </span>
                       <p className="mt-5 capitalize line-clamp-2 text-xl font-black">
-                        DONACIÓN DE ALIMENTOS A “MANZANA ROJA”
+                      {t('home:new01')}
                       </p>
                       <p className="text-gray-500 text-base line-clamp-3 mt-2">
-                        La Manzana Roja es el primer banco de alimentos en Bolivia y funciona desde
-                        junio del 2017 a partir de una serie de investigaciones que pusieron en
-                        evidencia la necesidad de implementar un sistema de rescate y redistribución
-                        de alimentos hacia quienes más lo necesitan.{' '}
+                      {t('home:new01_text')}
                       </p>
                       <p className="pb-0 pt-4 text-base underline font-bold text-blue-800 mb-4">
                         {t('home:leer_mas')}
@@ -235,14 +230,13 @@ export default function HomePage({ posts, locale, availableLocales }) {
                     </div>
                     <div className="relative p-4 w-auto h-54">
                       <span className="absolute bg-violeta rounded-full py-1 px-4 w-auto text-xs text-white font-bold -mt-7">
-                        22 enero
+                      {t('home:new02_date')}
                       </span>
                       <p className="h-16 mt-5 capitalize line-clamp-2 text-xl font-black">
-                        APOYO A LA POLICÍA NACIONAL
+                      {t('home:new02')}
                       </p>
                       <p className="h-16 text-gray-500 text-base line-clamp-3 mt-2">
-                        Realizamos donación de productos de bioseguridad para nuestra Policía
-                        Nacional.{' '}
+                      {t('home:new02_text')}
                       </p>
                       <p className="pb-0 pt-4 text-base underline font-bold text-blue-800 mb-4">
                         {t('home:leer_mas')}
@@ -262,14 +256,13 @@ export default function HomePage({ posts, locale, availableLocales }) {
                     </div>
                     <div className="relative p-4 w-auto h-54">
                       <span className="absolute bg-violeta rounded-full py-1 px-4 w-auto text-xs text-white font-bold  -mt-7">
-                        10 enero
+                      {t('home:new01_date')}
                       </span>
                       <p className="mt-5 capitalize line-clamp-2 text-xl font-black">
-                        DONACIONES BRIGADAS DE RASTRILLAJE COCHABAMBA”
+                      {t('home:new03')}
                       </p>
                       <p className="text-gray-500 text-base line-clamp-3 mt-2">
-                        Realizamos donación de insumos de bioseguridad y alimentos para las brigadas
-                        de rastrillaje COVID-19 en la ciudad de Cochabamba
+                      {t('home:new03_text')}
                       </p>
                       <p className="pb-0 pt-4 text-base underline font-bold text-blue-800 mb-4">
                         {t('home:leer_mas')}
