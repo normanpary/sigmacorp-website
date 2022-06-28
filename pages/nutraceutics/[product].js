@@ -105,7 +105,8 @@ export default function Product() {
                   viewport={{ margin: '-200px' }}
                 >
                   <div className="grid grid-cols-2 mx-auto pt-10 place-items-center max-w-sm -mt-20">
-                    <div className="p-5">
+                    
+                    <div className="p-4">
                       <div>
                         <img
                           className="max-h-12 max-w-12 mx-auto "
@@ -114,7 +115,7 @@ export default function Product() {
                       </div>
                       <div className="text-center font-bold pt-3 text-gris">Nutraceutico</div>
                     </div>
-                    <div className="p-5 ">
+                    <div className="p-4 ">
                       <div>
                         <img
                           className="max-h-12 max-w-12 mx-auto"
@@ -123,8 +124,24 @@ export default function Product() {
                       </div>
                       <div className="text-center font-bold pt-3 text-gris">Venta libre</div>
                     </div>
-
-                    <div className="p-5 col-span-2 border-t ">
+                    <div className="p-4 col-span-2 border-t ">
+                      <div className="mx-auto flex content-center">
+                        <div className="grid grid-cols-4 place-items-center">
+                          <div className="">
+                            {' '}
+                            <img
+                              className="max-h-12 max-w-12"
+                              src="/static/images/iconos/bolivia-bandera-circulo.png"
+                            />
+                          </div>
+                          <div className="col-span-3">
+                            <div>Producto elaborado para el Estado Plurinacional de Bolivia</div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4 col-span-2 border-t ">
                       <div className="mx-auto flex content-center">
                         <div className="grid grid-cols-4 place-items-center">
                           <div className="">
@@ -145,6 +162,7 @@ export default function Product() {
                         </div>
                       </div>
                     </div>
+                    
                   </div>
                 </motion.div>
               </div>

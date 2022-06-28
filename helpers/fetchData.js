@@ -1,8 +1,5 @@
 //const graphQLAPI = process.env.NEXT_PUBLIC_GRAPHQL
 const graphQLAPI = process.env.NEXT_PUBLIC_GRAPHQL
-console.log("PROBANDO EL ENV")
-console.log(graphQLAPI)
-
 const fetchData = async (query, { variables = {} }) => {
     
     
