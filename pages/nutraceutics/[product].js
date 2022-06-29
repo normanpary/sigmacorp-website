@@ -68,8 +68,10 @@ export default function Product() {
   const nutraceutic_total_fat = nutraceutic.data[0].attributes.total_fat
   const nutraceutic_cholesterol = nutraceutic.data[0].attributes.cholesterol
   const nutraceutic_carbohydrates = nutraceutic.data[0].attributes.carbohydrates
-  const nutraceutic_banner =
-    nutraceutic.data[0].attributes.banner.data.attributes.url  
+  const nutraceutic_banner = nutraceutic.data[0].attributes.banner.data.attributes.url  
+  const nutraceutic_made_for_bolivia = nutraceutic.data[0].attributes.made_for_bolivia  
+  const nutraceutic_base_weight = nutraceutic.data[0].attributes.nutritional_base_weight  
+
   return (
     <div>
       <div className="static bg-no-repeat bg-cover bg-center h-[600px]"
@@ -124,6 +126,7 @@ export default function Product() {
                       </div>
                       <div className="text-center font-bold pt-3 text-gris">Venta libre</div>
                     </div>
+                    {nutraceutic_made_for_bolivia == true &&
                     <div className="p-4 col-span-2 border-t ">
                       <div className="mx-auto flex content-center">
                         <div className="grid grid-cols-4 place-items-center">
@@ -141,6 +144,7 @@ export default function Product() {
                         </div>
                       </div>
                     </div>
+                    }
                     <div className="p-4 col-span-2 border-t ">
                       <div className="mx-auto flex content-center">
                         <div className="grid grid-cols-4 place-items-center">
@@ -193,6 +197,7 @@ export default function Product() {
                     VALORES <span className="text-rosa">NUTRICIONALES </span>
                     
                   </div>
+                  
                   <div className="grid grid-cols-5">
                     {/* ------------ CIRCULO ENERGIA*/}        
                     <div>
@@ -330,6 +335,8 @@ export default function Product() {
                       </div>
                     </div>
                   </div>
+                  <div className="text-sm text-gris  leading-normal px-5 text-center font-bold pb-5">Basado en {nutraceutic_base_weight}g de producto en relación a los valores diarios recomendados.</div>
+
                   <div className="text-lg text-gris  leading-normal ">
                     {nutraceutic_description}
                   </div>

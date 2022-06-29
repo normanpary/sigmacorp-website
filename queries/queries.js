@@ -266,6 +266,8 @@ export const getNutraceuticDetails = async (language, slug) => {
               preparation
               duration
               indications
+              made_for_bolivia
+              nutritional_base_weight
               nutritional_table{
                 data{
                   attributes{
