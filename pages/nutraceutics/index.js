@@ -89,7 +89,7 @@ export default function Nutraceutics() {
         <div className="container mx-auto text-center pb-[50px]">
           <div className="font-extrabold text-6xl   text-violeta">Nutracéuticos de</div>
           <div className="flex justify-center pb-5">
-            <img className="w-[480px]" src="/static/images/logo-sigma-transparente.png" />
+            <img className="w-[480px]" src="/static/images/logo-nutraceuticos.png" />
           </div>
 
           <div className="text-xl">
