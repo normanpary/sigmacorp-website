@@ -289,6 +289,147 @@ export const getNutraceuticDetails = async (language, slug) => {
 }
 
 
+export const getBiosecurityProducts = async (language) => {
+  const data = await fetchData(
+    `
+    query {
+      biosecurities  (locale:"${language}", pagination: { start: 0, limit: 100 }, sort: ["biosecurity_category.order:asc", "title:asc"]){
+        data {  
+          attributes{
+            title
+            slug
+            image{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+            biosecurity_category
+            {
+              data{
+                attributes{
+                  title
+                  order
+                }
+              }
+            }
+            
+            
+          }
+        }
+      }
+    }
+      
+      `,
+    {
+      variables: {},
+    }
+  )
+
+  return data.data.biosecurities
+}
+
+
+
+export const getProductBiosecurityDetails = async (language, slug) => {
+  const data = await fetchData(
+    `
+        query {
+          biosecurities  (filters:{slug:{eq:"${slug}"} }, locale:"${language}"){
+            data {  
+              attributes{
+                title
+                slug
+                description
+                
+                image{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
+               
+                
+                pharmaceutics_category{
+                  data{
+                    attributes{
+                      name
+                      slug
+
+                      
+                      
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        `,
+    {
+      variables: {},
+    }
+  )
+
+  return data.data.biosecurities
+}
+
+export const getBiosecurityProductsFromCategory = async (language, slug) => {
+  const data = await fetchData(
+    `
+        query {
+          pharmaceuticsProducts  (filters:{pharmaceutics_category:{slug:{eq:"${slug}"}} }, locale:"${language}", pagination: { start: 0, limit: 100 }){
+            data {  
+              attributes{
+                title
+                slug
+                image{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
+                type_of_sale{
+                  data{
+                    attributes{
+                      title
+                    }
+                  }
+                }
+                pharmaceutics_category{
+                  data{
+                    attributes{
+                      name
+                      slug
+                      icon{
+                        data{
+                          attributes{
+                            url
+                          }
+                        }
+
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        `,
+    {
+      variables: {},
+    }
+  )
+
+  return data.data.pharmaceuticsProducts
+}
+
+
+
 export const getEvents = async (language) => {
   const data = await fetchData(
     `

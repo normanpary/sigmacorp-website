@@ -20,12 +20,12 @@ export default function Slide02() {
     return (
       <div className=" ">
       <div
-        className="bg-cover bg-center p-20 grid grid-cols-2"
+        className="bg-cover bg-center p-10 lg:p-20 grid grid-cols-2"
         style={{ backgroundImage: 'url(static/images/home/nutraceuticos-slider.jpg)' }}
       >
         <div className="max-h-[700px] flex flex-col justify-center">
           <motion.div
-            initial={{ opacity: 0, x: 1000 }}
+            initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeIn' }}
           >
@@ -34,7 +34,7 @@ export default function Slide02() {
             </div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 1000 }}
+            initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeIn', delay: 0.1 }}
           >
@@ -43,19 +43,19 @@ export default function Slide02() {
             </div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 1000 }}
+            initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeIn', delay: 0.3 }}
           >
             <div>
-              <button className="bg-violeta hover:bg-indigo-800 text-white font-black py-2 px-10 rounded-full text-xl">
+              <button className="bg-violeta hover:bg-indigo-800 text-white font-black py-2 px-10 rounded-full lg:text-xl">
                 {t('home:conocelos')}
               </button>
             </div>
           </motion.div>
         </div>
         <motion.div
-          initial={{ opacity: 0, x: 400 }}
+          initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, ease: 'easeIn', delay: 0.3 }}
           whileHover={{

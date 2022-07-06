@@ -12,10 +12,13 @@ import { Parallax } from 'react-scroll-parallax'
 import { motion } from 'framer-motion'
 import useTranslation from 'next-translate/useTranslation'
 import HomePage from 'pages'
+import { useIsLarge, useIsSmall }  from 'hooks/utils'
 
 
 export default function Slide01() {
-  
+    const isLarge = useIsLarge()
+    const isSmall = useIsSmall()
+    console.log("IS-SMALL:"+isSmall)
     const { t } = useTranslation()
     return (
       
@@ -23,21 +26,21 @@ export default function Slide01() {
 
       <div className="">
       <div
-        className="bg-cover bg-center p-20 grid grid-cols-2"
+        className="bg-cover bg-center p-10 lg:p-20 grid grid-cols-2"
         style={{ backgroundImage: 'url(static/images/home/farmaceuticos-slider.jpg)' }}
       >
         <div className="max-h-[600px] flex flex-col justify-center">
           <motion.div
-            initial={{ opacity: 0, x: 1000 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, ease: 'easeIn' }}
+            initial={isSmall ? {opacity: 0, x:100} : { opacity: 0, x: 100  }}
+            whileInView={isSmall ? { opacity: 1, x:0 } : { opacity: 1, x: 0 }}
+            transition={isSmall ? { duration: 0.5,ease: 'easeIn'  } : {duration: 0.5, ease: 'easeIn' }}
           >
-            <div className="transition-transform font-mulish uppercase text-rosa tracking-wider text-xl font-black pb-1 sm:text-4xl xl:text-8xl">
+            <div className="transition-transform font-mulish uppercase text-rosa tracking-wider text-2xl lg:text-xl font-black pb-1 sm:text-4xl xl:text-8xl">
               {t('home:farmaceuticos')}
             </div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 1000 }}
+            initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeIn', delay: 0.1 }}
           >
@@ -46,19 +49,19 @@ export default function Slide01() {
             </div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 1000 }}
+            initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeIn', delay: 0.3 }}
           >
             <div>
-              <button className="bg-violeta hover:bg-indigo-800 text-white font-black py-2 px-10 rounded-full text-xl">
+              <button className="bg-violeta hover:bg-indigo-800 text-white font-black py-2 px-10 rounded-full lg:text-xl">
               {t('home:conocelos')}
               </button>
             </div>
           </motion.div>
         </div>
         <motion.div
-          initial={{ opacity: 0, x: 400 }}
+          initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, ease: 'easeIn', delay: 0.3 }}
           whileHover={{

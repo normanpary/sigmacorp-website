@@ -20,7 +20,7 @@ export default function HomePage({ posts, locale, availableLocales }) {
   const { t } = useTranslation()
 
   return (
-    <>
+    <div className='overflow-hidden'>
       <PageSEO
         title={siteMetadata.title[locale]}
         description={siteMetadata.description[locale]}
@@ -44,13 +44,13 @@ export default function HomePage({ posts, locale, availableLocales }) {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, ease: 'easeIn' }}
-        viewport={{ margin: '-200px' }}
+        viewport={{ margin: '-100px' }}
       >
-        <div className="container relative mb-10 mx-auto max-w-[60%] grid grid-cols-4 gap-6 -mt-32 z-10">
-          <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-10 py-8 rounded-xl flex flex-col items-center">
-            <div className="min-h-[80px] flex flex-col-reverse">
+        <div className="container relative mb-10 mx-auto max-w-[95%]  lg:max-w-[60%] grid grid-cols-2 gap-2 lg:grid-cols-4 lg:gap-6 -mt-20 lg:-mt-32 z-10 ">
+          <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-2 lg:px-10  py-3 lg:py-8 rounded-xl flex flex-col items-center">
+            <div className=" min-h-[70px] lg:min-h-[80px] flex flex-col-reverse">
               <img
-                className="relative inset-x-0 bottom-0"
+                className="scale-75 lg:scale-100"
                 src={'static/images/home/innovacion.png'}
               />
             </div>
@@ -60,9 +60,9 @@ export default function HomePage({ posts, locale, availableLocales }) {
             </div>
           </div>
 
-          <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-10 py-8 rounded-xl flex flex-col items-center">
-            <div className="min-h-[80px] flex flex-col-reverse">
-              <img className="" src={'static/images/home/crecimiento.png'} />
+          <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-2 lg:px-10  py-3 lg:py-8 rounded-xl flex flex-col items-center">
+            <div className="min-h-[70px] lg:min-h-[80px] flex flex-col-reverse">
+              <img className="scale-75 lg:scale-100" src={'static/images/home/crecimiento.png'} />
             </div>
             <div className="text-center font-black text-xl uppercase pt-4">{t('home:crecimiento')}</div>
             <div className="text-center pt-4 text-sm">
@@ -70,9 +70,9 @@ export default function HomePage({ posts, locale, availableLocales }) {
             </div>
           </div>
 
-          <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-10 py-8 rounded-xl flex flex-col items-center">
-            <div className="min-h-[80px] flex flex-col-reverse">
-              <img className="" src={'static/images/home/desarrollo.png'} />
+          <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-2 lg:px-10  py-3 lg:py-8 rounded-xl flex flex-col items-center">
+            <div className="min-h-[70px] lg:min-h-[80px] flex flex-col-reverse">
+              <img  className="scale-75 lg:scale-100" src={'static/images/home/desarrollo.png'} />
             </div>
             <div className="text-center font-black text-xl uppercase pt-4">{t('home:desarrollo')}</div>
             <div className="text-center pt-4 text-sm">
@@ -80,9 +80,9 @@ export default function HomePage({ posts, locale, availableLocales }) {
             </div>
           </div>
 
-          <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-10 py-8 rounded-xl flex flex-col items-center">
-            <div className="min-h-[80px] flex flex-col-reverse">
-              <img className="" src={'static/images/home/proyeccion.png'} />
+          <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-2 lg:px-10  py-3 lg:py-8 rounded-xl flex flex-col items-center">
+            <div className="min-h-[70px] lg:min-h-[80px] flex flex-col-reverse">
+              <img  className="scale-75 lg:scale-100" src={'static/images/home/proyeccion.png'} />
             </div>
             <div className="text-center font-black text-xl uppercase pt-4">{t('home:proyeccion')}</div>
             <div className="text-center pt-4 text-sm">
@@ -95,12 +95,12 @@ export default function HomePage({ posts, locale, availableLocales }) {
 
       {/**QUIENES SOMOS */}
       <div className="bg-fondo_reverse bg-no-repeat bg-right-top mt-20 puntero" data-cursortext="<div class='cursor-icono'>+</div>" >
-        <div className=" container mx-auto space-y-6 md:space-y-0  grid grid-cols-1 md:grid-cols-2 md:gap-6 md:px-8 lg:px-28 ">
+        <div className=" container mx-auto space-y-6 md:space-y-0  px-4 grid grid-cols-1 md:grid-cols-2 md:gap-6 md:px-8 lg:px-28 ">
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, ease: 'easeIn' }}
-            viewport={{ margin: '-400px' }}
+            viewport={{ margin: '-100px' }}
           >
             <div className="">
               <p className="font-extrabold text-gray-500 pb-4 text-lg">{t('home:quienes_somos')}</p>
@@ -120,19 +120,19 @@ export default function HomePage({ posts, locale, availableLocales }) {
               initial={{ opacity: 0, x: -100, scale: 1.3 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 0.3, ease: 'easeIn' }}
-              viewport={{ margin: '-400px' }}
+              viewport={{ margin: '-100px' }}
             >
-              <div className="hidden sm:flex justify-end w-full">
-                <img className="w-2/3" src="/static/images/home/children.png" />
+              <div className="flex justify-end w-full">
+                <img className="lg:w-2/3" src="/static/images/home/children.png" />
               </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 200 }}
-              whileInView={{ opacity: 1, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, ease: 'easeIn' }}
               viewport={{ margin: '150px' }}
             >
-              <div className="flex w-full sm:w-60 sm:absolute sm:bottom-40 sm:left-0 text-lg">
+              <div className="flex w-full -mt-40 lg:w-60 lg:absolute lg:bottom-40 lg:left-0 text-lg">
                 <ItemProposito />
               </div>
             </motion.div>
@@ -182,7 +182,7 @@ export default function HomePage({ posts, locale, availableLocales }) {
               value={t('home:ver_blog')}
             />
           </motion.div>
-          <div className="p-4 sm:p-8 justify-center">
+          <div className="lg:p-4 sm:p-8 justify-center">
             {/**<BlogCarousel posts={posts} />*/}
 
             
@@ -192,7 +192,7 @@ export default function HomePage({ posts, locale, availableLocales }) {
               transition={{ duration: 0.3, ease: 'easeIn' }}
               viewport={{ margin: '-100px' }}
             >
-              <div className="container relative mb-10 mx-auto  grid grid-cols-3 gap-24 ">
+              <div className="container relative mb-10 mx-auto  grid lg:grid-cols-3 gap-10 lg:gap-24 ">
                 <div className="transition hover:-translate-y-3 hover:shadow-lg">
                   <div className="h-auto  bg-white  rounded-md">
                     <div className="">
@@ -275,7 +275,7 @@ export default function HomePage({ posts, locale, availableLocales }) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

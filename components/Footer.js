@@ -21,7 +21,7 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-violeta py-8 px-8 md:px-20 lg:px-32 bg-fondo_footer bg-no-repeat bg-right-top">
-        <div className="container mx-auto px-20">
+        <div className="container mx-auto lg:px-20 overflow-hidden">
           <motion.div
             initial={{ opacity: 0, x: 200 }}
             whileInView={{ opacity: 1, x: 0 }}

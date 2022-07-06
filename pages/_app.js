@@ -90,11 +90,8 @@ const [loading, setLoading] = useState(true)
           </Head>
           <Analytics />
           <Cursor/>
-          <LayoutWrapper>
-            <Component {...pageProps} />
-          </LayoutWrapper>
           <FloatingWhatsApp
-            phoneNumber="59177938700"
+            phoneNumber="59167598055"
             accountName="Soporte Sigmacorp"
             avatar={'static/images/profile-logo.jpg'}
             statusMessage="Responde en una hora aprox."
@@ -103,11 +100,20 @@ const [loading, setLoading] = useState(true)
             notification={false}
             notificationSound={true}
             notificationDelay={30000}
+            
+            className="z-50"
+            
           />
+          <LayoutWrapper>
+            
+            <Component {...pageProps} />
+            
+          </LayoutWrapper>
+          
           <RSS />
         </ParallaxProvider>
       </ThemeProvider>
-      <ReactQueryDevtools initialIsOpen={false} />
+      
       </Hydrate>
      </QueryClientProvider>
     )

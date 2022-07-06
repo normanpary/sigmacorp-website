@@ -93,12 +93,12 @@ const LayoutWrapper = ({ children }) => {
     <SectionContainer>
       <div className="flex flex-col justify-between h-screen">
         <header className=" flex flex-col">
-          <div className="flex bg-violeta h-[78px]">
-            <div className="w-interior mx-auto p-2">
+          <div className="flex bg-violeta h-[60px] lg:h-[78px]">
+            <div className="w-interior mx-auto lg:p-2">
               <Link href="/" aria-label="Sigmacorp Website">
                 <div className="flex items-center justify-between">
                   <div className="mr-3">
-                    <Logo />
+                    <Logo className="scale-75 lg:scale-100"/>
                   </div>
                   {/*typeof siteMetadata.headerTitle[locale] === 'string' ? (
                       <div className="hidden h-6 text-2xl font-semibold sm:block">
