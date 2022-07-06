@@ -74,17 +74,17 @@ export default function Product() {
 
   return (
     <div>
-      <div className="static bg-no-repeat bg-cover bg-center h-[600px]"
+      <div className="lg:static bg-no-repeat bg-cover bg-center lg:h-[600px]"
       style={{ backgroundImage: `url(${assetsUrl}${nutraceutic_banner})` }}
       >
         <div className="bg-gradient-to-r from-white/10 to-white/40 h-[600px]"></div>
       </div>
       <div className="-mt-[600px]">
         <div className="">
-          <div className=" container mx-auto grid grid-cols-2 max-w-6xl">
+          <div className=" container mx-auto grid grid-cols-1 lg:grid-cols-2 max-w-6xl">
             <div className="static bottom-0 left-0 ">
               <div>
-                <div className="mt-10 z-50">
+                <div className="p-4 mt-10 z-50">
                   <a href="/" className="hover:text-pink-700 font-bold">
                     Inicio
                   </a>{' '}
@@ -171,7 +171,7 @@ export default function Product() {
                 </motion.div>
               </div>
             </div>
-            <div>
+            <div className='p-4'>
               <motion.div
                 initial={{ opacity: 0, x: 200 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -179,7 +179,7 @@ export default function Product() {
                 viewport={{ margin: '-30px' }}
               >
                 <div className='h-[450px]'>
-                <div className="text-rosa text-6xl mt-[200px] uppercase ">{nutraceutic_title}</div>
+                <div className="text-rosa text-4xl lg:text-6xl lg:mt-[200px] uppercase ">{nutraceutic_title}</div>
                 <div className="text-gray-900 text-xl leading-normal pt-10 mb-[100px]">
                   {nutraceutic_short_description}
                 </div>
@@ -198,10 +198,10 @@ export default function Product() {
                     
                   </div>
                   
-                  <div className="grid grid-cols-5">
+                  <div className="grid grid-cols-3 lg:grid-cols-5">
                     {/* ------------ CIRCULO ENERGIA*/}        
                     <div>
-                      <div className="text-rosa font-black text-center text-sm">Energia</div>
+                      <div className="text-rosa font-black text-center text-sm h-10">Energia</div>
                       <div className="p-3 font-extrabold">
                         <VisibilitySensor>
                           {({ isVisible }) => {
@@ -228,7 +228,7 @@ export default function Product() {
                     </div>
                      {/* ------------ CIRCULO PROTEINAS*/}        
                      <div>
-                      <div className="text-blue-900 font-black text-center text-sm">Proteínas</div>
+                      <div className="text-blue-900 font-black text-center text-sm h-10">Proteínas</div>
                       <div className="p-3 font-extrabold">
                         <VisibilitySensor>
                           {({ isVisible }) => {
@@ -255,7 +255,7 @@ export default function Product() {
                     </div>
                      {/* ------------ CIRCULO GRASAS TOTALES*/}        
                      <div>
-                      <div className="text-green-500 font-black text-center text-sm">Grasas Totales</div>
+                      <div className="text-green-500 font-black text-center text-sm h-10">Grasas Totales</div>
                       <div className="p-3 font-extrabold">
                         <VisibilitySensor>
                           {({ isVisible }) => {
@@ -282,7 +282,7 @@ export default function Product() {
                     </div>
                      {/* ------------ CIRCULO COLESTEROL*/}        
                      <div>
-                      <div className="text-sky-500 font-black text-center text-sm">Colesterol</div>
+                      <div className="text-sky-500 font-black text-center text-sm h-10">Colesterol</div>
                       <div className="p-3 font-extrabold">
                         <VisibilitySensor>
                           {({ isVisible }) => {
@@ -309,7 +309,7 @@ export default function Product() {
                     </div>
                     {/* ------------ CIRCULO CARBOHIDRATOS*/}        
                     <div>
-                      <div className="text-orange-400 font-black text-center text-sm">Carbohidratos</div>
+                      <div className="text-orange-400 font-black text-center text-sm h-10">Carbohidratos</div>
                       <div className="p-3 font-extrabold">
                         <VisibilitySensor>
                           {({ isVisible }) => {
@@ -420,12 +420,7 @@ export default function Product() {
                   <div className="text-lg text-gris leading-normal ">{nutraceutic_indications}</div>
                 </div>
               </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: 'easeIn' }}
-                viewport={{ margin: '-10px' }}
-              >
+              
                 {/* CAJA TABLA NUTRICIONAL */}
                 <div className="py-5">
                   <div className="text-azul text-4xl leading-normal  font-extrabold ">
@@ -434,12 +429,12 @@ export default function Product() {
 
                   <div className="text-lg text-gris leading-normal ">
                     <img
-                      className=" max-w-[800px] "
+                      className=" lg:max-w-[800px] "
                       src={`${assetsUrl}${nutraceutic_nutritional_table}`}
                     />
                   </div>
                 </div>
-              </motion.div>
+            
             </div>
           </div>
         </div>
@@ -451,14 +446,14 @@ export default function Product() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1, ease: 'easeIn' }}
         >
-          <div className="absolute w-full top-1/4 pointer-events-none">
+          <div className="p-4 absolute w-full top-1/4 pointer-events-none">
             <div className="flex justify-center pb-10">
               <img className="" src="/static/images/logo-sigmacorp.png" />
             </div>
             <div className="text-2xl text-center text-white font-extralight  ">
               Sigmacorp investiga, desarrolla y comercializa nutracéuticos de alta calidad.
             </div>
-            <div className="text-8xl text-center text-white font-extrabold py-5">NUTRACÉUTICOS</div>
+            <div className=" text-4xl lg:text-8xl text-center text-white font-extrabold py-5">NUTRACÉUTICOS</div>
             <div className="text-2xl text-center text-white font-extralight ">
               Los pacientes son el centro de lo que hacemos
             </div>
@@ -489,7 +484,7 @@ export default function Product() {
         </motion.div>
       </div>
 
-      <div className="container relative mb-10 mx-auto  grid grid-cols-3 gap-24 ">
+      <div className="container relative mb-10 mx-auto  grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-24 ">
         {products.data.map((product) => (
           <NutraceuticCard
             title={product.attributes.title}

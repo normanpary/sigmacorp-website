@@ -19,7 +19,7 @@ const NutraceuticCard = ({ title, slugProduct, image }) => {
     <div className='group border-gris_claro border-2 rounded-3xl overflow-hidden hover:-translate-y-4 duration-500 puntero cursor-pointer' data-cursortext="<div class='cursor-icono'>+</div>">
     
         <div className='p-10 pt-14'>
-            <img className='group-hover:scale-125 group-hover:rotate-12 duration-500 h-[400px] mx-auto' 
+            <img className='group-hover:scale-125 group-hover:rotate-12 duration-500 h-[200px] lg:h-[400px] mx-auto' 
              src={`${assetsUrl}${image}`}
             />
         </div>
