@@ -46,8 +46,8 @@ export default function Nutraceutics() {
     <div className='overflow-hidden'>  
       <div className="bg-[url('/static/images/dna.png')] bg-cover bg-center h-[150px] lg:h-[600px]">
         <div className="bg-gradient-to-r from-white/80 to-white/50 h-[150px] lg:h-[600px]">
-          <canvas className=" mx-auto w-[300px] h-[200px] lg:w-[1200px] lg:h-[600px] " id="scene"></canvas>
-          <input className="hidden" id="copy" type="text" value="NUTRACÉUTICOS" />
+          <canvas className="hidden lg:block mx-auto w-[300px] h-[200px] lg:w-[1200px] lg:h-[600px] " id="scene"></canvas>
+          <input className="invisible" id="copy" type="text" value="NUTRACÉUTICOS" />
         </div>
       </div>
 
