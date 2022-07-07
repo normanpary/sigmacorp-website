@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const assetsUrl = process.env.NEXT_PUBLIC_ASSETS_URL
 
-const ProductBiosecurityCard = ({ title,  slugProduct, image }) => {
+const ProductBiosecurityCard = ({ title,  slugProduct, image, slugCategory, category }) => {
   return (
     <motion.div
     initial={{ opacity: 0, y: 100 }}
@@ -14,14 +14,14 @@ const ProductBiosecurityCard = ({ title,  slugProduct, image }) => {
     <div className="group grid grid-cols-2 gap-5 hover:-translate-y-2 duration-500 hover:-translate-x-2 puntero" data-cursortext="<div class='cursor-icono'>+</div>">
        
        <div className='bg-white rounded-full p-5 overflow-hidden border-2 shadow-md w-40 cursor-pointer ml-auto'> 
-       <Link href={`${slugProduct}`}>
+       <Link href={`/bioseguridad/${slugCategory}/${slugProduct}`}>
        <img className="group-hover:scale-125 group-hover:rotate-12 duration-500" src={`${assetsUrl}${image}`}/> 
        </Link>
        </div>
        
       <div>
       <div className="text-azul_oscuro text-3xl font-extrabold">
-        <Link href={`${slugProduct}`}>{title}</Link>
+        <Link href={`/bioseguridad/${slugCategory}/${slugProduct}`}>{title}</Link>
       </div>
       <div className="text-gris font-semibold text-base flex flex-row mb-3 mt-3">
         

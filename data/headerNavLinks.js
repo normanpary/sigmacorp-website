@@ -1,9 +1,12 @@
 const headerNavLinks = [
   { href: '/', title: 'Home' },
   { href: '/about', title: 'About' },
-  { href: '/products', title: 'Products' },
+  { href: '/nutraceutics', title: 'Nutraceutics' },
+  { href: '/pharmaceutics', title: 'Pharmaceutics' },
+
+  { href: '/bioseguridad', title: 'Biosecurity' },
   { href: '/maquila', title: 'Maquila' },
-  { href: '/contacts', title: 'Contacts' },
+  { href: '/recursos/contacto', title: 'Contact' },
 ]
 
 export default headerNavLinks

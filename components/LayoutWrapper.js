@@ -166,6 +166,14 @@ const LayoutWrapper = ({ children }) => {
                         {t('headerNavLinks:nutraceutics')}
                       </a>
                       <a
+                        href="/bioseguridad"
+                        replace={true}
+                        prefetch={false}
+                        class="px-4 py-2 block text-gris hover:text-rosa text-lg"
+                      >
+                        {t('headerNavLinks:biosecurity')}
+                      </a>
+                      <a
                         href="/pharmaceutics"
                         replace={true}
                         prefetch={false}

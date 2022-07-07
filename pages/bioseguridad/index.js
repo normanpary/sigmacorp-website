@@ -47,9 +47,9 @@ export default function ProductsList() {
         <div className="container mx-auto pt-16">
           <div className="flex flex-row font-extrabold text-5xl justify-between">
             <div className="flex flex-row">
-              <div className="text-pink-700 ">*&nbsp;</div>
+              <div className="text-pink-700 ">*&nbsp;Productos de&nbsp;</div>
               <div className="text-violeta">
-                
+                Bioseguridad
               </div>
             </div>
             <div className="float-right">
@@ -60,8 +60,8 @@ export default function ProductsList() {
             <a href="/" className="hover:text-pink-700 font-bold">
               Inicio
             </a>{' '}/{' '}
-            <a href="/pharmaceutics" className="hover:text-pink-700 font-bold">
-              Farmaceuticos
+            <a href="/bioseguridad" className="hover:text-pink-700 font-bold">
+              Bioseguridad
             </a>{' '}/
           </div>
           <div className="grid grid-cols-3 gap-20 py-20">
@@ -81,10 +81,10 @@ export default function ProductsList() {
                 
 
                 <ProductBiosecurityCard
-                  title={product.attributes.title}
-              
-                  slugProduct={product.attributes.slug}
-                  image={product.attributes.image.data.attributes.url}
+                  title =         {product.attributes.title}
+                  slugProduct=    {product.attributes.slug}
+                  image =         {product.attributes.image.data.attributes.url}
+                  slugCategory =  {product.attributes.biosecurity_category.data.attributes.slug}
                   
                 />
 

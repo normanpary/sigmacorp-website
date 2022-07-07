@@ -311,6 +311,7 @@ export const getBiosecurityProducts = async (language) => {
                 attributes{
                   title
                   order
+                  slug
                 }
               }
             }
@@ -352,10 +353,10 @@ export const getProductBiosecurityDetails = async (language, slug) => {
                 }
                
                 
-                pharmaceutics_category{
+                biosecurity_category{
                   data{
                     attributes{
-                      name
+                      title
                       slug
 
                       
@@ -380,7 +381,7 @@ export const getBiosecurityProductsFromCategory = async (language, slug) => {
   const data = await fetchData(
     `
         query {
-          pharmaceuticsProducts  (filters:{pharmaceutics_category:{slug:{eq:"${slug}"}} }, locale:"${language}", pagination: { start: 0, limit: 100 }){
+          biosecurities  (filters:{biosecurity_category:{slug:{eq:"${slug}"}} }, locale:"${language}", pagination: { start: 0, limit: 100 }){
             data {  
               attributes{
                 title
@@ -392,26 +393,13 @@ export const getBiosecurityProductsFromCategory = async (language, slug) => {
                     }
                   }
                 }
-                type_of_sale{
+                
+                biosecurity_category{
                   data{
                     attributes{
                       title
-                    }
-                  }
-                }
-                pharmaceutics_category{
-                  data{
-                    attributes{
-                      name
                       slug
-                      icon{
-                        data{
-                          attributes{
-                            url
-                          }
-                        }
-
-                      }
+                      
                     }
                   }
                 }
@@ -425,7 +413,7 @@ export const getBiosecurityProductsFromCategory = async (language, slug) => {
     }
   )
 
-  return data.data.pharmaceuticsProducts
+  return data.data.biosecurities
 }
 
 
