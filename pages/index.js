@@ -12,15 +12,20 @@ import axios from 'axios'
 import Carousel from '@/components/homepage/Carousel'
 import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
-import { useEffect, useState } from 'react'
+//import { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { blue, red } from 'tailwindcss/colors'
+import FsLightbox from 'fslightbox-react'
 
 export default function HomePage({ posts, locale, availableLocales }) {
   const { t } = useTranslation()
-
+  const [toggler, setToggler] = useState(false)
+  
   return (
     <div className='overflow-hidden'>
+      
+
       <PageSEO
         title={siteMetadata.title[locale]}
         description={siteMetadata.description[locale]}
@@ -39,6 +44,17 @@ export default function HomePage({ posts, locale, availableLocales }) {
         </Fade>
       </div>
       */}
+
+
+      <FsLightbox
+        className = "border-4 border-pink-900"
+        openOnMount={true} 
+        sources = {[`static/media/sigma-unicef.mp4`]}
+        videosPosters = {[`static/images/carmelo.png`]}
+        showThumbsOnMount={true}
+        
+      />
+
       {/**CAJAS VALORES */}
       <motion.div
         initial={{ opacity: 0, y: 100 }}
