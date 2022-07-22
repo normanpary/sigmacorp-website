@@ -31,6 +31,13 @@ export default function HomePage({ posts, locale, availableLocales }) {
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
+           <FsLightbox
+        openOnMount={true} 
+        sources = {[`https://www.youtube.com/watch?v=tDLOFR5P1jQ`]}
+        
+        showThumbsOnMount={true}
+        
+      />
       <Carousel className="z-0" />
 
       {/** 
@@ -46,14 +53,7 @@ export default function HomePage({ posts, locale, availableLocales }) {
       */}
 
 
-      <FsLightbox
-        className = "border-4 border-pink-900"
-        openOnMount={true} 
-        sources = {[`static/media/sigma-unicef.mp4`]}
-        videosPosters = {[`static/images/carmelo.png`]}
-        showThumbsOnMount={true}
-        
-      />
+ 
 
       {/**CAJAS VALORES */}
       <motion.div

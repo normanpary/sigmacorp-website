@@ -48,9 +48,11 @@ export default function Slide03() {
             transition={{ duration: 0.5, ease: 'easeIn', delay: 0.3 }}
           >
             <div>
+              <a href='./maquila'>
               <button className="bg-violeta hover:bg-indigo-800 text-white font-black py-2 px-2 lg:px-10 rounded-full lg:text-xl">
               {t('home:conoce_nuestra_fabrica')}
               </button>
+              </a>
             </div>
           </motion.div>
         </div>

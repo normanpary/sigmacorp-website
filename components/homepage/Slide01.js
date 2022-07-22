@@ -54,9 +54,11 @@ export default function Slide01() {
             transition={{ duration: 0.5, ease: 'easeIn', delay: 0.3 }}
           >
             <div>
+              <a href="./pharmaceutics">
               <button className="bg-violeta hover:bg-indigo-800 text-white font-black py-2 px-10 rounded-full lg:text-xl">
               {t('home:conocelos')}
               </button>
+              </a>
             </div>
           </motion.div>
         </div>
