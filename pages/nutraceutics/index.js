@@ -69,7 +69,7 @@ export default function Nutraceutics() {
         </div>
       </div>
       {/*FIN BANNER*/}
-      <div className="container p-4 mx-auto lg:mt-[200px] lg:mb-[150px] text-center">
+      <div className="container p-4 mx-auto lg:mt-[200px] lg:mb-[50px] text-center">
         <div className="lg:max-w-xl text-lg pt-5 text-center mx-auto">
           Sigma Nutracéuticos ofrece <strong>suplementos y complementos nutricionales </strong>para
           madres en etapa de gestación y lactancia, para bebés entre 6 meses para adelante así como
@@ -87,9 +87,9 @@ export default function Nutraceutics() {
             viewport={{ margin: '-100px' }}
           >
         <div className="p-4 lg:container lg mx-auto text-center pb-[50px]">
-          <div className="font-extrabold text-4xl lg:text-6xl   text-violeta">Nutracéuticos de</div>
+          
           <div className="flex justify-center pb-5">
-            <img className="w-[280px] lg:w-[480px]" src="/static/images/logo-nutraceuticos.png" />
+            <img className="w-[280px] lg:w-[680px]" src="/static/images/logo-nutraceuticos.png" />
           </div>
 
           <div className="text-xl">

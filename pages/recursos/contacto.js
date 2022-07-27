@@ -319,7 +319,7 @@ export default function Contacto({ posts, locale, availableLocales }) {
       {/*FIN NUTRACEUTICOS*/}
 
       {/*FORMULARIO*/}
-      <div className="bg-[url('/static/images/bg-big-hexagon-right.png')]  bg-no-repeat bg-right-top mt-32">
+      <div id='formulario' className="bg-[url('/static/images/bg-big-hexagon-right.png')]  bg-no-repeat bg-right-top mt-32">
         <div className="container mx-auto  ">
           <div className="text-center text-6xl font-black text-azul_oscuro">CONTÁCTENOS</div>
           <div className="my-16 text-lg text-gris gap-y-20 bg-gris_claro rounded-3xl w-[800px] mx-auto p-12">

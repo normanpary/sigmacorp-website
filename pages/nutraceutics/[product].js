@@ -115,7 +115,7 @@ export default function Product() {
                           src="/static/images/productos/receta-rosa.png"
                         />
                       </div>
-                      <div className="text-center font-bold pt-3 text-gris">Nutraceutico</div>
+                      <div className="text-center font-bold pt-3 text-gris">Nutracéutico</div>
                     </div>
                     <div className="p-4 ">
                       <div>
@@ -158,7 +158,7 @@ export default function Product() {
                           <div className="col-span-3">
                             <div>¿Tienes alguna pregunta de este producto?</div>
                             <div>
-                              <a href="#" className="text-azul font-bold hover:text-rosa">
+                              <a href="../recursos/contacto#formulario" className="text-azul font-bold hover:text-rosa">
                                 Escribe a Sigma Corp.
                               </a>
                             </div>
@@ -201,7 +201,7 @@ export default function Product() {
                   <div className="grid grid-cols-3 lg:grid-cols-5">
                     {/* ------------ CIRCULO ENERGIA*/}        
                     <div>
-                      <div className="text-rosa font-black text-center text-sm h-10">Energia</div>
+                      <div className="text-rosa font-black text-center text-sm h-10">Energía</div>
                       <div className="p-3 font-extrabold">
                         <VisibilitySensor>
                           {({ isVisible }) => {
@@ -342,7 +342,7 @@ export default function Product() {
                   </div>
                 </div>
               </motion.div>
-              {/* CAJA DESCRIPCION */}
+              {/* CAJA DESCRIPCIÓN */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -352,7 +352,7 @@ export default function Product() {
                 
                 <div className="">
                   <div className="text-azul text-4xl leading-normal  font-extrabold ">
-                    DESCRIPCION DEL <span className="text-rosa">PRODUCTO </span>
+                    DESCRIPCIÓN DEL <span className="text-rosa">PRODUCTO </span>
                   </div>
 
                   <div className="text-lg text-gris  leading-normal ">
@@ -455,7 +455,7 @@ export default function Product() {
             </div>
             <div className=" text-4xl lg:text-8xl text-center text-white font-extrabold py-5">NUTRACÉUTICOS</div>
             <div className="text-2xl text-center text-white font-extralight ">
-              Los pacientes son el centro de lo que hacemos
+              Tu salud es el centro de lo que hacemos
             </div>
           </div>
         </motion.div>
@@ -470,10 +470,10 @@ export default function Product() {
         >
           <div className="container mx-auto">
             <div className="text-center">
-              <span className="text-azul font-bold text-6xl">Tenemos mas productos </span>
+              <span className="text-azul font-bold text-6xl">Tenemos más productos </span>
               <span className="text-rosa font-bold text-6xl lowercase">nutracéuticos</span>
               <div className="pt-5 text-xl">
-                Los mejores productos farmacéuticos para tu bienestar
+                Los mejores productos nutracéuticos para tu bienestar
               </div>
             </div>
 
