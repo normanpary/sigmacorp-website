@@ -452,7 +452,7 @@ export default function Product() {
               <img className="" src="/static/images/logo-nutraceuticos-blanco.png" />
             </div>
             <div className="text-2xl text-center text-white font-extralight  ">
-              Sigmacorp investiga, desarrolla y comercializa nutracéuticos de alta calidad.
+              Sigmacorp investiga, desarrolla y comercializa suplementos y complementos de alta calidad.
             </div>
             <div className=" text-4xl lg:text-8xl text-center text-white font-extrabold py-5">NUTRACÉUTICOS</div>
             <div className="text-2xl text-center text-white font-extralight ">

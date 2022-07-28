@@ -69,7 +69,7 @@ export default class Carousel extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 7000,
+      autoplaySpeed: 10000,
       arrows: false,
       vertical: false,
       verticalSwiping: false,
@@ -86,9 +86,9 @@ export default class Carousel extends Component {
           {/*carouselData.map((item, index) => (
             <CarouselItem item={item} key={index} />
           ))*/}
-
+      <Slide02/>
      <Slide01/>
-     <Slide02/>
+     
      <Slide03/>
         </Slider>
         <button

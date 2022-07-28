@@ -21,7 +21,7 @@ export default function Slide02() {
       <div className=" ">
       <div
         className="bg-cover bg-center p-10 lg:p-20 grid grid-cols-2"
-        style={{ backgroundImage: 'url(static/images/home/nutraceuticos-slider.jpg)' }}
+        style={{ backgroundImage: 'url(static/images/home/slide-nutraceuticos.jpg)' }}
       >
         <div className="max-h-[700px] flex flex-col justify-center">
           <motion.div

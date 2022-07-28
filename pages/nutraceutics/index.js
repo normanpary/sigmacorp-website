@@ -76,16 +76,14 @@ export default function Nutraceutics() {
           para el adulto mayor. Sigma es pionero en el{' '}
           <strong>desarrollo de nanotecnología en Bolivia.</strong>
         </div>
+        <div className="lg:max-w-xl text-lg pt-5 text-center mx-auto">
+          <strong>SOMOS LA SOLUCIÓN A TU SALUD NUTRICIONAL</strong>
+        </div>
       </div>
 
       {/**te gustaria cotizacion */}
       {/**<BlogCarousel posts={posts} />*/}
-      <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: 'easeIn' }}
-            viewport={{ margin: '-100px' }}
-          >
+   
         <div className="p-4 lg:container lg mx-auto text-center pb-[50px]">
           
           <div className="flex justify-center pb-5">
@@ -97,7 +95,7 @@ export default function Nutraceutics() {
             Conoce nuestros productos. Selecciona uno y ve sus detalles.
           </div>
         </div>
-      </motion.div>
+      
       <div className="container p-4 lg:relative mb-10 mx-auto  grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-24 ">
       {isSuccess &&
               products.data.map((product) => (
