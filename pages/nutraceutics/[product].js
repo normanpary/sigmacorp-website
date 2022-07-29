@@ -441,12 +441,7 @@ export default function Product() {
       </div>
 
       <div className="relative ">
-      <motion.div
-          initial={{ opacity: 0, y: 0 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: 'easeIn' }}
-          viewport={{ margin: '-10px' }}
-        >
+ 
           <div className="p-4 absolute w-full mt-20 pointer-events-none">
             <div className="flex justify-center pb-10">
               <img className="" src="/static/images/logo-nutraceuticos-blanco.png" />
@@ -459,7 +454,7 @@ export default function Product() {
               Tu salud es el centro de lo que hacemos
             </div>
           </div>
-        </motion.div>
+      
         <HomeParticlesAnimation />
       </div>
       <div className="bg-[url('/static/images/bg-big-hexagon-right.png')]  bg-no-repeat bg-right-top pt-20">
