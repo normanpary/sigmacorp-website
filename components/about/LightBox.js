@@ -7,7 +7,7 @@ import useTranslation from 'next-translate/useTranslation'
 const videos = [
   {
     img: '/static/images/about/about01.png',
-    url: 'https://www.youtube.com/watch?v=QFmMNfbsi6k&t=8s',
+    url: 'https://www.youtube.com/watch?v=j3CeNy3Gczo',
     align: 'justify-end',
   },
   {

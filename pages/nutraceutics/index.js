@@ -96,7 +96,7 @@ export default function Nutraceutics() {
           </div>
         </div>
       
-      <div className="container p-4 lg:relative mb-10 mx-auto  grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-24 ">
+      <div className="container p-4 lg:relative mb-10 mx-auto  grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-12 ">
       {isSuccess &&
               products.data.map((product) => (
                 <NutraceuticCard

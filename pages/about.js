@@ -44,7 +44,7 @@ export default function About({ posts, locale, availableLocales }) {
               viewport={{ margin: '0px' }}
             >
               <div className="container mx-auto pt-24">
-                <div className="flex flex-row font-extrabold text-5xl">
+                <div className="lg:flex lg:flex-row font-extrabold text-5xl">
                   <div className="text-pink-700 ">{t('about:sobre')}</div>
                   <div className="text-violeta">{t('about:nosotros')}</div>
                 </div>
@@ -63,24 +63,24 @@ export default function About({ posts, locale, availableLocales }) {
 
       {/*QUIENES SOMOS*/}
       <div className="bg-hexagon bg-no-repeat bg-left-top">
-        <div className="container mx-auto py-14  grid grid-cols-2 gap-16">
+        <div className="container mx-auto py-14  grid grid-cols-1 lg:grid-cols-2 gap-16">
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
+            initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeIn', delay: 0 }}
-            viewport={{ margin: '-300px' }}
+            viewport={{ margin: '-100px' }}
           >
             <div>
               <LightBox video={0} />
             </div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 200 }}
+            initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeIn', delay: 0 }}
-            viewport={{ margin: '-300px' }}
+            viewport={{ margin: '-100px' }}
           >
-            <div className="pr-36">
+            <div className="lg:pr-36">
               <p className="font-extrabold text-gray-500 pb-4 text-lg">
                 {t('about:quienes_somos')}
               </p>
@@ -100,15 +100,15 @@ export default function About({ posts, locale, availableLocales }) {
       {/*NUESTROS PROPOSITOS*/}
       <div className="bg-[url('/static/images/about/proposito.png')] bg-cover bg-top">
         <div className="bg-gradient-to-r from-white/0 to-white/90 ">
-          <div className="container mx-auto py-14  grid grid-cols-2 gap-16">
+          <div className="container mx-auto py-14  grid lg:grid-cols-2 gap-16">
             <div></div>
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, ease: 'easeIn' }}
-              viewport={{ margin: '-200px' }}
+              viewport={{ margin: '-100px' }}
             >
-              <div className="pr-36">
+              <div className="lg:pr-36">
                 <p className="text-xl md:text-6xl text-pink-700 font-extrabold">
                   {t('about:nuestros')}
                 </p>
@@ -154,7 +154,7 @@ export default function About({ posts, locale, availableLocales }) {
             transition={{ duration: 0.3, ease: 'easeIn' }}
             viewport={{ margin: '-200px' }}
           >
-            <div className="container mx-auto px-16  grid grid-cols-2 gap-16">
+            <div className="container mx-auto px-16 grid lg:grid-cols-2 gap-16">
               <div className="space-y-4">
                 <p className="text-lg md:text-3xl text-pink-700 font-black">
                   {t('about:integridad')}
@@ -228,7 +228,7 @@ export default function About({ posts, locale, availableLocales }) {
               </p>
             </div>
 
-            <div className="container relative mb-10 mx-auto max-w-[60%] grid grid-cols-4 gap-6 z-10">
+            <div className="container relative mb-10 mx-auto max-w-[60%] grid lg:grid-cols-4 gap-6 z-10">
               <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-10 py-8 rounded-xl flex flex-col items-center">
                 <div className="min-h-[80px] flex flex-col-reverse">
                   <img
