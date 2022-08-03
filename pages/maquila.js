@@ -43,14 +43,14 @@ export default function Contacto({ posts, locale, availableLocales }) {
             transition={{ duration: 0.3, ease: 'easeIn' }}
             viewport={{ margin: '0px' }}
           >
-            <div className="container mx-auto pt-24">
+            <div className="container mx-auto pt-24 p-3">
               <div className="">
                 <a href="../" className="hover:text-pink-700 font-bold">
                   Inicio
                 </a>{' '}
                 / Noticias
               </div>
-              <div className=" flex flex-row font-extrabold text-6xl py-4">
+              <div className=" lg:flex lg:flex-row font-extrabold text-6xl py-4">
                 <div className="text-pink-700 ">MAQUILA&nbsp;</div>
                 <div className="text-violeta">SIGMACORP</div>
               </div>
@@ -66,12 +66,12 @@ export default function Contacto({ posts, locale, availableLocales }) {
 
       {/*QUIENES SOMOS*/}
       <div className="bg-hexagon bg-no-repeat bg-left-top">
-        <div className="container mx-auto py-14 w-2/3">
+        <div className="container mx-auto py-14 lg:w-2/3">
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
+            initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeIn', delay: 0 }}
-            viewport={{ margin: '-300px' }}
+            viewport={{ margin: '-100px' }}
           >
             <div className="py-10 text-2xl  text-center mx-auto leading-12">
               Nuestras plantas farmacéuticas operan cumpliendo con las buenas prácticas de
@@ -80,7 +80,7 @@ export default function Contacto({ posts, locale, availableLocales }) {
               productos en diferentes formas farmacéuticas humanas o veterinarias.
             </div>
 
-            <div className="w-3/4  mx-auto grid grid-cols-3 gap-24 py-20">
+            <div className="w-3/4  mx-auto grid grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-24 py-20">
               <div className="text-center">
                 <div className="h-28">
                   <img className="mx-auto" src="static/images/maquila/semisolidos.png"></img>
@@ -125,23 +125,23 @@ export default function Contacto({ posts, locale, availableLocales }) {
                   <img className="mx-auto" src="static/images/maquila/polvos.png"></img>
                 </div>
                 <div className="text-xl font-black pt-5 uppercase">Polvos</div>
-                <div className="text-lg">Alimentos - Suplmentos - Mezclas</div>
+                <div className="text-lg">Alimentos - Suplementos - Mezclas</div>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
       {/*FIN QUIENES SOMOS*/}
-      <div className=" bg-[url('/static/images/maquila/fabrica.jpg')] bg-fixed bg-cover bg-center h-screen">
-        <div className="  bg-azul bg-opacity-70 bg-fixed bg-cover bg-center h-screen">
+      <div className=" bg-[url('/static/images/maquila/fabrica.jpg')] bg-fixed bg-cover bg-center h-screen ">
+        <div className="  bg-azul bg-opacity-70 bg-fixed bg-cover bg-center h-screen p-3">
           <div className="container mx-auto flex h-screen">
             <div className="m-auto">
-              <div className="text-6xl font-light text-white leading-relaxed">
+              <div className="text-3xl lg:text-6xl font-light text-white leading-relaxed">
                 <strong>SIGMACORP </strong>cuenta con más de 40 años de experiencia en la
                 manufactura, investigación y desarrollo de productos farmacéuticos
               </div>
-              <a href="#">
-                <div className="mt-10 p-8 text-center uppercase text-xl font-normal text-white bg-rosa w-1/4 hover:bg-azul">
+              <a href="./about">
+                <div className="mt-10 p-8 text-center uppercase text-xl font-normal text-white bg-rosa lg:w-1/4 hover:bg-azul">
                   Acerca de Sigmacorp
                 </div>
               </a>
@@ -151,19 +151,19 @@ export default function Contacto({ posts, locale, availableLocales }) {
       </div>
 
       <div className=" bg-[url('/static/images/maquila/maquila.jpg')] bg-fixed bg-cover bg-center h-screen">
-        <div className="  bg-rosa bg-opacity-70 bg-fixed bg-cover bg-center h-screen">
+        <div className="  bg-rosa bg-opacity-70 bg-fixed bg-cover bg-center h-screen p-3">
           <div className="container mx-auto flex h-screen">
             <div className="m-auto">
-              <div className="w-2/3 text-6xl font-light text-white leading-relaxed">
+              <div className=" text-3xl lg:w-2/3 lg:text-6xl font-light text-white leading-relaxed">
                 Nuestros productos cumplen con los más altos estándares de calidad farmacéutica
               </div>
-              <div className=" w-2/3 text-xl font-thin text-white leading-loose">
+              <div className=" lg:w-2/3 text-xl font-thin text-white leading-loose">
                 Sigmacorp cumple con los requisitos de manufactura ligados a control de calidad,
                 materias primas, máquinas de los procesos, además de poseer la infraestructura
                 adecuada. SIGMACORP cuenta con la <strong>certificación ISO 9001:2008.</strong>
               </div>
-              <a href="#">
-                <div className="mt-10 p-8 text-center uppercase text-xl font-normal text-white bg-azul w-1/4 bg-opacity-80 hover:bg-rosa">
+              <a href="#certificaciones">
+                <div className="mt-10 p-8 text-center uppercase text-xl font-normal text-white bg-azul lg:w-1/4 bg-opacity-80 hover:bg-rosa">
                   Ver certificaciones
                 </div>
               </a>
@@ -174,14 +174,14 @@ export default function Contacto({ posts, locale, availableLocales }) {
 
       {/*QUIENES SOMOS*/}
       <div className="bg-hexagon bg-no-repeat bg-left-top">
-        <div className="container mx-auto py-14 w-2/3">
+        <div className="container mx-auto py-14 lg:w-2/3 p-3">
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
+            initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeIn', delay: 0 }}
-            viewport={{ margin: '-300px' }}
+            viewport={{ margin: '-100px' }}
           >
-            <div className="  font-extrabold text-6xl py-4">
+            <div className="  font-extrabold text-4xl lg:text-6xl py-4">
               <div className="text-pink-700 uppercase">Nuestros</div>
               <div className="text-azul uppercase">beneficios</div>
             </div>
@@ -191,7 +191,7 @@ export default function Contacto({ posts, locale, availableLocales }) {
               una variedad de opciones en toda clase de operaciones de producción.
             </div>
 
-            <div className="  mx-auto grid grid-cols-3 gap-16 py-20">
+            <div className="  mx-auto grid grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16 py-20 ">
               <div className="text-center">
                 <div className="text-xl font-black pt-5 uppercase">
                   <span className="text-2xl font-black text-rosa">* </span>Certificaciones
@@ -203,7 +203,7 @@ export default function Contacto({ posts, locale, availableLocales }) {
                   <span className="text-2xl font-black text-rosa">* </span>Informe 32-92 OMS
                 </div>
                 <div className="text-lg font-light">
-                  Otorgado por la Organizacion Mundial de la Salud
+                  Otorgado por la Organización Mundial de la Salud
                 </div>
               </div>
               <div className="text-center">
@@ -241,25 +241,72 @@ export default function Contacto({ posts, locale, availableLocales }) {
             </div>
           </motion.div>
         </div>
+
+        <div className="container mx-auto py-14 lg:w-2/3 p-3 ">
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: 'easeIn', delay: 0 }}
+            viewport={{ margin: '-100px' }}
+          >
+            <div className="  font-extrabold text-4xl lg:text-6xl py-4" id="certificaciones">
+              <div className="text-pink-700 uppercase">Nuestras </div>
+              <div className="text-azul uppercase">Certificaciones</div>
+            </div>
+           
+            <div className="  mx-auto grid grid-cols-2 lg:grid-cols-4 gap-16 py-10">
+              <div className="text-center">
+                <div className="text-xl font-black pt-5 uppercase">
+                  <img src="/static/images/maquila/logo-bpm.png"/>
+                </div>
+                <div className="text-sm pt-2">Certificación Buenas Practicas de Manufactura</div>
+              </div>
+              <div className="text-center">
+                <div className="text-xl font-black pt-5 uppercase">
+                <img src="/static/images/maquila/logo-rse.png"/>
+                </div>
+                <div className="text-sm pt-2">
+                  Certificación Responsabilidad Social Empresarial
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-xl font-black pt-5 uppercase">
+                <img src="/static/images/maquila/logo-fda.png"/>
+                </div>
+                <div className="text-sm pt-2">United States Food and Drug Administration</div>
+              </div>
+              <div className="text-center">
+                <div className="text-xl font-black pt-5 uppercase">
+                <img src="/static/images/maquila/logo-iso-22000.png"/>
+                </div>
+                <div className="text-sm pt-2">
+                 Gestión de la Inocuidad de los Alimentos
+                </div>
+              </div>
+             
+              
+            </div>
+          </motion.div>
+        </div>
       </div>
       {/*FIN QUIENES SOMOS*/}
       {/*QUIENES SOMOS*/}
       <div className="bg-[url('/static/images/maquila/bolivia.png')] bg-gris_claro bg-no-repeat bg-right-top bg-contain">
-        <div className="container mx-auto py-14 w-2/3 h-screen ">
+        <div className="container mx-auto py-14 lg:w-2/3 h-screen ">
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
+            initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeIn', delay: 0 }}
-            viewport={{ margin: '-300px' }}
+            viewport={{ margin: '-100px' }}
           >
-            <div className="  font-extrabold text-6xl pt-40">
+            <div className="  font-extrabold text-4xl lg:text-6xl lg:pt-40 p-3">
               <div className="text-pink-700 uppercase">Red de</div>
               <div className="text-azul uppercase">distribución</div>
             </div>
-            <div className="py-10 text-2xl leading-12 w-2/3">
+            <div className="py-10 text-xl lg:text-2xl leading-12 lg:w-2/3 pt-60 lg:pt-10 p-3">
               Nuestra ubicación es <strong>estratégica</strong>. Al ubicarnos en Cochabamba, el
-              centro de Bolivia y Sudamerica, nos permite distribuir facilmente a todo el territorio
-              boliviano y a los paises de Sudamerica.
+              centro de Bolivia y Sudamérica, nos permite distribuir fácilmente a todo el territorio
+              boliviano y a los países de Sudamérica.
             </div>
           </motion.div>
         </div>
@@ -267,69 +314,69 @@ export default function Contacto({ posts, locale, availableLocales }) {
       {/*FIN QUIENES SOMOS*/}
       {/*QUIENES SOMOS*/}
       <div className="bg-hexagon bg-no-repeat bg-left-top">
-        <div className="container mx-auto py-14 w-2/3">
+        <div className="container mx-auto py-14 lg:w-2/3 p-3">
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
+            initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeIn', delay: 0 }}
-            viewport={{ margin: '-300px' }}
+            viewport={{ margin: '-100px' }}
           >
-            <div className="  font-extrabold text-6xl py-4">
+            <div className="  font-extrabold text-4xl lg:text-6xl py-4">
               <div className="text-pink-700 uppercase">Control de</div>
               <div className="text-azul uppercase">calidad</div>
             </div>
-            <div className="py-10 text-2xl  mx-auto leading-12">
+            <div className="py-10 text-xl lg:text-2xl  mx-auto leading-12">
               Nuestra política de servicios es ofrecer la máxima calidad e innovación adaptada a las
               necesidades de nuestros clientes.
             </div>
 
-            <div className="  mx-auto grid grid-cols-3 gap-24 ">
+            <div className="  mx-auto grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-24 ">
               <div className="text-center">
-                <div className="text-xl font-black pt-5 ">
+                <div className="text-xl  pt-5 ">
                   <span className="text-2xl font-black text-rosa">* </span>Análisis Microbiológico
                   de materias primas, material de empaque y producto.{' '}
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-xl font-black pt-5 ">
+                <div className="text-xl  pt-5 ">
                   <span className="text-2xl font-black text-rosa">* </span> Prueba de pirógenos.{' '}
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-xl font-black pt-5 ">
+                <div className="text-xl  pt-5 ">
                   <span className="text-2xl font-black text-rosa">* </span> Pruebas de esterilidad.{' '}
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-xl font-black pt-5 ">
+                <div className="text-xl pt-5 ">
                   <span className="text-2xl font-black text-rosa">* </span>Evaluación de
                   desinfectantes.
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-xl font-black pt-5 ">
+                <div className="text-xl  pt-5 ">
                   <span className="text-2xl font-black text-rosa">* </span>Análisis microbiológicos
                   de ambientes (áreas, superficies) y de aguas.
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-xl font-black pt-5">
+                <div className="text-xl  pt-5">
                   <span className="text-2xl font-black text-rosa">* </span> Análisis de
                   Antibióticos.{' '}
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-xl font-black pt-5 ">
+                <div className="text-xl pt-5 ">
                   <span className="text-2xl font-black text-rosa">* </span> Análisis fisicoquímico de materias primas, material de empaque y producto.  
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-xl font-black pt-5 ">
+                <div className="text-xl  pt-5 ">
                   <span className="text-2xl font-black text-rosa">* </span>Análisis por HPLC de materia prima y producto
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-xl font-black pt-5">
+                <div className="text-xl pt-5">
                   <span className="text-2xl font-black text-rosa">* </span> Validación de metodologías analíticas.
                 </div>
               </div>
@@ -339,10 +386,10 @@ export default function Contacto({ posts, locale, availableLocales }) {
       </div>
       {/*FIN QUIENES SOMOS*/}
       {/*FORMULARIO*/}
-      <div className="bg-[url('/static/images/bg-big-hexagon-right.png')]  bg-no-repeat bg-right-top mt-32">
+      <div className="bg-[url('/static/images/bg-big-hexagon-right.png')]  bg-no-repeat bg-right-top mt-32 p-3">
         <div className="container mx-auto  ">
-          <div className="text-center text-4xl font-black text-azul_oscuro">Solicite mas informacion de SIGMACORP MAQUILA</div>
-          <div className="my-16 text-lg text-gris gap-y-20 bg-gris_claro rounded-3xl w-[800px] mx-auto p-12">
+          <div className="text-center text-4xl font-black text-azul_oscuro">Solicite mas información de SIGMACORP MAQUILA</div>
+          <div className="my-16 text-lg text-gris gap-y-20 bg-gris_claro rounded-3xl lg:w-[800px] mx-auto p-12">
             <form className='grid grid-cols-2 gap-5'>
               <div class="mb-2 col-span-2">
                 
