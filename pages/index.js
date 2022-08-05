@@ -62,7 +62,7 @@ export default function HomePage({ posts, locale, availableLocales }) {
         transition={{ duration: 0.3, ease: 'easeIn' }}
         viewport={{ margin: '-100px' }}
       >
-        <div className="container relative mb-10 mx-auto max-w-[95%]  lg:max-w-[60%] grid grid-cols-2 gap-2 lg:grid-cols-4 lg:gap-6 -mt-20 lg:-mt-32 z-10 ">
+        <div className="container relative mb-10 mx-auto max-w-[95%]  lg:max-w-[80%] xl:max-w-[60%] grid grid-cols-2 gap-2 lg:grid-cols-4 lg:gap-6 -mt-20 lg:-mt-32 z-10 ">
           <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-2 lg:px-10  py-3 lg:py-8 rounded-xl flex flex-col items-center">
             <div className=" min-h-[70px] lg:min-h-[80px] flex flex-col-reverse">
               <img

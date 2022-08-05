@@ -39,7 +39,7 @@ export default function Slide02() {
             transition={{ duration: 0.5, ease: 'easeIn', delay: 0.1 }}
           >
             
-            <div className="font-mulish text-gray-800 tracking-wider font-semibold pb-10 sm:text-4xl xl:text-3xl">
+            <div className="font-mulish text-gray-800 tracking-wider font-semibold lg:pb-5 lg:text-3xl xl:text-3xl">
             {t('home:suplementos')}
             </div>
           </motion.div>
