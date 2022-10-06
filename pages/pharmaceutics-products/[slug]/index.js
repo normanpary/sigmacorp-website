@@ -59,10 +59,10 @@ export default function ProductsList() {
           </div>
           <div className="">
             <a href="/" className="hover:text-pink-700 font-bold">
-              Inicio
+            {t('pharmaceutics:inicio_miga')}
             </a>{' '}/{' '}
             <a href="/pharmaceutics" className="hover:text-pink-700 font-bold">
-              Farmaceuticos
+            {t('pharmaceutics:farmaceuticos_miga')}
             </a>{' '}/ {categoryName}
           </div>
           <div className="grid grid-cols-3 gap-20 py-20">

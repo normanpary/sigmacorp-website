@@ -67,11 +67,11 @@ export default function Product() {
         <div className="container mx-auto pt-16 max-w-5xl">
           <div className="mb-10">
             <a href="/" className="hover:text-pink-700 font-bold">
-              Inicio
+            {t('pharmaceutics:inicio_miga')}
             </a>{' '}
             /{' '}
             <a href="../" className="hover:text-pink-700 font-bold">
-              Farmacéuticos
+            {t('pharmaceutics:farmaceuticos_miga')}
             </a>{' '}
             /{' '}
             <a className="hover:text-pink-700 font-bold">
@@ -128,10 +128,10 @@ export default function Product() {
                         />
                       </div>
                       <div className="col-span-3">
-                        <div>¿Tienes alguna pregunta de este producto?</div>
+                        <div>{t('pharmaceutics:pregunta')}</div>
                         <div>
                           <a href="#" className="text-azul font-bold hover:text-rosa">
-                            Escribe a Sigma Corp.
+                          {t('pharmaceutics:escribe')}
                           </a>
                         </div>
                       </div>
@@ -155,15 +155,15 @@ export default function Product() {
               <div className="text-gris text-lg mt-10 mb-5 font-light">
                 {product.data[0].attributes.description}
               </div>
-              <div className="text-gris text-xl mt-5  font-extrabold">Acción terapéutica</div>
+              <div className="text-gris text-xl mt-5  font-extrabold">{t('pharmaceutics:accion')}</div>
               <div className="text-gris text-lg mb-5 font-light">
                 {product.data[0].attributes.therapeutical_action}
               </div>
-              <div className="text-gris text-xl mt-5  font-extrabold">Composición</div>
+              <div className="text-gris text-xl mt-5  font-extrabold">{t('pharmaceutics:composicion')}</div>
               <div className="text-gris text-lg mb-5 font-light">
                 {product.data[0].attributes.composition}
               </div>
-              <div className="text-gris text-xl mt-5  font-extrabold">Presentación</div>
+              <div className="text-gris text-xl mt-5  font-extrabold">{t('pharmaceutics:presentacion')}</div>
               <div className="text-gris text-lg  mb-5 font-light">
                 {product.data[0].attributes.presentation}
               </div>
@@ -182,9 +182,9 @@ export default function Product() {
       <div className="container mx-auto">
      
         <div className="text-center">
-          <span className="text-azul font-bold text-6xl">Tenemos mas productos </span>
+          <span className="text-azul font-bold text-6xl">{t('pharmaceutics:tenemos')} </span>
           <span className="text-rosa font-bold text-6xl lowercase">{category_name}</span>
-          <div className='pt-5 text-xl'>Los mejores productos farmacéuticos para tu bienestar</div>
+          <div className='pt-5 text-xl'>{t('pharmaceutics:mejores')}</div>
         </div>
 
         <div>
