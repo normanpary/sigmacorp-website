@@ -47,7 +47,7 @@ export default function Nutraceutics() {
       <div className="bg-[url('/static/images/dna.png')] bg-cover bg-center h-[150px] lg:h-[600px]">
         <div className="bg-gradient-to-r from-white/80 to-white/50 h-[150px] lg:h-[600px]">
           <canvas className="hidden lg:block mx-auto w-[300px] h-[200px] lg:w-[1200px] lg:h-[600px] " id="scene"></canvas>
-          <input className="invisible" id="copy" type="text" value="NUTRACÉUTICOS" />
+          <input className="invisible" id="copy" type="text" value={t('nutraceutics:nutraceuticos_texto')} />
         </div>
       </div>
 
@@ -57,13 +57,13 @@ export default function Nutraceutics() {
           <div className="container mx-auto pt-16">
             <div className="">
               <a href="#" className="hover:text-pink-700 font-bold">
-                Inicio
+              {t('nutraceutics:inicio_miga')}
               </a>{' '}
-              / Productos Nutracéuticos
+              / {t('nutraceutics:nutraceuticos_miga')}
             </div>
             <div className="font-extrabold  text-4xl lg:text-6xl">
-              <div className="text-pink-700 ">Productos</div>
-              <div className="text-violeta">Nutracéuticos</div>
+              <div className="text-pink-700 ">{t('nutraceutics:productos')}</div>
+              <div className="text-violeta">{t('nutraceutics:nutraceuticos')}</div>
             </div>
           </div>
         </div>
@@ -71,13 +71,10 @@ export default function Nutraceutics() {
       {/*FIN BANNER*/}
       <div className="container p-4 mx-auto lg:mt-[200px] lg:mb-[50px] text-center">
         <div className="lg:max-w-xl text-lg pt-5 text-center mx-auto">
-          Sigma Nutracéuticos ofrece <strong>suplementos y complementos nutricionales </strong>para
-          madres en etapa de gestación y lactancia, para bebés entre 6 meses para adelante así como
-          para el adulto mayor. Sigma es pionero en el{' '}
-          <strong>desarrollo de nanotecnología en Bolivia.</strong>
+        {t('nutraceutics:sigma_nutraceuticos_ofrece')}
         </div>
         <div className="lg:max-w-xl text-lg pt-5 text-center mx-auto">
-          <strong>SOMOS LA SOLUCIÓN A TU SALUD NUTRICIONAL</strong>
+          <strong>{t('nutraceutics:somos_la_solucion')}</strong>
         </div>
       </div>
 
@@ -92,7 +89,7 @@ export default function Nutraceutics() {
 
           <div className="text-xl">
             {' '}
-            Conoce nuestros productos. Selecciona uno y ve sus detalles.
+            {t('nutraceutics:conoce')}
           </div>
         </div>
       

@@ -13,7 +13,10 @@
       "about",
       "maquila",
       "contacts",
-      "news"
+      "news",
+      "pharmaceutics",
+      "nutraceutics",
+      "biosecurity"
     ],
     "/products": ["headerNavLinks"]
   }

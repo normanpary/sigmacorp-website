@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default function Pharmaceutics() {
+export default function Pharmaceutics({ posts, locale, availableLocales }) {
   
 
   const { t } = useTranslation()
@@ -57,11 +57,11 @@ export default function Pharmaceutics() {
       <div className="relative" id="cells">
         <div className="absolute w-full top-1/3 max-h-full">
           <div className="text-2xl text-center text-white font-extralight  ">
-            Sigmacorp desarrolla y elabora farmacéuticos de alta calidad.
+            {t('pharmaceutics:sigmacorp_desarrolla')}
           </div>
-          <div className="text-4xl lg:text-8xl text-center text-white font-extrabold py-5">FARMACÉUTICOS</div>
+          <div className="text-4xl lg:text-8xl text-center text-white font-extrabold py-5">{t('pharmaceutics:farmaceuticos')}</div>
           <div className="text-2xl text-center text-white font-extralight ">
-            Las enfermedades siguen evolucionando, nuestros productos también.
+          {t('pharmaceutics:enfermedades_evolucionando')}
           </div>
         </div>
       </div>
@@ -79,19 +79,17 @@ export default function Pharmaceutics() {
               <div>
                 <div className="">
                   <a href="/" className="hover:text-pink-700 font-bold">
-                    Inicio
+                  {t('pharmaceutics:inicio_miga')}
                   </a>{' '}
-                  / Farmacéuticos
+                  / {t('pharmaceutics:farmaceuticos_miga')}
                 </div>
                 <div className="flex flex-row font-bold text-2xl lg:text-5xl lg:leading-14">
                   <div className="text-violeta">
-                    Todos los productos de Sigma están desarrollados para sanarte y protegerte
+                  {t('pharmaceutics:todos_los_productos')}
                   </div>
                 </div>
                 <div className="max-w-2xl text-lg  py-5 ">
-                  Durante más de <strong>45 años</strong>, Sigma Corp ha trabajado incansablemente
-                  para <strong>desarrollar y brindar medicamentos</strong> de confianza que ayuden a
-                  las personas a mejorar, sentirse mejor y a <strong>vivir mejor</strong>.
+                {t('pharmaceutics:durante_mas')}
                 </div>
               </div>
             </motion.div>
@@ -155,14 +153,14 @@ export default function Pharmaceutics() {
             viewport={{ margin: '-10px' }}
           >
         <div className="container mx-auto text-center p-5 lg:py-10 ">
-          <div className="font-extrabold text-2xl lg:text-6xl  text-violeta">Farmacéuticos de</div>
+          <div className="font-extrabold text-2xl lg:text-6xl  text-violeta">{t('pharmaceutics:farmaceuticos_de')}</div>
           <div className="flex justify-center lg:pb-10">
             <img className="w-[280px] lg:w-[480px]" src="/static/images/logo-sigma-transparente.png" />
           </div>
 
           <div className="text-xl pb-5">
             {' '}
-            Navega por nuestros productos usando el buscador o seleccionando la dolencia.
+            {t('pharmaceutics:navega_por')}
           </div>
         </div>
       </motion.div>
@@ -174,20 +172,20 @@ export default function Pharmaceutics() {
               id="categoria"
               name="categoria"
               type="text"
-              placeholder="Categoría"
+              placeholder={t('pharmaceutics:categoria')}
             />
             <input
               className="ml-5 lg:ml-10 bg-violeta text-white border-b-2 border-0 border-white placeholder-white w-24 text-sm"
               id="producto"
               name="producto"
               type="text"
-              placeholder="Producto"
+              placeholder={t('pharmaceutics:producto')}
             />
             <button
               className="bg-rosa text-white font-bold lg:px-10 lg:py-3 rounded-full lg:ml-10 px-5 py-2 ml-5"
               type="submit"
             >
-              Buscar
+              {t('pharmaceutics:buscar')}
             </button>
           </form>
         </div>
