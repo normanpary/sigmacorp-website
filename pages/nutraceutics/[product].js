@@ -86,11 +86,11 @@ export default function Product() {
               <div>
                 <div className="p-4 mt-10 z-50">
                   <a href="/" className="hover:text-pink-700 font-bold">
-                    Inicio
+                  {t('nutraceutics:inicio_miga')}
                   </a>{' '}
                   /{' '}
                   <a href="../nutraceutics" className="hover:text-pink-700 font-bold">
-                    Nutracéuticos
+                  {t('nutraceutics:nutraceuticos_miga')}
                   </a>{' '}
                   / {nutraceutic_title}
                 </div>

@@ -65,16 +65,13 @@ export default function ProductBiosecurity() {
         <div className="container mx-auto pt-16 max-w-5xl">
           <div className="mb-10">
             <a href="/" className="hover:text-pink-700 font-bold">
-              Inicio
+            {t('biosecurity:inicio_miga')}
             </a>{' '}
             /{' '}
             <a href="../" className="hover:text-pink-700 font-bold">
-              Farmacéuticos
+            {t('biosecurity:bioseguridad_miga')}
             </a>{' '}
-            /{' '}
-            <a className="hover:text-pink-700 font-bold">
-              <Link href={`../${category_slug}`}>{category_name}</Link>
-            </a>{' '}
+            
             / {product.data[0].attributes.title}
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -111,10 +108,10 @@ export default function ProductBiosecurity() {
                         />
                       </div>
                       <div className="col-span-3">
-                        <div>¿Tienes alguna pregunta de este producto?</div>
+                        <div>{t('biosecurity:tienes_alguna_pregunta')}</div>
                         <div>
-                          <a href="#" className="text-azul font-bold hover:text-rosa">
-                            Escribe a Sigma Corp.
+                          <a href="../../recursos/contacto#formulario" className="text-azul font-bold hover:text-rosa">
+                          {t('biosecurity:escribe')}
                           </a>
                         </div>
                       </div>
@@ -154,9 +151,9 @@ export default function ProductBiosecurity() {
       <div className="container mx-auto">
      
         <div className="text-center">
-          <span className="text-azul font-bold text-6xl">Tenemos mas productos </span>
+          <span className="text-azul font-bold text-6xl">{t('biosecurity:tenemos_mas')} </span>
           <span className="text-rosa font-bold text-6xl lowercase">{category_name}</span>
-          <div className='pt-5 text-xl'>Los mejores productos farmacéuticos para tu bienestar</div>
+          <div className='pt-5 text-xl'>{t('biosecurity:los_mejores')}</div>
         </div>
 
         <div>
