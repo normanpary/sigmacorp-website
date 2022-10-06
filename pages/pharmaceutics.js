@@ -55,13 +55,13 @@ export default function Pharmaceutics() {
       
 
       <div className="relative" id="cells">
-        <div className="absolute w-full top-1/3">
+        <div className="absolute w-full top-1/3 max-h-full">
           <div className="text-2xl text-center text-white font-extralight  ">
             Sigmacorp desarrolla y elabora farmacéuticos de alta calidad.
           </div>
-          <div className="text-8xl text-center text-white font-extrabold py-5">FARMACÉUTICOS</div>
+          <div className="text-4xl lg:text-8xl text-center text-white font-extrabold py-5">FARMACÉUTICOS</div>
           <div className="text-2xl text-center text-white font-extralight ">
-            Las enfermadades siguen evolucionando, nuestros productos tambíen.
+            Las enfermedades siguen evolucionando, nuestros productos también.
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@ export default function Pharmaceutics() {
       {/**BANNER */}
       <div className="bg-gris_claro bg-cover bg-center">
         <div className="bg-gradient-to-r from-white/80 to-white/0 ">
-          <div className="container mx-auto py-16 grid grid-cols-2 gap-10">
+          <div className="container mx-auto  p-5 lg:py-16 grid grid-cols-1 lg:grid-cols-2 gap-10">
             <motion.div
               initial={{ opacity: 1, x: -200 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -83,9 +83,9 @@ export default function Pharmaceutics() {
                   </a>{' '}
                   / Farmacéuticos
                 </div>
-                <div className="flex flex-row font-bold text-5xl leading-14">
+                <div className="flex flex-row font-bold text-2xl lg:text-5xl lg:leading-14">
                   <div className="text-violeta">
-                    Todos los productos de Sigma estan desarrollados para sanarte y protegerte
+                    Todos los productos de Sigma están desarrollados para sanarte y protegerte
                   </div>
                 </div>
                 <div className="max-w-2xl text-lg  py-5 ">
@@ -154,37 +154,37 @@ export default function Pharmaceutics() {
             transition={{ duration: 0.5, ease: 'easeIn' }}
             viewport={{ margin: '-10px' }}
           >
-        <div className="container mx-auto text-center py-10 ">
-          <div className="font-extrabold text-6xl   text-violeta">Farmacéuticos de</div>
-          <div className="flex justify-center pb-10">
-            <img className="w-[480px]" src="/static/images/logo-sigma-transparente.png" />
+        <div className="container mx-auto text-center p-5 lg:py-10 ">
+          <div className="font-extrabold text-2xl lg:text-6xl  text-violeta">Farmacéuticos de</div>
+          <div className="flex justify-center lg:pb-10">
+            <img className="w-[280px] lg:w-[480px]" src="/static/images/logo-sigma-transparente.png" />
           </div>
 
-          <div className="text-xl">
+          <div className="text-xl pb-5">
             {' '}
             Navega por nuestros productos usando el buscador o seleccionando la dolencia.
           </div>
         </div>
       </motion.div>
-      <div className="h-20 bg-violeta flex items-center">
-        <div className="max-w-2xl mx-auto">
+      <div className="lg:h-20 bg-violeta flex items-center p-5">
+        <div className="lg:max-w-2xl mx-auto">
           <form action="#">
             <input
-              className="bg-violeta text-white border-b-2 border-0 border-white placeholder-white"
+              className="bg-violeta text-white border-b-2 border-0 border-white placeholder-white w-24 text-sm"
               id="categoria"
               name="categoria"
               type="text"
               placeholder="Categoría"
             />
             <input
-              className="ml-10 bg-violeta text-white border-b-2 border-0 border-white placeholder-white"
+              className="ml-5 lg:ml-10 bg-violeta text-white border-b-2 border-0 border-white placeholder-white w-24 text-sm"
               id="producto"
               name="producto"
               type="text"
               placeholder="Producto"
             />
             <button
-              className="bg-rosa text-white font-bold px-10 py-3 rounded-full ml-10"
+              className="bg-rosa text-white font-bold lg:px-10 lg:py-3 rounded-full lg:ml-10 px-5 py-2 ml-5"
               type="submit"
             >
               Buscar
@@ -195,7 +195,7 @@ export default function Pharmaceutics() {
 
       {/**Pharmacetuical categories */}
       <div className="container mx-auto">
-        <div className="grid grid-cols-3 gap-8 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-8 lg:py-12 p-5">
           {isLoading && <div>------------------LOADING ---------------</div>}
           {isSuccess &&
             categories.data.map((category) => (

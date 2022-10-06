@@ -49,10 +49,10 @@ export default function About({ posts, locale, availableLocales }) {
                   <div className="text-violeta">{t('about:nosotros')}</div>
                 </div>
                 <div className="">
-                  <a href="#" className="hover:text-pink-700 font-bold">
-                    Inicio
+                  <a href="./" className="hover:text-pink-700 font-bold">
+                  {t('about:inicio')}
                   </a>{' '}
-                  / Sobre nosotros
+                  / {t('about:sobre_nosotros')}
                 </div>
               </div>
             </motion.div>
@@ -236,9 +236,9 @@ export default function About({ posts, locale, availableLocales }) {
                     src={'static/images/home/innovacion.png'}
                   />
                 </div>
-                <div className="text-center font-black text-xl uppercase pt-4">Innovación</div>
+                <div className="text-center font-black text-xl uppercase pt-4">{t('home:innovacion')}</div>
                 <div className="text-center pt-4 text-sm">
-                  SIGMA Corp. fue pionero en la producción de Complementos Nutricionales
+                {t('home:innovacion_text')}
                 </div>
               </div>
 
@@ -246,10 +246,9 @@ export default function About({ posts, locale, availableLocales }) {
                 <div className="min-h-[80px] flex flex-col-reverse">
                   <img className="" src={'static/images/home/crecimiento.png'} />
                 </div>
-                <div className="text-center font-black text-xl uppercase pt-4">Crecimiento</div>
+                <div className="text-center font-black text-xl uppercase pt-4">{t('home:crecimiento')}</div>
                 <div className="text-center pt-4 text-sm">
-                  Por su constante crecimiento adquirió una moderna infraestructura que cuenta con
-                  más de 15.000 m2.
+                {t('home:crecimiento_text')}
                 </div>
               </div>
 
@@ -257,9 +256,9 @@ export default function About({ posts, locale, availableLocales }) {
                 <div className="min-h-[80px] flex flex-col-reverse">
                   <img className="" src={'static/images/home/desarrollo.png'} />
                 </div>
-                <div className="text-center font-black text-xl uppercase pt-4">Desarrollo</div>
+                <div className="text-center font-black text-xl uppercase pt-4">{t('home:desarrollo')}</div>
                 <div className="text-center pt-4 text-sm">
-                  Anualmente se incrementan medicamentos para cubrir diferentes patologías.
+                {t('home:desarrollo_text')}
                 </div>
               </div>
 
@@ -267,10 +266,9 @@ export default function About({ posts, locale, availableLocales }) {
                 <div className="min-h-[80px] flex flex-col-reverse">
                   <img className="" src={'static/images/home/proyeccion.png'} />
                 </div>
-                <div className="text-center font-black text-xl uppercase pt-4">Proyección</div>
+                <div className="text-center font-black text-xl uppercase pt-4">{t('home:proyeccion')}</div>
                 <div className="text-center pt-4 text-sm">
-                  Se tiene proyectado duplicar la producción actual e incursionar en las áreas de
-                  Cosmética y Veterinaria.
+                {t('home:proyeccion_text')}
                 </div>
               </div>
             </div>
