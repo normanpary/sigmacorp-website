@@ -157,26 +157,25 @@ const LayoutWrapper = ({ children }) => {
                       >
                         {t('headerNavLinks:biosecurity')}
                   </Link>*/}
+                       <Link
+                      key="nutraceutics"
+                      href="/nutraceutics"
+                      class="px-4 py-2 block text-gris hover:text-rosa text-lg"
+                    >
+                      {t('headerNavLinks:nutraceutics')}
+                    </Link>
+                    <Link
+                      key="bioseguridad"
+                      href="/bioseguridad"
+                      class="px-4 py-2 block text-gris hover:text-rosa text-lg"
+                    >
+                      {t('headerNavLinks:biosecurity')}
+                    </Link>
+                    
+                     
                       <a
-                        href="/nutraceutics"
-                        replace={true}
-                        prefetch={false}
-                        class="px-4 py-2 block text-gris hover:text-rosa text-lg"
-                      >
-                        {t('headerNavLinks:nutraceutics')}
-                      </a>
-                      <a
-                        href="/bioseguridad"
-                        replace={true}
-                        prefetch={false}
-                        class="px-4 py-2 block text-gris hover:text-rosa text-lg"
-                      >
-                        {t('headerNavLinks:biosecurity')}
-                      </a>
-                      <a
-                        href="/pharmaceutics"
-                        replace={true}
-                        prefetch={false}
+                        href={t('headerNavLinks:link_pharmaceutics')}
+                        
                         class="px-4 py-2 block text-gris hover:text-rosa text-lg"
                       >
                         {t('headerNavLinks:pharmaceutics')}

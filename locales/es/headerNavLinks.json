@@ -15,5 +15,6 @@
   "news": "Noticias",
   "csr": "RSE",
   "pharmacovigilance": "Farmacovigilancia",
-  "search":"Buscar"
+  "search":"Buscar",
+  "link_pharmaceutics":"/pharmaceutics"
 }
