@@ -19,9 +19,21 @@
     "grasas":"Grasas Totales",
     "colesterol":"Colesterol",
     "carbohidratos":"Carbohidratos",
-    "buscar":"Buscar",
-    "buscar":"Buscar",
-    "buscar":"Buscar",
-    "buscar":"Buscar"
+    "bolivia":"Producto elaborado para el Estado Plurinacional de Bolivia",
+    "basado":"Basado en ",
+    "de_producto":"g de producto en relación a los valores diarios recomendados.",
+    "descripcion_del":"DESCRIPCIÓN DEL",
+    "producto":"PRODUCTO",
+    "ingredientes":"INGREDIENTES /",
+    "dosificacion":"DOSIFICACIÓN",
+    "preparacion":"PREPARACIÓN",
+    "duracion":"DURACIÓN",
+    "indicaciones":"INDICACIONES",
+    "tabla":"TABLA",
+    "nutricional":"NUTRICIONAL",
+    "sigmacorp_investiga":"Sigmacorp investiga, desarrolla y comercializa suplementos y complementos de alta calidad.",
+    "tu_salud":"Tu salud es el centro de lo que hacemos",
+    "tenemos":"Tenemos más productos",
+    "mejores":"Los mejores productos nutracéuticos para tu bienestar"
 
 }

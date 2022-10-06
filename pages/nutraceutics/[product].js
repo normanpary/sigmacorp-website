@@ -115,7 +115,7 @@ export default function Product() {
                           src="/static/images/productos/receta-rosa.png"
                         />
                       </div>
-                      <div className="text-center font-bold pt-3 text-gris">Nutracéutico</div>
+                      <div className="text-center font-bold pt-3 text-gris">{t('nutraceutics:nutraceutico')}</div>
                     </div>
                     <div className="p-4 ">
                       <div>
@@ -124,7 +124,7 @@ export default function Product() {
                           src="/static/images/productos/receta-rosa.png"
                         />
                       </div>
-                      <div className="text-center font-bold pt-3 text-gris">Venta libre</div>
+                      <div className="text-center font-bold pt-3 text-gris">{t('nutraceutics:venta_libre')}</div>
                     </div>
                     {nutraceutic_made_for_bolivia == true &&
                     <div className="p-4 col-span-2 border-t ">
@@ -138,7 +138,7 @@ export default function Product() {
                             />
                           </div>
                           <div className="col-span-3">
-                            <div>Producto elaborado para el Estado Plurinacional de Bolivia</div>
+                            <div>{t('nutraceutics:bolivia')}</div>
                             
                           </div>
                         </div>
@@ -156,10 +156,10 @@ export default function Product() {
                             />
                           </div>
                           <div className="col-span-3">
-                            <div>¿Tienes alguna pregunta de este producto?</div>
+                            <div>{t('nutraceutics:pregunta')}</div>
                             <div>
                               <a href="../recursos/contacto#formulario" className="text-azul font-bold hover:text-rosa">
-                                Escribe a Sigma Corp.
+                              {t('nutraceutics:escribe')}
                               </a>
                             </div>
                           </div>
@@ -194,14 +194,14 @@ export default function Product() {
               >
                 <div className="py-5">
                   <div className="text-azul text-4xl leading-normal  font-extrabold pb-5">
-                    VALORES <span className="text-rosa">NUTRICIONALES </span>
+                  {t('nutraceutics:valores')} <span className="text-rosa">{t('nutraceutics:nutricionales')} </span>
                     
                   </div>
                   
                   <div className="grid grid-cols-3 lg:grid-cols-5">
                     {/* ------------ CIRCULO ENERGIA*/}        
                     <div>
-                      <div className="text-rosa font-black text-center text-sm h-10">Energía</div>
+                      <div className="text-rosa font-black text-center text-sm h-10">{t('nutraceutics:energia')}</div>
                       <div className="p-3 font-extrabold">
                         <VisibilitySensor>
                           {({ isVisible }) => {
@@ -228,7 +228,7 @@ export default function Product() {
                     </div>
                      {/* ------------ CIRCULO PROTEINAS*/}        
                      <div>
-                      <div className="text-blue-900 font-black text-center text-sm h-10">Proteínas</div>
+                      <div className="text-blue-900 font-black text-center text-sm h-10">{t('nutraceutics:proteinas')}</div>
                       <div className="p-3 font-extrabold">
                         <VisibilitySensor>
                           {({ isVisible }) => {
@@ -255,7 +255,7 @@ export default function Product() {
                     </div>
                      {/* ------------ CIRCULO GRASAS TOTALES*/}        
                      <div>
-                      <div className="text-green-500 font-black text-center text-sm h-10">Grasas Totales</div>
+                      <div className="text-green-500 font-black text-center text-sm h-10">{t('nutraceutics:grasas')}</div>
                       <div className="p-3 font-extrabold">
                         <VisibilitySensor>
                           {({ isVisible }) => {
@@ -282,7 +282,7 @@ export default function Product() {
                     </div>
                      {/* ------------ CIRCULO COLESTEROL*/}        
                      <div>
-                      <div className="text-sky-500 font-black text-center text-sm h-10">Colesterol</div>
+                      <div className="text-sky-500 font-black text-center text-sm h-10">{t('nutraceutics:colesterol')}</div>
                       <div className="p-3 font-extrabold">
                         <VisibilitySensor>
                           {({ isVisible }) => {
@@ -309,7 +309,7 @@ export default function Product() {
                     </div>
                     {/* ------------ CIRCULO CARBOHIDRATOS*/}        
                     <div>
-                      <div className="text-orange-400 font-black text-center text-sm h-10">Carbohidratos</div>
+                      <div className="text-orange-400 font-black text-center text-sm h-10">{t('nutraceutics:carbohidratos')}</div>
                       <div className="p-3 font-extrabold">
                         <VisibilitySensor>
                           {({ isVisible }) => {
@@ -335,7 +335,7 @@ export default function Product() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-sm text-gris  leading-normal px-5 text-center font-bold pb-5">Basado en {nutraceutic_base_weight}g de producto en relación a los valores diarios recomendados.</div>
+                  <div className="text-sm text-gris  leading-normal px-5 text-center font-bold pb-5">{t('nutraceutics:basado')} {nutraceutic_base_weight}{t('nutraceutics:de_producto')}</div>
 
                   <div className="text-lg text-gris  leading-normal ">
                     {nutraceutic_description}
@@ -352,7 +352,7 @@ export default function Product() {
                 
                 <div className="">
                   <div className="text-azul text-4xl leading-normal  font-extrabold ">
-                    DESCRIPCIÓN DEL <span className="text-rosa">PRODUCTO </span>
+                  {t('nutraceutics:descripcion_del')} <span className="text-rosa">{t('nutraceutics:producto')} </span>
                   </div>
 
                   <div className="text-lg text-gris  leading-normal ">
@@ -369,7 +369,7 @@ export default function Product() {
                 {/* CAJA INGREDIENTES */}
                 <div className="py-5">
                   <div className="text-azul text-4xl leading-normal  font-extrabold ">
-                    INGREDIENTES / <span className="text-rosa">DOSIFICACIÓN </span>
+                  {t('nutraceutics:ingredientes')} <span className="text-rosa">{t('nutraceutics:dosificacion')} </span>
                   </div>
 
                   <div className="text-lg text-gris leading-normal ">{nutraceutic_ingredients}</div>
@@ -384,7 +384,7 @@ export default function Product() {
                 {/* CAJA PREPARACION */}
                 <div className="py-5">
                   <div className="text-azul text-4xl leading-normal  font-extrabold ">
-                    PREPARACIÓN <span className="text-rosa"> </span>
+                  {t('nutraceutics:preparacion')} <span className="text-rosa"> </span>
                   </div>
 
                   <div className="text-lg text-gris leading-normal ">{nutraceutic_preparation}</div>
@@ -399,7 +399,7 @@ export default function Product() {
                 {/* CAJA DURACION */}
                 <div className="py-5">
                   <div className="text-azul text-4xl leading-normal  font-extrabold ">
-                    DURACIÓN <span className="text-rosa"> </span>
+                  {t('nutraceutics:duracion')} <span className="text-rosa"> </span>
                   </div>
 
                   <div className="text-lg text-gris leading-normal ">{nutraceutic_duration}</div>
@@ -414,7 +414,7 @@ export default function Product() {
                 {/* CAJA INDICACIONES */}
                 <div className="py-5">
                   <div className="text-azul text-4xl leading-normal  font-extrabold ">
-                    INDICACIONES <span className="text-rosa"> </span>
+                  {t('nutraceutics:indicaciones')} <span className="text-rosa"> </span>
                   </div>
 
                   <div className="text-lg text-gris leading-normal ">{nutraceutic_indications}</div>
@@ -424,7 +424,7 @@ export default function Product() {
                 {/* CAJA TABLA NUTRICIONAL */}
                 <div className="py-5">
                   <div className="text-azul text-4xl leading-normal  font-extrabold ">
-                    TABLA <span className="text-rosa">NUTRICIONAL </span>
+                  {t('nutraceutics:tabla')} <span className="text-rosa">{t('nutraceutics:nutricional')} </span>
                   </div>
 
                   <div className="text-lg text-gris leading-normal ">
@@ -447,11 +447,11 @@ export default function Product() {
               <img className="" src="/static/images/logo-nutraceuticos-blanco.png" />
             </div>
             <div className="text-2xl text-center text-white font-extralight  ">
-              Sigmacorp investiga, desarrolla y comercializa suplementos y complementos de alta calidad.
+            {t('nutraceutics:sigmacorp_investiga')}
             </div>
-            <div className=" text-4xl lg:text-8xl text-center text-white font-extrabold py-5">NUTRACÉUTICOS</div>
+            <div className=" text-4xl lg:text-8xl text-center text-white font-extrabold py-5">{t('nutraceutics:nutraceuticos_texto')}</div>
             <div className="text-2xl text-center text-white font-extralight ">
-              Tu salud es el centro de lo que hacemos
+            {t('nutraceutics:tu_salud')}
             </div>
           </div>
       
@@ -466,10 +466,10 @@ export default function Product() {
         >
           <div className="container mx-auto">
             <div className="text-center">
-              <span className="text-azul font-bold text-6xl">Tenemos más productos </span>
-              <span className="text-rosa font-bold text-6xl lowercase">nutracéuticos</span>
+              <span className="text-azul font-bold text-6xl">{t('nutraceutics:tenemos')} </span>
+              <span className="text-rosa font-bold text-6xl lowercase">{t('nutraceutics:nutraceuticos')}</span>
               <div className="pt-5 text-xl">
-                Los mejores productos nutracéuticos para tu bienestar
+              {t('nutraceutics:mejores')}
               </div>
             </div>
 
