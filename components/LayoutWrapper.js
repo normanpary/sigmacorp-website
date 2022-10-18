@@ -23,7 +23,12 @@ const LayoutWrapper = ({ children }) => {
 
   const changeLanguage = (e) => {
     const locale = e.value
-    router.push(router.asPath, router.asPath, { locale })
+    
+    //solucion provisional al error en idiomas. Redireccion al homepage del idioma
+    router.push("/", "/", { locale })
+
+    //lo siguiente es para direccionar a la ruta del idioma que correpsonde
+    //router.push(router.asPath, router.asPath, { locale })
   }
   const customStyles = {
     control: (styles) => ({
@@ -266,7 +271,7 @@ const LayoutWrapper = ({ children }) => {
                 </div>
                 <div className="flex divide-x divide-gray-300 justify-items-stretch">
                   <div className="flex px-3 self-center">
-                    <a href="http://164.92.66.171:1337/admin" target="_blank"><UserIcon className="" /></a>
+                    <a href="https://admin.sigmacorp.com.bo" target="_blank"><UserIcon className="" /></a>
                   </div>
                   <div className="px-3 text-sm">
                     <MyComponent />

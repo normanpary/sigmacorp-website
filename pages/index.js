@@ -31,6 +31,8 @@ export default function HomePage({ posts, locale, availableLocales }) {
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
+           
+           {locale== "es" &&
            <FsLightbox
         openOnMount={true} 
         sources = {[`https://www.youtube.com/watch?v=tDLOFR5P1jQ`]}
@@ -38,6 +40,7 @@ export default function HomePage({ posts, locale, availableLocales }) {
         showThumbsOnMount={true}
         
       />
+           }
       <Carousel className="z-0" />
 
       {/** 
