@@ -55,6 +55,7 @@ export default function Product() {
   const nutraceutic_image = nutraceutic.data[0].attributes.image.data.attributes.url
   const nutraceutic_short_description = nutraceutic.data[0].attributes.short_description
   const nutraceutic_description = nutraceutic.data[0].attributes.description
+  const nutraceutic_claim = nutraceutic.data[0].attributes.claim
   const nutraceutic_technical_description = nutraceutic.data[0].attributes.technical_description
   const nutraceutic_ingredients = nutraceutic.data[0].attributes.ingredients
   const nutraceutic_preparation = nutraceutic.data[0].attributes.preparation
@@ -178,9 +179,12 @@ export default function Product() {
                 transition={{ duration: 1, ease: 'easeIn' }}
                 viewport={{ margin: '-30px' }}
               >
-                <div className='h-[450px]'>
-                <div className="text-rosa text-4xl lg:text-6xl lg:mt-[200px] uppercase ">{nutraceutic_title}</div>
-                <div className="text-gray-900 text-xl leading-normal pt-10 mb-[100px]">
+                <div className='h-[500px]'>
+                <div className="text-rosa text-4xl lg:text-6xl lg:mt-[150px] uppercase ">{nutraceutic_title}</div>
+                <div className="text-gray-900 text-xl font-bold pt-10">
+                  {nutraceutic_claim}
+                </div>
+                <div className="text-gray-900 text-xl leading-normal pt-5 pb-10 mb-[150px]">
                   {nutraceutic_short_description}
                 </div>
                 </div>

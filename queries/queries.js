@@ -253,7 +253,7 @@ export const getNutraceuticDetails = async (language, slug) => {
                   }
                 }
               }
-
+              claim
               description
               short_description
               energy
