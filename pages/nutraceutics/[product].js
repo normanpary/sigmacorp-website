@@ -180,13 +180,11 @@ export default function Product() {
                 viewport={{ margin: '-30px' }}
               >
                 <div className='h-[500px]'>
-                <div className="text-rosa text-4xl lg:text-6xl lg:mt-[150px] uppercase ">{nutraceutic_title}</div>
-                <div className="text-gray-900 text-xl font-bold pt-10">
+                
+                <div className="text-azul text-2xl lg:text-4xl lg:mt-[100px]  lg:leading-normal">
                   {nutraceutic_claim}
                 </div>
-                <div className="text-gray-900 text-xl leading-normal pt-5 pb-10 mb-[150px]">
-                  {nutraceutic_short_description}
-                </div>
+                
                 </div>
               </motion.div>
               {/* CAJA VALORES */}
@@ -197,6 +195,10 @@ export default function Product() {
                 viewport={{ margin: '-180px' }}
               >
                 <div className="py-5">
+                <div className="text-rosa text-4xl lg:text-6xl lg:mt-[10px] uppercase ">{nutraceutic_title}</div>
+                <div className="text-gray-900 text-xl leading-normal pt-5 pb-10 mb-[50px]">
+                  {nutraceutic_short_description}
+                </div>
                   <div className="text-azul text-4xl leading-normal  font-extrabold pb-5">
                   {t('nutraceutics:valores')} <span className="text-rosa">{t('nutraceutics:nutricionales')} </span>
                     
