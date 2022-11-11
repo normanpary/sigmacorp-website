@@ -6,6 +6,7 @@ const headerNavLinks = [
 
   { href: '/bioseguridad', title: 'Biosecurity' },
   { href: '/maquila', title: 'Maquila' },
+  { href: '/noticias', title: 'News' },
   { href: '/recursos/contacto', title: 'Contact' },
 ]
 

@@ -45,7 +45,7 @@ export default function Contacto({ posts, locale, availableLocales }) {
             viewport={{ margin: '0px' }}
           >
             <div className="container mx-auto pt-24">
-              <div className=" flex flex-row font-extrabold text-6xl">
+              <div className=" lg:flex lg:flex-row font-extrabold text-6xl">
                 <div className="text-pink-700 ">NOTICIAS&nbsp;</div>
                 <div className="text-violeta">SIGMACORP</div>
               </div>
@@ -63,7 +63,7 @@ export default function Contacto({ posts, locale, availableLocales }) {
 
       {/*QUIENES SOMOS*/}
       <div className="bg-hexagon bg-no-repeat bg-left-top">
-        <div className="container mx-auto py-14">
+        <div className="container mx-auto py-14 px-5">
           <motion.div
             initial={{ opacity: 0, x: -200 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -72,7 +72,7 @@ export default function Contacto({ posts, locale, availableLocales }) {
           >
             <div></div>
           </motion.div>
-          <div className="container relative mb-10 mx-auto  grid grid-cols-3 gap-24 ">
+          <div className="container relative mb-10 mx-auto  grid grid-cols-2 lg:grid-cols-3 lg:gap-24 gap-5 ">
           {isSuccess &&
               events.data.map((event) => (
                 <EventCard
