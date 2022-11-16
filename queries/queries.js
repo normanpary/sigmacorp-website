@@ -576,7 +576,7 @@ export const getNews = async (language) => {
   const data = await fetchData(
     `
     query {
-      news (locale:"${language}", pagination: { start: 0, limit: 100 }){
+      news (locale:"${language}", pagination: { start: 0, limit: 100 },sort:["date:desc"]){
         data {  
           attributes{
             title

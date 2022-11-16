@@ -14,14 +14,40 @@ import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
 //import { useEffect, useState } from 'react'
 import React, { useState } from 'react'
+import { dehydrate, QueryClient, useQuery } from 'react-query'
 import { motion } from 'framer-motion'
 import { blue, red } from 'tailwindcss/colors'
 import FsLightbox from 'fslightbox-react'
+import { getNews} from 'queries/queries'
+import { useRouter } from 'next/router'
+import EventCard from '@/components/eventos/EventCard'
+import Link from 'next/link'
+
+export async function getServerSideProps(context) {
+  
+  const queryClient = new QueryClient()
+  await queryClient.prefetchQuery(['queryEvents', context.locale], async () =>
+    getNews(context.locale)
+  )
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  }
+}
 
 export default function HomePage({ posts, locale, availableLocales }) {
   const { t } = useTranslation()
   const [toggler, setToggler] = useState(false)
   
+    const router = useRouter()
+    const { data: events, isSuccess, isLoading } = useQuery(
+    ['queryEvents', router.locale],
+    async () => getNews(router.locale)
+  )
+  
+
   return (
     <div className='overflow-hidden'>
       
@@ -158,7 +184,7 @@ export default function HomePage({ posts, locale, availableLocales }) {
           </div>
         </div>
       </div>
-      {/**BLOG */}
+      {/**CSR */}
       <div className="bg-gray-200 bg-fondo bg-no-repeat bg-left-top">
         <div className=" container mx-auto p-10 pt-20 mt-8">
           <motion.div
@@ -294,21 +320,98 @@ export default function HomePage({ posts, locale, availableLocales }) {
           </div>
         </div>
       </div>
+      {/**NEWS */}
+      <div className="bg-white bg-fondo bg-no-repeat bg-left-top">
+        <div className=" container mx-auto p-10 pt-20 mt-8">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeIn' }}
+            viewport={{ margin: '-100px' }}
+          >
+            <div>
+              <p className="font-extrabold text-gray-500 text-center text-lg">
+                {t('home:nuestras_noticias')}
+              </p>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeIn' }}
+            viewport={{ margin: '-100px' }}
+          >
+            <div className="flex justify-center mt-4">
+              <p className="text-xl sm:text-2xl md:text-5xl text-rosa font-extrabold">
+                {t('home:sigma_titulo_noticias')}
+              </p>
+              <p className="text-xl sm:text-2xl md:text-5xl text-violeta font-extrabold pl-2">
+                {t('home:noticias')}
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeIn' }}
+            viewport={{ margin: '-100px' }}
+          >
+            <Link href={"./noticias"} aria-label={`Link to News`}>
+            <a >
+           <div
+              className="hover:bg-rosa bg-violeta text-white text-xs rounded-full py-1 px-4 mt-8 ml-8 mb-2 inline-block"
+              
+            >{t('home:ver_noticias')}
+              </div>
+              </a>
+            </Link>
+          </motion.div>
+          <div className="lg:p-4 sm:p-8 justify-center">
+            {/**<BlogCarousel posts={posts} />*/}
+
+            
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: 'easeIn' }}
+              viewport={{ margin: '-100px' }}
+            >
+
+              
+              {/*NOTICIAS*/}
+      <div className="bg-hexagon bg-no-repeat bg-left-top">
+        <div className="container mx-auto py-14 px-5">
+          <motion.div
+            initial={{ opacity: 0, x: -200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: 'easeIn', delay: 0 }}
+            viewport={{ margin: '-300px' }}
+          >
+            <div></div>
+          </motion.div>
+          <div className="container relative mb-10 mx-auto  grid grid-cols-2 lg:grid-cols-3 lg:gap-24 gap-5 ">
+          {isSuccess &&
+              events.data.map((event) => (
+                <EventCard
+                  title={event.attributes.title}
+                  date={event.attributes.date}
+                  description={event.attributes.description}
+                  main_image={event.attributes.main_image.data.attributes.url}
+                  slug={event.attributes.slug}
+                  path="noticias"
+                />
+              ))}
+      
+          </div>
+        </div>
+      </div>
+      {/*FIN NOTICIAS*/}
+            </motion.div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
 
-export async function getServerSideProps({ locale, locales }) {
-  {
-    try {
-      const response = await axios.get(URL_BLOG_POSTS + locale)
-      return {
-        props: { posts: response.data, locale, availableLocales: locales },
-      }
-    } catch (error) {
-      return {
-        props: { posts: [], locale, availableLocales: locales },
-      }
-    }
-  }
-}
