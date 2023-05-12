@@ -2,6 +2,8 @@ import useTranslation from 'next-translate/useTranslation'
 import Formulario from '@/components/contacts/Formulario'
 import { motion } from 'framer-motion'
 import { dehydrate, QueryClient, useQuery } from 'react-query'
+import { useState } from 'react'
+import { Formik, Form, Field } from 'formik'
 
 export async function getStaticProps({ locale }) {
   const queryClient = new QueryClient()
@@ -14,6 +16,38 @@ export async function getStaticProps({ locale }) {
 }
 export default function Maquila() {
   const { t } = useTranslation()
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+  
+  const handleSubmit = (e) => { 
+    e.preventDefault()
+    console.log('Sending')
+  let data = {
+      name,
+      email,
+      message
+    }
+  fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }).then((res) => {
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+        setSubmitted(true)
+        setName('')
+        setEmail('')
+        setBody('')
+      }
+    })
+  }
+
   return (
     <>
       {/**BANNER */}
@@ -103,24 +137,51 @@ export default function Maquila() {
             </div>
           </div>
           <div className="mb-20 text-lg text-gris gap-y-20 bg-gris_claro rounded-3xl w-3/4 mx-auto p-12">
-            <form className='grid grid-cols-12 gap-5'>
+            
+            <Formik
+              initialValues={{ name: '', email: '' }}
+                  validate={values => {
+                    const errors = {}
+                    if (!values.name) {
+                      errors.name = 'Required'
+                    }
+                    if (!values.email) {
+                      errors.email = 'Required'
+                    } else if (
+                      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                    ) {
+                      errors.email = 'Invalid email address'
+                    }
+                    return errors
+                  }}
+                  onSubmit={(values, { setSubmitting }) => {
+                    setTimeout(() => {
+                      alert(JSON.stringify(values, null, 2))
+                      setSubmitting(false)
+                    }, 400)
+                  }}
+            
+            >
+            <form className='grid grid-cols-12 gap-5' onSubmit={handleSubmit}>
               <div className="uppercase text-xl font-black col-span-12">
               Datos del medicamento
               </div>
               <div class="mb-2 col-span-6">
                 <input
                   type="text"
-                  id="producto"
+                  name="productName"
+                  onChange={(e)=>{setProductName(e.target.value)}} 
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-xl italic rounded-lg focus:ring-rosa focus:border-rosa block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 p-3"
                   placeholder="Medicamento / Producto"
-                  required=""
+                  
                 />
               </div>
               <div class="mb-2 col-span-3">
                 
                 <input
                   type="text"
-                  id="lote"
+                  name="productLot"
+                  onChange={(e)=>{setProductLot(e.target.value)}} 
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-xl italic rounded-lg focus:ring-rosa focus:border-rosa block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 p-3"
                   placeholder="Lote / Número de lote"
                   required=""
@@ -143,7 +204,9 @@ export default function Maquila() {
               <div class="mb-2 col-span-6">
                 <input
                   type="text"
-                  id="nombre"
+                 
+                  name="name"
+                  onChange={(e)=>{setName(e.target.value)}} 
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-xl italic rounded-lg focus:ring-rosa focus:border-rosa block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 p-3"
                   placeholder="Nombres"
                   required=""
@@ -183,7 +246,8 @@ export default function Maquila() {
                 
                 <input
                   type="text"
-                  id="telefono"
+                  name="email"
+                  onChange={(e)=>{setEmail(e.target.value)}} 
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-xl italic rounded-lg focus:ring-rosa focus:border-rosa block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 p-3"
                   placeholder="Teléfono"
                   required=""
@@ -230,7 +294,8 @@ export default function Maquila() {
                 
                 <textarea
                   rows="5"
-                  id="mensaje"
+                  name="mensaje"
+                  onChange={(e)=>{setMessage(e.target.value)}} 
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-xl italic rounded-lg focus:ring-rosa focus:border-rosa block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 p-3"
                   placeholder="Descripción detallada del evento y sintomas"
                   required=""
@@ -242,11 +307,13 @@ export default function Maquila() {
               <button
                 type="submit"
                 className="mx-auto text-white bg-rosa hover:bg-azul_oscuro focus:ring-4 focus:outline-none focus:ring-blue-300  rounded-lg text-2xl font-normal  px-24 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                
               >
                 Enviar reporte a Farmacovigilancia
               </button>
               </div>
             </form>
+            </Formik>
           </div>
         </div>
       </div>

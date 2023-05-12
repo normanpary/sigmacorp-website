@@ -2,9 +2,16 @@ import useTranslation from 'next-translate/useTranslation'
 import Formulario from '@/components/contacts/Formulario'
 import { motion } from 'framer-motion'
 import { dehydrate, QueryClient, useQuery } from 'react-query'
+import { useState } from 'react'
 
 export async function getStaticProps({ locale }) {
   const queryClient = new QueryClient()
+
+  const [name, setName] = useState('')
+const [email, setEmail] = useState('')
+const [message, setMessage] = useState('')
+const [submitted, setSubmitted] = useState(false)
+
 
   return {
     props: {

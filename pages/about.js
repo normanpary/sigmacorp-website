@@ -95,6 +95,29 @@ export default function About({ posts, locale, availableLocales }) {
             </div>
           </motion.div>
         </div>
+        <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: 'easeIn' }}
+              viewport={{ margin: '-100px' }}
+            >
+        <div className="container mx-auto py-14  grid grid-cols-1 lg:grid-cols-2 gap-16">
+        
+          <div>
+          <p className="text-xl sm:text-2xl md:text-6xl text-blue-800 font-extrabold">
+          {t('about:vision')}
+              </p>
+          <p className="mt-2 md:mt-4 text-lg line md:pr-8 leading-8 text-justify"> {t('about:vision_contenido')}</p>
+
+          </div>
+          <div>
+          <p className="text-xl sm:text-2xl md:text-6xl text-blue-800 font-extrabold">
+          {t('about:mision')}
+              </p>
+              <p className="mt-2 md:mt-4 text-lg line md:pr-8 leading-8 text-justify">  {t('about:mision_contenido')}</p>
+          </div>
+        </div>
+        </motion.div>
       </div>
       {/*FIN QUIENES SOMOS*/}
       {/*NUESTROS PROPOSITOS*/}
@@ -132,16 +155,16 @@ export default function About({ posts, locale, availableLocales }) {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, ease: 'easeIn' }}
-              viewport={{ margin: '-200px' }}
+              viewport={{ margin: '-100px' }}
             >
               <div>
-                <p className="font-extrabold pl-8 text-gray-500">{t('about:valores')}</p>
+                <p className="font-extrabold pl-8 text-gray-500">{t('about:importante')}</p>
                 <div className="pl-8 pr-8">
                   <p className="text-xl md:text-6xl text-pink-700 font-extrabold">
-                    {t('about:cultura')}
+                  {t('about:nuestros')}
                   </p>
                   <p className="text-xl md:text-6xl text-blue-800 font-extrabold">
-                    {t('about:organizacional')}
+                  {t('about:valores')}
                   </p>
                 </div>
               </div>
@@ -152,37 +175,52 @@ export default function About({ posts, locale, availableLocales }) {
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: 'easeIn' }}
-            viewport={{ margin: '-200px' }}
+            viewport={{ margin: '-100px' }}
           >
             <div className="container mx-auto px-16 grid lg:grid-cols-2 gap-16">
               <div className="space-y-4">
                 <p className="text-lg md:text-3xl text-pink-700 font-black">
                   {t('about:integridad')}
                 </p>
-                <p className="text-lg pl-6 text-gray-600"> {t('about:integridad_text')}</p>
-              </div>
-              <div className="space-y-4">
-                <p className="text-lg md:text-3xl text-pink-700 font-black">{t('about:etica')}</p>
-                <p className="text-lg pl-6 text-gray-600"> {t('about:etica_text')}</p>
-              </div>
-              <div className="space-y-4">
-                <p className="text-lg md:text-3xl text-pink-700 font-black">
-                  {t('about:eficacia')}
-                </p>
-                <p className="text-lg pl-6 text-gray-600"> {t('about:eficacia_text')}</p>
-              </div>
-              <div className="space-y-4">
-                <p className="text-lg md:text-3xl text-pink-700 font-black">
-                  {t('about:compromiso')}
-                </p>
-                <p className="text-lg pl-6 text-gray-600"> {t('about:compromiso_text')}</p>
+                <p className="text-lg pl-6 text-gray-600 text-justify"> {t('about:integridad_text')}</p>
               </div>
               <div className="space-y-4">
                 <p className="text-lg md:text-3xl text-pink-700 font-black">
                   {t('about:honestidad')}
                 </p>
-                <p className="text-lg pl-6 text-gray-600"> {t('about:honestidad_text')}</p>
+                <p className="text-lg pl-6 text-gray-600" text-justify> {t('about:honestidad_text')}</p>
               </div>
+              <div className="space-y-4">
+                <p className="text-lg md:text-3xl text-pink-700 font-black">{t('about:etica')}</p>
+                <p className="text-lg pl-6 text-gray-600 text-justify"> {t('about:etica_text')}</p>
+              </div>
+              <div className="space-y-4">
+                <p className="text-lg md:text-3xl text-pink-700 font-black">
+                  {t('about:eficacia')}
+                </p>
+                <p className="text-lg pl-6 text-gray-600 text-justify"> {t('about:eficacia_text')}</p>
+              </div>
+              <div className="space-y-4">
+                <p className="text-lg md:text-3xl text-pink-700 font-black">
+                  {t('about:compromiso')}
+                </p>
+                <p className="text-lg pl-6 text-gray-600 text-justify"> {t('about:compromiso_text')}</p>
+              </div>
+              
+              <div className="space-y-4">
+                <p className="text-lg md:text-3xl text-pink-700 font-black">
+                {t('about:responsabilidad')}
+                </p>
+                <p className="text-lg pl-6 text-gray-600 text-justify">{t('about:responsabilidad_text')}
+</p>
+              </div>
+              <div className="space-y-4">
+                <p className="text-lg md:text-3xl text-pink-700 font-black">
+                {t('about:innovacion')}
+                </p>
+                <p className="text-lg pl-6 text-gray-600 text-justify">{t('about:innovacion_text')}</p>
+              </div>
+              
             </div>
           </motion.div>
         </div>
@@ -198,10 +236,10 @@ export default function About({ posts, locale, availableLocales }) {
             viewport={{ margin: '-200px' }}
           >
             <p className="sm:text-right text-xl md:text-6xl text-pink-700 font-extrabold">
-              {t('about:responsabilidad')}
+              {t('about:responsabilidad_title')}
             </p>
             <p className="sm:text-right text-xl md:text-6xl text-blue-800 font-extrabold">
-              {t('about:social')}
+              {t('about:social_title')}
             </p>
 
             <LightBox video={1} />
