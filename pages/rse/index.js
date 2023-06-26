@@ -156,9 +156,7 @@ export default function Contacto({ posts, locale, availableLocales }) {
               Asegurar el cumplimiento de los requisitos legales ambientales aplicables y los
                 requisitos voluntariamente asumidos por la industria.{' '}
               </li>
-              <li>
-              Asegurar el cumplimiento de los requisitos legales ambientales aplicables y los requisitos voluntariamente asumidos por la industria.
-              </li>
+              
               <li>
               Mantener la sensibilización y concientización de todos nuestros empleados, fomentando la formación de respeto ambiental de los mismos y favoreciendo la participación activa, incluyendo las sugerencias de mejora propuestas por ellos con objetivo de fomentar la mejora continua.
               </li>
