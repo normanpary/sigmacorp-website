@@ -11,11 +11,11 @@ import JarallaxImage from '../components/JarallaxImage'
 
 import { motion } from 'framer-motion'
 
-import { dehydrate, QueryClient, useQuery } from 'react-query';
+import { dehydrate, QueryClient, useQuery } from 'react-query'
 
-export async function getStaticProps({locale}) {
+export async function getStaticProps({ locale }) {
   const queryClient = new QueryClient()
- 
+
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
@@ -50,7 +50,7 @@ export default function About({ posts, locale, availableLocales }) {
                 </div>
                 <div className="">
                   <a href="./" className="hover:text-pink-700 font-bold">
-                  {t('about:inicio')}
+                    {t('about:inicio')}
                   </a>{' '}
                   / {t('about:sobre_nosotros')}
                 </div>
@@ -96,27 +96,31 @@ export default function About({ posts, locale, availableLocales }) {
           </motion.div>
         </div>
         <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: 'easeIn' }}
-              viewport={{ margin: '-100px' }}
-            >
-        <div className="container mx-auto py-14  grid grid-cols-1 lg:grid-cols-2 gap-16">
-        
-          <div>
-          <p className="text-xl sm:text-2xl md:text-6xl text-blue-800 font-extrabold">
-          {t('about:vision')}
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: 'easeIn' }}
+          viewport={{ margin: '-100px' }}
+        >
+          <div className="container mx-auto py-14  grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+              <p className="text-xl sm:text-2xl md:text-6xl text-blue-800 font-extrabold">
+                {t('about:vision')}
               </p>
-          <p className="mt-2 md:mt-4 text-lg line md:pr-8 leading-8 text-justify"> {t('about:vision_contenido')}</p>
-
-          </div>
-          <div>
-          <p className="text-xl sm:text-2xl md:text-6xl text-blue-800 font-extrabold">
-          {t('about:mision')}
+              <p className="mt-2 md:mt-4 text-lg line md:pr-8 leading-8 text-justify">
+                {' '}
+                {t('about:vision_contenido')}
               </p>
-              <p className="mt-2 md:mt-4 text-lg line md:pr-8 leading-8 text-justify">  {t('about:mision_contenido')}</p>
+            </div>
+            <div>
+              <p className="text-xl sm:text-2xl md:text-6xl text-blue-800 font-extrabold">
+                {t('about:mision')}
+              </p>
+              <p className="mt-2 md:mt-4 text-lg line md:pr-8 leading-8 text-justify">
+                {' '}
+                {t('about:mision_contenido')}
+              </p>
+            </div>
           </div>
-        </div>
         </motion.div>
       </div>
       {/*FIN QUIENES SOMOS*/}
@@ -161,10 +165,10 @@ export default function About({ posts, locale, availableLocales }) {
                 <p className="font-extrabold pl-8 text-gray-500">{t('about:importante')}</p>
                 <div className="pl-8 pr-8">
                   <p className="text-xl md:text-6xl text-pink-700 font-extrabold">
-                  {t('about:nuestros')}
+                    {t('about:nuestros')}
                   </p>
                   <p className="text-xl md:text-6xl text-blue-800 font-extrabold">
-                  {t('about:valores')}
+                    {t('about:valores')}
                   </p>
                 </div>
               </div>
@@ -182,13 +186,19 @@ export default function About({ posts, locale, availableLocales }) {
                 <p className="text-lg md:text-3xl text-pink-700 font-black">
                   {t('about:integridad')}
                 </p>
-                <p className="text-lg pl-6 text-gray-600 text-justify"> {t('about:integridad_text')}</p>
+                <p className="text-lg pl-6 text-gray-600 text-justify">
+                  {' '}
+                  {t('about:integridad_text')}
+                </p>
               </div>
               <div className="space-y-4">
                 <p className="text-lg md:text-3xl text-pink-700 font-black">
                   {t('about:honestidad')}
                 </p>
-                <p className="text-lg pl-6 text-gray-600" text-justify> {t('about:honestidad_text')}</p>
+                <p className="text-lg pl-6 text-gray-600" text-justify>
+                  {' '}
+                  {t('about:honestidad_text')}
+                </p>
               </div>
               <div className="space-y-4">
                 <p className="text-lg md:text-3xl text-pink-700 font-black">{t('about:etica')}</p>
@@ -198,29 +208,37 @@ export default function About({ posts, locale, availableLocales }) {
                 <p className="text-lg md:text-3xl text-pink-700 font-black">
                   {t('about:eficacia')}
                 </p>
-                <p className="text-lg pl-6 text-gray-600 text-justify"> {t('about:eficacia_text')}</p>
+                <p className="text-lg pl-6 text-gray-600 text-justify">
+                  {' '}
+                  {t('about:eficacia_text')}
+                </p>
               </div>
               <div className="space-y-4">
                 <p className="text-lg md:text-3xl text-pink-700 font-black">
                   {t('about:compromiso')}
                 </p>
-                <p className="text-lg pl-6 text-gray-600 text-justify"> {t('about:compromiso_text')}</p>
+                <p className="text-lg pl-6 text-gray-600 text-justify">
+                  {' '}
+                  {t('about:compromiso_text')}
+                </p>
               </div>
-              
+
               <div className="space-y-4">
                 <p className="text-lg md:text-3xl text-pink-700 font-black">
-                {t('about:responsabilidad')}
+                  {t('about:responsabilidad')}
                 </p>
-                <p className="text-lg pl-6 text-gray-600 text-justify">{t('about:responsabilidad_text')}
-</p>
+                <p className="text-lg pl-6 text-gray-600 text-justify">
+                  {t('about:responsabilidad_text')}
+                </p>
               </div>
               <div className="space-y-4">
                 <p className="text-lg md:text-3xl text-pink-700 font-black">
-                {t('about:innovacion')}
+                  {t('about:innovacion')}
                 </p>
-                <p className="text-lg pl-6 text-gray-600 text-justify">{t('about:innovacion_text')}</p>
+                <p className="text-lg pl-6 text-gray-600 text-justify">
+                  {t('about:innovacion_text')}
+                </p>
               </div>
-              
             </div>
           </motion.div>
         </div>
@@ -274,40 +292,40 @@ export default function About({ posts, locale, availableLocales }) {
                     src={'static/images/home/innovacion.png'}
                   />
                 </div>
-                <div className="text-center font-black text-xl uppercase pt-4">{t('home:innovacion')}</div>
-                <div className="text-center pt-4 text-sm">
-                {t('home:innovacion_text')}
+                <div className="text-center font-black text-xl uppercase pt-4">
+                  {t('home:innovacion')}
                 </div>
+                <div className="text-center pt-4 text-sm">{t('home:innovacion_text')}</div>
               </div>
 
               <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-10 py-8 rounded-xl flex flex-col items-center">
                 <div className="min-h-[80px] flex flex-col-reverse">
                   <img className="" src={'static/images/home/crecimiento.png'} />
                 </div>
-                <div className="text-center font-black text-xl uppercase pt-4">{t('home:crecimiento')}</div>
-                <div className="text-center pt-4 text-sm">
-                {t('home:crecimiento_text')}
+                <div className="text-center font-black text-xl uppercase pt-4">
+                  {t('home:crecimiento')}
                 </div>
+                <div className="text-center pt-4 text-sm">{t('home:crecimiento_text')}</div>
               </div>
 
               <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-10 py-8 rounded-xl flex flex-col items-center">
                 <div className="min-h-[80px] flex flex-col-reverse">
                   <img className="" src={'static/images/home/desarrollo.png'} />
                 </div>
-                <div className="text-center font-black text-xl uppercase pt-4">{t('home:desarrollo')}</div>
-                <div className="text-center pt-4 text-sm">
-                {t('home:desarrollo_text')}
+                <div className="text-center font-black text-xl uppercase pt-4">
+                  {t('home:desarrollo')}
                 </div>
+                <div className="text-center pt-4 text-sm">{t('home:desarrollo_text')}</div>
               </div>
 
               <div className="transition bg-azul opacity-90 hover:bg-rosa hover:-translate-y-6  text-white px-10 py-8 rounded-xl flex flex-col items-center">
                 <div className="min-h-[80px] flex flex-col-reverse">
                   <img className="" src={'static/images/home/proyeccion.png'} />
                 </div>
-                <div className="text-center font-black text-xl uppercase pt-4">{t('home:proyeccion')}</div>
-                <div className="text-center pt-4 text-sm">
-                {t('home:proyeccion_text')}
+                <div className="text-center font-black text-xl uppercase pt-4">
+                  {t('home:proyeccion')}
                 </div>
+                <div className="text-center pt-4 text-sm">{t('home:proyeccion_text')}</div>
               </div>
             </div>
           </motion.div>
