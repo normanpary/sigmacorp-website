@@ -102,15 +102,7 @@ export default function About({ posts, locale, availableLocales }) {
           viewport={{ margin: '-100px' }}
         >
           <div className="container mx-auto py-14  grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div>
-              <p className="text-xl sm:text-2xl md:text-6xl text-blue-800 font-extrabold">
-                {t('about:vision')}
-              </p>
-              <p className="mt-2 md:mt-4 text-lg line md:pr-8 leading-8 text-justify">
-                {' '}
-                {t('about:vision_contenido')}
-              </p>
-            </div>
+           
             <div>
               <p className="text-xl sm:text-2xl md:text-6xl text-blue-800 font-extrabold">
                 {t('about:mision')}
@@ -118,6 +110,15 @@ export default function About({ posts, locale, availableLocales }) {
               <p className="mt-2 md:mt-4 text-lg line md:pr-8 leading-8 text-justify">
                 {' '}
                 {t('about:mision_contenido')}
+              </p>
+            </div>
+            <div>
+              <p className="text-xl sm:text-2xl md:text-6xl text-blue-800 font-extrabold">
+                {t('about:vision')}
+              </p>
+              <p className="mt-2 md:mt-4 text-lg line md:pr-8 leading-8 text-justify">
+                {' '}
+                {t('about:vision_contenido')}
               </p>
             </div>
           </div>
