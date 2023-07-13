@@ -84,11 +84,11 @@ export default function eventDetails({ posts, locale, availableLocales }) {
               >
                 <div className="">
                   <a href="../" className="hover:text-pink-700 font-bold">
-                    Inicio
+                    Home
                   </a>{' '}
                   /{' '}
                   <a href="./" className="hover:text-pink-700 font-bold">
-                    Noticias{' '}
+                    News{' '}
                   </a>
                   / {title}
                 </div>
@@ -97,7 +97,7 @@ export default function eventDetails({ posts, locale, availableLocales }) {
                 </div>
               </motion.div>
               <div>
-                <img className="object-cover w-full h-96 mb-10" src={`${assetsUrl}${main_image}`} />
+                <img className="  mb-10" src={`${assetsUrl}${main_image}`} />
               </div>
 
               <div className="text-xl">
@@ -128,7 +128,7 @@ export default function eventDetails({ posts, locale, availableLocales }) {
             </div>
             <div className="ml-20 pl-20 border-l-[1px] border-l-gris_claro">
               <div className="pt-20 pb-10 text-xl font-black text-azul">
-                OTRAS NOTICIAS
+                MORE POSTS
               </div>
               <div className="">
                 {isSuccess &&
