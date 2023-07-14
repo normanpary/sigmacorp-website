@@ -32,5 +32,12 @@
   "c6": "• Análisis de Antibióticos.",
   "c7": "• Análisis fisicoquímico de materias primas, material de empaque y producto.",
   "c8": "• Análisis por HPLC de materia prima y producto.",
-  "c9": "• Validación de metodologías analíticas."
+  "c9": "• Validación de metodologías analíticas.",
+  
+  "noticias_titulo":"NOTICIAS",
+  "sigmacorp_titulo":"SIGMACORP",
+  "noticias":"Noticias",
+  "leer_mas":"Leer más",
+  "mas_noticias":"Más noticias"
+
 }

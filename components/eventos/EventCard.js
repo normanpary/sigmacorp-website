@@ -5,6 +5,7 @@ import useTranslation from 'next-translate/useTranslation'
 const assetsUrl = process.env.NEXT_PUBLIC_ASSETS_URL
 
 const EventCard = ({ title, date, description, main_image, slug, path}) => {
+  const { t } = useTranslation()
   return (
     <motion.div
     initial={{ opacity: 0, y: 100 }}
@@ -19,7 +20,7 @@ const EventCard = ({ title, date, description, main_image, slug, path}) => {
           }}
         >
           <a>
-     <div className="rounded-xl shadow-lg transition hover:-translate-y-3 hover:shadow-lg puntero" data-cursortext="Leer más">
+     <div className="rounded-xl shadow-lg transition hover:-translate-y-3 hover:shadow-lg puntero" data-cursortext={t('news:leer_mas')}>
                   <div className="h-auto  bg-white  ">
                     <div className="">
                       <img

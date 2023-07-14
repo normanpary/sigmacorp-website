@@ -84,11 +84,11 @@ export default function eventDetails({ posts, locale, availableLocales }) {
               >
                 <div className="">
                   <a href="../" className="hover:text-pink-700 font-bold">
-                    Home
+                  {t('about:inicio')}
                   </a>{' '}
                   /{' '}
                   <a href="./" className="hover:text-pink-700 font-bold">
-                    News{' '}
+                  {t('news:noticias')}
                   </a>
                   / {title}
                 </div>
@@ -128,7 +128,7 @@ export default function eventDetails({ posts, locale, availableLocales }) {
             </div>
             <div className="ml-20 pl-20 border-l-[1px] border-l-gris_claro">
               <div className="pt-20 pb-10 text-xl font-black text-azul">
-                MORE POSTS
+              {t('news:mas_noticias')}
               </div>
               <div className="">
                 {isSuccess &&

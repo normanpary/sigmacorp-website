@@ -46,14 +46,14 @@ export default function Contacto({ posts, locale, availableLocales }) {
           >
             <div className="container mx-auto pt-24">
               <div className=" lg:flex lg:flex-row font-extrabold text-6xl">
-                <div className="text-pink-700 ">NOTICIAS&nbsp;</div>
-                <div className="text-violeta">SIGMACORP</div>
+                <div className="text-pink-700 ">{t('news:sigmacorp_titulo')}&nbsp;</div>
+                <div className="text-violeta">{t('news:noticias_titulo')}</div>
               </div>
               <div className="">
                 <a href="../" className="hover:text-pink-700 font-bold">
-                  Inicio
+                {t('about:inicio')}
                 </a>{' '}
-                / Noticias
+                / {t('news:noticias')}
               </div>
             </div>
           </motion.div>
