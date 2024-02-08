@@ -366,13 +366,14 @@ export default function Product() {
                   </div>
                 </div>
               </motion.div>
+              {/* 
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: 'easeIn' }}
                 viewport={{ margin: '-10px' }}
               >
-                {/* CAJA INGREDIENTES */}
+                
                 <div className="py-5">
                   <div className="text-azul text-4xl leading-normal  font-extrabold ">
                   {t('nutraceutics:ingredientes')} <span className="text-rosa">{t('nutraceutics:dosificacion')} </span>
@@ -381,6 +382,7 @@ export default function Product() {
                   <div className="text-lg text-gris leading-normal ">{nutraceutic_ingredients}</div>
                 </div>
               </motion.div>
+            */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
