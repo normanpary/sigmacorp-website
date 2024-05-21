@@ -284,7 +284,58 @@ export const getNutraceuticDetails = async (language, slug) => {
       variables: {},
     }
   )
+  console.log(data.data)
+  return data.data.nutraceutics
+}
 
+export const getNutraceuticsAndCategories = async (language) => {
+  const data = await fetchData(
+    `
+    query {
+      nutraceutics  (locale:"${language}", pagination: { start: 0, limit: 100 }, sort: ["nutraceutics_category.order:asc", "title:asc"]){
+        data {  
+          attributes{
+            title
+            short_description
+            slug
+            image{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+            nutraceutics_category
+            {
+              data{
+                attributes{
+                  title
+                  description
+                  order
+                  slug
+                  image{
+                    data{
+                      attributes{
+                        url
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            
+            
+          }
+        }
+      }
+    }
+      
+      `,
+    {
+      variables: {},
+    }
+  )
+  console.log(data.data)
   return data.data.nutraceutics
 }
 
