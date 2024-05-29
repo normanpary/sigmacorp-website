@@ -13,6 +13,7 @@ import NutraceuticCard from '@/components/category/NutraceuticCard'
 
 import useScript from 'hooks/useScript'
 import { Fragment } from 'react'
+import { useState } from 'react'
 
 
 
@@ -22,7 +23,7 @@ export async function getServerSideProps(context) {
   await queryClient.prefetchQuery(['queryProducts', context.locale], async () =>
     getNutraceuticsAndCategories(context.locale)
   )
-
+  
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
@@ -34,11 +35,13 @@ export default function Nutraceuticindex() {
   const { t } = useTranslation()
   const router = useRouter()
   console.log('**************************DESDE EL CLIENTE*********************')
+
   const { data: products, isSuccess, isLoading } = useQuery(
     ['queryProducts', router.locale],
     async () => getNutraceuticsAndCategories(router.locale)
   )
-
+  const [isHovered, setIsHovered] = useState(Array(products.length).fill(false));
+console.log(products)
   return (
     <div className="overflow-hidden bg-white">
       {/*HERO SECTION WITH VIDEO BACKGROUND VIDEO */}
@@ -139,10 +142,46 @@ export default function Nutraceuticindex() {
                         pathname: '/nutraceutics/'+innerProduct.attributes.slug,
                   
                       }} className=''>
-                    <div className='group bg-white bg-opacity-50 p-10 rounded-lg puntero cursor-pointer transition-all  duration-500 hover:-translate-y-4  hover:bg-white' key={innerIndex} data-cursortext="<div class='cursor-icono'>+</div>">
+                    <div className='min-h-[500px] group bg-white bg-opacity-50 p-10 rounded-lg puntero cursor-pointer transition-all  duration-500 hover:-translate-y-1  hover:bg-white ' data-cursortext="<div class='cursor-icono'>+</div>"
+                    key={innerIndex}
+                    data-cursortext="<div class='cursor-icono'>+</div>"
+                    onMouseEnter={() => setIsHovered(prevState => {
+                      const newState = [...prevState];
+                      newState[innerIndex] = true;
+                      return newState;
+                    })}
+                    onMouseLeave={() => setIsHovered(prevState => {
+                      const newState = [...prevState];
+                      newState[innerIndex] = false;
+                      return newState;
+                    })}
+
+                    >
+                       {isHovered[innerIndex] ? (
+      <div className='video-container rounded-lg overflow-hidden '>
+        <video autoPlay loop muted preload="auto" className='absolute top-0 left-0 w-full h-full object-cover rounded-lg bg-top' style={{ mask: 'radial-gradient(circle, white 100%, black 100%)', objectPosition: 'top'  }}>
+          <source src={assetsUrl+innerProduct.attributes.video.data.attributes.url}  type='video/mp4' />
+        </video>
+        <div className='absolute top-0 left-0 w-full h-full bg-white bg-opacity-30 rounded-lg'></div>
+        <div className='absolute bottom-0 left-0 w-full flex items-bottom justify-center flex flex-col items-center'>
+          <div className='uppercase text-violeta font-bold text-lg p-5 text-center'>{innerProduct.attributes.title}</div>
+          <div className='pb-10'>
+              <a href="#productos">
+                <button className="bg-violeta hover:bg-indigo-800 text-white py-2 px-10 rounded-full lg:text-xl text-xl">
+                  {t('nutraceutics:ver_producto')}
+                </button>
+              </a>
+            </div>
+          </div>
+      </div>
+      
+    ) : (
+      <>
                       <img src={assetsUrl+innerProduct.attributes.image.data.attributes.url} className='mx-auto d-block max-h-60'/>
                       <div className='uppercase text-violeta font-bold text-lg'>{innerProduct.attributes.title}</div>
-                      <div className='text-gray-600 '>{innerProduct.attributes.short_description}</div>
+                      <div className='text-gray-600 line-clamp-6'>{innerProduct.attributes.short_description}</div>
+                      </>
+                       )}
                     </div>
                     </Link>
                   ) : null

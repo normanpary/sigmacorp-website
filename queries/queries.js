@@ -305,6 +305,13 @@ export const getNutraceuticsAndCategories = async (language) => {
                 }
               }
             }
+            video{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
             nutraceutics_category
             {
               data{
