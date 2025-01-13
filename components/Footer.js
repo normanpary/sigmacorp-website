@@ -20,8 +20,8 @@ export default function Footer() {
   const { locale } = useRouter()
   return (
     <>
-      <footer className="bg-violeta py-8 px-8 md:px-20 lg:px-32 bg-fondo_footer bg-no-repeat bg-right-top">
-        <div className="container mx-auto lg:px-20 overflow-hidden">
+      <footer className="bg-violeta py-8 px-4 md:px-4  bg-fondo_footer bg-no-repeat bg-right-top">
+        <div className="container mx-auto overflow-hidden">
           <motion.div
             initial={{ opacity: 0, x: 200 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -94,7 +94,7 @@ export default function Footer() {
                   <p className="font-bold text-white text-xl">{t('footer:redes_sociales')}</p>
                   <div className="w-1/4 h-0.5 bg-rosa xl:w-16" />
                 </div>
-                <div className="flex space-x-4 justify-center gap-5">
+                <div className="flex space-x-4 justify-center gap-1">
                   <SocialIcon kind="facebook" href={siteMetadata.facebook} size="8" />
                   <SocialIcon kind="instagram" href={siteMetadata.instagram} size="8" />
                   <SocialIcon kind="youtube" href={siteMetadata.youtube} size="8" />
