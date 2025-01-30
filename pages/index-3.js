@@ -75,7 +75,7 @@ export default function HomePage({ posts, locale, availableLocales }) {
           <p>{t('home:la_salud')}</p>
           <Link href={'./noticias'} aria-label={`Link to News`}>
             <a>
-              <div className="hover:bg-rosa bg-violeta text-white text-lg lg:text-xl rounded-full py-1 px-4 mt-8 mb-2 px-8 inline-block">
+            <div className="hover:bg-violeta bg-rosa text-white text-lg lg:text-xl rounded-full py-1 px-4 mt-8 mb-2 px-8 inline-block">
                 {t('home:explorar_productos')}
               </div>
             </a>
