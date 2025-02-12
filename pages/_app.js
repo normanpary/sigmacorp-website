@@ -1,5 +1,6 @@
 import '@/css/tailwind.css'
 import '@/css/prism.css'
+import '@/css/custom.css' // Importa el archivo CSS personalizado
 
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
@@ -8,7 +9,6 @@ import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
 import RSS from '@/components/Rss'
 
-//code wil
 import wrapper from '../redux/store'
 import withReduxSaga from 'next-redux-saga'
 
@@ -24,99 +24,39 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 
 import Cursor from '../common/cursor';
 
-
 function App({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())
   const router = useRouter()
-  //const [queryClient] = React.useState(() => new QueryClient())
-/*
-  useEffect(() => {
-    router.push(router.asPath, router.asPath, { locale: 'es' })
-  }, [])
-*/
-/*  
-const [loading, setLoading] = useState(true)
+  const getLayout = Component.getLayout || ((page) => <LayoutWrapper>{page}</LayoutWrapper>)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLoading(false)
-    }, 1000)
-    return () => clearInterval(interval)
-  }, [])
-  */
-  
-  const loading = false
-
-  if (loading) {
-    return (
-      <div>
-        <video playsInline autoPlay muted loop width="400">
-          <source src="/static/images/loader-sigmacorp.webm" type="video/webm" />
-          Sorry, your browser doesn't support embedded videos.
-        </video>
-        <style global jsx>{`
-          html,
-          body,
-          body > div:first-child,
-          div#__next,
-          div#__next > div {
-            height: 100%;
-            position: relative;
-          }
-
-          div#__next > div > video {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-          }
-        `}</style>
-        <div className="z-20 w-screen h-screen bg-white flex justify-center items-center">
-          <div className="w-48 h-48 border-b-2 border-rosa rounded-full animate-spin"></div>
-        </div>
-      </div>
-    )
-  } else {
-    return (
-      
+  return (
+    <>
       <QueryClientProvider client={queryClient}>
-       <Hydrate state={pageProps.dehydratedState}>
-      <ThemeProvider attribute="class">
-        <ParallaxProvider>
-          <Head>
-            <meta content="width=device-width, initial-scale=1" name="viewport" />
-          </Head>
-          <Analytics />
-          <Cursor/>
-          <FloatingWhatsApp
-            phoneNumber="59167598055"
-            accountName="Soporte Sigmacorp"
-            avatar={'static/images/profile-logo.jpg'}
-            statusMessage="Responde en una hora aprox."
-            chatMessage="Hola! 👋👩‍🔬. ¿Como podemos ayudarte?"
-            placeholder="Escribe un mensaje..."
-            notification={false}
-            notificationSound={true}
-            notificationDelay={30000}
-            
-            className="z-50"
-            
-          />
-          <LayoutWrapper>
-            
-            <Component {...pageProps} />
-            
-          </LayoutWrapper>
-          
-          <RSS />
-        </ParallaxProvider>
-      </ThemeProvider>
-      
-      </Hydrate>
-     </QueryClientProvider>
-    )
-  }
+        <Hydrate state={pageProps.dehydratedState || {}}>
+          <ThemeProvider attribute="class">
+            <ParallaxProvider>
+              <Head>
+                <meta content="width=device-width, initial-scale=1" name="viewport" />
+              </Head>
+              <Analytics />
+              <Cursor />
+              <FloatingWhatsApp
+                phoneNumber="59167598055"
+                accountName="Soporte Sigmacorp"
+                avatar={'static/images/profile-logo.jpg'}
+                statusMessage="Responde en una hora aprox."
+                chatMessage="Hola! 👋👩‍🔬. ¿Como podemos ayudarte?"
+                placeholder="Escribe un mensaje..."
+                notification={false}
+                notificationSound={true}
+              />
+             {getLayout(<Component {...pageProps} />)}
+            </ParallaxProvider>
+          </ThemeProvider>
+        </Hydrate>
+      </QueryClientProvider>
+    </>
+  )
 }
+
 export default wrapper.withRedux(withReduxSaga(App))
