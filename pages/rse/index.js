@@ -62,6 +62,48 @@ export default function Contacto({ posts, locale, availableLocales }) {
         </div>
       </div>
       {/*FIN BANNER*/}
+      {/*POLÍTICA DE LA CALIDAD
+*/}
+      <div className="bg-hexagon bg-no-repeat bg-left-top">
+        <div className="container mx-auto  pt-14 grid grid-cols-3">
+          
+          <div className="col-span-2 p-10">
+          <div className=" font-extrabold text-6xl text-violeta">
+          POLÍTICA DE LA CALIDAD
+
+          </div>
+          <div className="text-lg pl-6 text-gray-600 text-justify flex flex-col space-y-5 py-5">
+            <p>
+            La empresa Sigma asegura la calidad e inocuidad con acciones planificadas y sistemáticas, cumpliendo de esta manera requisitos predefinidos elaborados internamente, como también estándares internacionales propios de la industria farmacéutica en conjunto con los estándares de inocuidad alimentaria y dispositivos médicos. Para asegurar nuestra calidad, trabajamos en la pureza y calidad de la materia prima, la presentación y estabilidad de los productos que ofrecemos al mercado farmacéutico, nutracéutico y otros.
+
+            </p>
+            <p>
+            Políticas específicas de calidad de la empresa: 
+            </p>
+            <ul className='list-decimal ml-10 space-y-3'>
+              <li>Se debe preservar por encima de cualquier situación la calidad de los medicamentos y nutracéuticos, ya que estos afectan de manera directa a la salud de los consumidores.
+              </li>
+              <li>Todas las acciones de producción deben ser realizadas bajo las exigencias de las normas de Buenas Prácticas de Manufactura en conjunto con la NB-ISO 22000, ISO 13485 como sistema de garantía de calidad.
+              </li>
+              <li>La documentación relacionada con el cumplimiento de estas normas deberá ser de cumplimiento obligatorio para todo el personal que trabaja en la empresa.
+              </li>
+              <li>Todos los empleados de la organización deben estar profundamente comprometidos en el cumplimiento del sistema de aseguramiento de calidad establecido (BPM, BPL, BPT, BPA, ISO 22000 e ISO 13485).</li>
+              <li>Las responsabilidades de todo el personal deberán ser cumplidas según lo establecido por los procedimientos escritos correspondientes ya que estos aseguran la mejor manera de realizar las operaciones sin comprometer la calidad de los productos.</li>
+              <li>La falta de cumplimiento de cualquier exigencia o procedimiento escrito será sancionada con las medidas adecuadas.</li>
+              <li>Es obligación del personal reportar cualquier anormalidad o falta de cumplimiento en las normas que haya sido detectado en algún miembro de la empresa.</li>
+            </ul>
+            <p>
+            Nos comprometemos a trabajar de manera ética y responsable para garantizar un pago justo y adecuado a todos los trabajadores eventuales o a destajo de nuestra empresa, en línea con los principios de justicia social y equidad laboral.
+            </p>
+            </div>
+          </div>
+          <div className="p-10">
+            <img className="" src={'static/images/rse/certificaciones.png'} alt="Carousel" />
+          </div>
+        </div>
+      </div>
+      {/*FIN POLÍTICA DE LA CALIDAD
+*/}
       {/*COMERCIO JUSTO*/}
       <div className="bg-hexagon bg-no-repeat bg-left-top">
         <div className="container mx-auto pt-14 grid grid-cols-3">

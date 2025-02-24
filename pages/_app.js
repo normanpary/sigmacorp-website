@@ -40,6 +40,7 @@ function App({ Component, pageProps }) {
               </Head>
               <Analytics />
               <Cursor />
+         
               <FloatingWhatsApp
                 phoneNumber="59167598055"
                 accountName="Soporte Sigmacorp"
@@ -49,7 +50,10 @@ function App({ Component, pageProps }) {
                 placeholder="Escribe un mensaje..."
                 notification={false}
                 notificationSound={true}
+                className='z-50'
+                
               />
+             
              {getLayout(<Component {...pageProps} />)}
             </ParallaxProvider>
           </ThemeProvider>
