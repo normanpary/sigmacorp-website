@@ -244,6 +244,15 @@ const LayoutWrapper = ({ children }) => {
                       </Link>
                     </div>
                   </div>
+                  <div>
+                    <Link
+                      key="farmacovigilancia"
+                      href="/recursos/farmacovigilancia"
+                      className="font-bold lg:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
+                    >
+                      {t('headerNavLinks:pharmacovigilance')}
+                    </Link>
+                  </div>
                 </div>
                 {/*headerNavLinks.map((link) => (
                   <Link 
