@@ -23,10 +23,39 @@ import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
 import Cursor from '../common/cursor';
+import siteMetadata from '@/data/siteMetadata'
+import useTranslation from 'next-translate/useTranslation'
+
+// Título por defecto según la sección (las páginas con PageSEO lo reemplazan)
+const sectionTitleKeys = {
+  about: 'about',
+  nutraceutics: 'nutraceutics',
+  pharmaceutics: 'pharmaceutics',
+  'pharmaceutics-products': 'pharmaceutics',
+  products: 'products',
+  bioseguridad: 'biosecurity',
+  biosecurity: 'biosecurity',
+  maquila: 'maquila',
+  noticias: 'news',
+  eventos: 'events',
+  events: 'events',
+  rse: 'csr',
+  csr: 'csr',
+  contact: 'contact',
+  contacto: 'contact',
+  farmacovigilancia: 'pharmacovigilance',
+}
 
 function App({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient())
   const router = useRouter()
+  const { t } = useTranslation()
+  const pathSegments = router.pathname.split('/').filter(Boolean)
+  const sectionKey =
+    sectionTitleKeys[pathSegments[0] === 'recursos' ? pathSegments[1] : pathSegments[0]]
+  const defaultTitle = sectionKey
+    ? `${t(`headerNavLinks:${sectionKey}`)} | Sigmacorp`
+    : siteMetadata.title[router.locale]
   const getLayout = Component.getLayout || ((page) => <LayoutWrapper>{page}</LayoutWrapper>)
 
   return (
@@ -37,6 +66,8 @@ function App({ Component, pageProps }) {
             <ParallaxProvider>
               <Head>
                 <meta content="width=device-width, initial-scale=1" name="viewport" />
+                <title>{defaultTitle}</title>
+                <meta name="description" content={siteMetadata.description[router.locale]} />
               </Head>
               <Analytics />
               <Cursor />

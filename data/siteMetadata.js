@@ -1,22 +1,28 @@
 const siteMetadata = {
-  title: { en: 'Sigmacorp, NEW WEBSITE ', es: 'Sigmacorp, NUEVO SITIO WEB' },
+  title: {
+    en: 'Sigmacorp | Bolivian pharmaceutical laboratory',
+    es: 'Sigmacorp | Laboratorio farmacéutico boliviano',
+  },
   author: 'Strategic',
   headerTitle: { en: 'Sigmacorp', es: 'Sigmacorp' },
   // description: 'A blog created with Next.js and Tailwind.css',
-  description: { en: 'en description', es: 'Description en es' },
+  description: {
+    en: 'SIGMA Corp, established in 1976 in Cochabamba, Bolivia, manufactures and distributes pharmaceutical and nutraceutical products.',
+    es: 'SIGMA Corp, establecidos desde 1976 en Cochabamba, Bolivia, elabora y distribuye productos farmacéuticos y nutracéuticos.',
+  },
   language: 'es',
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
+  siteUrl: 'https://sigmacorp.com.bo',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
-  facebook: 'https://facebook.com',
-  instagram: 'https://www.instagram.com',
-  twitter: 'https://twitter.com/Twitter',
-  youtube: 'https://youtube.com',
+  facebook: 'https://www.facebook.com/SigmaCorpBO',
+  instagram: 'https://www.instagram.com/sigma_corp_bo',
+  twitter: '', // Sigmacorp no tiene cuenta de Twitter/X
+  youtube: 'https://www.youtube.com/@sigmacorpsrl871',
   email: 'address@yoursite.com',
   github: 'https://github.com',
-  linkedin: 'https://www.linkedin.com',
+  linkedin: 'https://bo.linkedin.com/company/sigma-corp-industria-quimico-farmaceutica',
   locale: 'es',
   analytics: {
     // supports plausible, simpleAnalytics or googleAnalytics

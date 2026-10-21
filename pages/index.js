@@ -53,8 +53,8 @@ export default function HomePage({ posts, locale, availableLocales }) {
       
 
       <PageSEO
-        title={siteMetadata.title[locale]}
-        description={siteMetadata.description[locale]}
+        title={siteMetadata.title[router.locale]}
+        description={siteMetadata.description[router.locale]}
         availableLocales={availableLocales}
       />
            

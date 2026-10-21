@@ -74,7 +74,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, availableLoca
           .filter((locale) => locale !== router.locale)
           .map((locale) => <meta key={locale} property="og:locale:alternate" content={locale} />)}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content={siteMetadata.twitter} />
+      {siteMetadata.twitter && <meta name="twitter:site" content={siteMetadata.twitter} />}
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={twImage} />
