@@ -468,9 +468,55 @@ export default function Contacto({ posts, locale, availableLocales }) {
         </div>
       </div>
       {/*FIN POLÍTICA DE COMUNICACIÓN LIBRE DE PUBLICIDAD SEXISTA*/}
+      {/*POLÍTICA DE PREVENCIÓN Y RECHAZO DE LA VIOLENCIA DE GÉNERO*/}
+      <div className="bg-hexagon bg-no-repeat bg-left-top">
+        <div className="container mx-auto px-4 xl:px-0 pt-10 md:pt-14 grid grid-cols-1 md:grid-cols-3 items-start">
+          <div className="md:col-span-2 py-4 md:p-10">
+          <div className="font-extrabold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-violeta break-words">
+          POLÍTICA DE PREVENCIÓN Y RECHAZO DE LA VIOLENCIA DE GÉNERO
+          </div>
+          <div className="font-bold text-xl md:text-2xl text-pink-700 pt-3">Por un entorno laboral seguro y respetuoso</div>
+          <div className="text-base md:text-lg md:pl-6 text-gray-600 text-left md:text-justify flex flex-col space-y-5 py-5">
+            <p>
+            La presente política establece el compromiso de Sigma Corp S.R.L. de prevenir y rechazar toda forma de violencia de género, especialmente la violencia contra las mujeres, y promover relaciones laborales basadas en la dignidad, la igualdad y el respeto.
+            </p>
+            <p>
+            Es aplicable a directivos, trabajadores y colaboradores, así como a proveedores, contratistas, distribuidores y socios estratégicos en sus relaciones con la empresa, incluyendo espacios laborales, eventos y comunicaciones digitales.
+            </p>
+            <strong>PRINCIPIOS RECTORES</strong>
+            <ul className='list-decimal ml-6 md:ml-10 space-y-3'>
+              <li>Dignidad e igualdad: Respetar los derechos de todas las personas, sin discriminación por sexo o género.</li>
+              <li>Rechazo a la violencia: No tolerar agresiones, amenazas, humillaciones, acoso sexual ni otras conductas de violencia.</li>
+              <li>Protección y confidencialidad: Atender los reportes con reserva, sin revictimización ni represalias.</li>
+              <li>Responsabilidad: Actuar con imparcialidad y respeto al debido proceso.</li>
+            </ul>
+            <strong>LINEAMIENTOS ESPECÍFICOS</strong>
+            <ul className='list-disc ml-6 md:ml-10 space-y-3'>
+              <li>Promover capacitación y sensibilización periódica sobre igualdad y prevención de la violencia de género.</li>
+              <li>Identificar riesgos y aplicar medidas preventivas en las áreas y actividades de la empresa.</li>
+              <li>Habilitar y comunicar canales seguros y confidenciales de reporte, con una alternativa ante conflictos de interés.</li>
+              <li>Atender oportunamente los reportes mediante el protocolo interno, adoptar medidas de protección y facilitar orientación hacia servicios especializados, sin condicionar el acceso a autoridades.</li>
+              <li>Evaluar los incumplimientos y aplicar las medidas correspondientes conforme a la normativa vigente y los instrumentos internos, respetando el derecho de defensa.</li>
+              <li>Asignar a Recursos Humanos la coordinación de esta política y revisar periódicamente su aplicación.</li>
+            </ul>
+            <strong>COMPROMISO INSTITUCIONAL</strong>
+            <p>
+            Sigma Corp S.R.L. reafirma su compromiso con una vida libre de violencia. La Alta Dirección promoverá el cumplimiento de esta política, la asignación de recursos y una cultura de respeto y protección de los derechos de las mujeres.
+            </p>
+            </div>
+          </div>
+          <div className="order-first md:order-none max-w-xs sm:max-w-sm mx-auto md:max-w-none p-2 md:p-10 lg:sticky lg:top-10">
+            <img className="w-full" src={'static/images/rse/violencia-de-genero.png'} alt="Carousel" />
+          </div>
+        </div>
+      </div>
+      {/*FIN POLÍTICA DE PREVENCIÓN Y RECHAZO DE LA VIOLENCIA DE GÉNERO*/}
       {/*COMPROMISOS ENTRE SIGMA CORP. Y SUS TRABAJADORES*/}
       <div className="bg-hexagon bg-no-repeat bg-left-top">
         <div className="container mx-auto px-4 xl:px-0 pt-10 md:pt-14 grid grid-cols-1 md:grid-cols-3 items-start">
+          <div className="order-first md:order-none max-w-xs sm:max-w-sm mx-auto md:max-w-none p-2 md:p-10 lg:sticky lg:top-10">
+            <img className="w-full" src={'static/images/rse/trabajadores.png'} alt="Carousel" />
+          </div>
           
           <div className="md:col-span-2 py-4 md:p-10">
           <div className="font-extrabold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-violeta break-words">
@@ -560,9 +606,6 @@ export default function Contacto({ posts, locale, availableLocales }) {
 
             </ul>
             </div>
-          </div>
-          <div className="order-first md:order-none max-w-xs sm:max-w-sm mx-auto md:max-w-none p-2 md:p-10 lg:sticky lg:top-10">
-            <img className="w-full" src={'static/images/rse/trabajadores.png'} alt="Carousel" />
           </div>
         </div>
       </div>
@@ -1055,9 +1098,55 @@ if(router.locale==="en"){
         </div>
       </div>
       {/*FIN POLÍTICA DE COMUNICACIÓN LIBRE DE PUBLICIDAD SEXISTA*/}
+      {/*POLÍTICA DE PREVENCIÓN Y RECHAZO DE LA VIOLENCIA DE GÉNERO*/}
+      <div className="bg-hexagon bg-no-repeat bg-left-top">
+        <div className="container mx-auto px-4 xl:px-0 pt-10 md:pt-14 grid grid-cols-1 md:grid-cols-3 items-start">
+          <div className="md:col-span-2 py-4 md:p-10">
+          <div className="font-extrabold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-violeta break-words">
+          GENDER-BASED VIOLENCE PREVENTION AND REJECTION POLICY
+          </div>
+          <div className="font-bold text-xl md:text-2xl text-pink-700 pt-3">For a safe and respectful workplace</div>
+          <div className="text-base md:text-lg md:pl-6 text-gray-600 text-left md:text-justify flex flex-col space-y-5 py-5">
+            <p>
+            This policy sets out the commitment of Sigma Corp S.R.L. to preventing and rejecting all forms of gender-based violence, especially violence against women, and to promoting working relationships based on dignity, equality and respect.
+            </p>
+            <p>
+            It applies to executives, workers and employees, as well as to suppliers, contractors, distributors and strategic partners in their dealings with the company, including workplaces, events and digital communications.
+            </p>
+            <strong>GUIDING PRINCIPLES</strong>
+            <ul className='list-decimal ml-6 md:ml-10 space-y-3'>
+              <li>Dignity and equality: Respect the rights of all people, without discrimination on the basis of sex or gender.</li>
+              <li>Rejection of violence: Do not tolerate aggression, threats, humiliation, sexual harassment or any other violent behavior.</li>
+              <li>Protection and confidentiality: Handle reports discreetly, without revictimization or retaliation.</li>
+              <li>Responsibility: Act impartially and with respect for due process.</li>
+            </ul>
+            <strong>SPECIFIC GUIDELINES</strong>
+            <ul className='list-disc ml-6 md:ml-10 space-y-3'>
+              <li>Promote periodic training and awareness on equality and the prevention of gender-based violence.</li>
+              <li>Identify risks and apply preventive measures in the company's areas and activities.</li>
+              <li>Set up and publicize safe and confidential reporting channels, with an alternative channel in case of conflicts of interest.</li>
+              <li>Handle reports promptly through the internal protocol, adopt protective measures and provide guidance toward specialized services, without restricting access to the authorities.</li>
+              <li>Assess breaches and apply the corresponding measures in accordance with current regulations and internal instruments, respecting the right of defense.</li>
+              <li>Assign Human Resources to coordinate this policy and periodically review its application.</li>
+            </ul>
+            <strong>INSTITUTIONAL COMMITMENT</strong>
+            <p>
+            Sigma Corp S.R.L. reaffirms its commitment to a life free from violence. Senior Management will promote compliance with this policy, the allocation of resources and a culture of respect for and protection of women's rights.
+            </p>
+            </div>
+          </div>
+          <div className="order-first md:order-none max-w-xs sm:max-w-sm mx-auto md:max-w-none p-2 md:p-10 lg:sticky lg:top-10">
+            <img className="w-full" src={'static/images/rse/violencia-de-genero.png'} alt="Carousel" />
+          </div>
+        </div>
+      </div>
+      {/*FIN POLÍTICA DE PREVENCIÓN Y RECHAZO DE LA VIOLENCIA DE GÉNERO*/}
       {/*COMPROMISOS ENTRE SIGMA CORP. Y SUS TRABAJADORES*/}
       <div className="bg-hexagon bg-no-repeat bg-left-top">
         <div className="container mx-auto px-4 xl:px-0 pt-10 md:pt-14 grid grid-cols-1 md:grid-cols-3 items-start">
+          <div className="order-first md:order-none max-w-xs sm:max-w-sm mx-auto md:max-w-none p-2 md:p-10 lg:sticky lg:top-10">
+            <img className="w-full" src={'static/images/rse/trabajadores.png'} alt="Carousel" />
+          </div>
           
           <div className="md:col-span-2 py-4 md:p-10">
           <div className="font-extrabold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-violeta break-words">
@@ -1147,9 +1236,6 @@ if(router.locale==="en"){
 
             </ul>
             </div>
-          </div>
-          <div className="order-first md:order-none max-w-xs sm:max-w-sm mx-auto md:max-w-none p-2 md:p-10 lg:sticky lg:top-10">
-            <img className="w-full" src={'static/images/rse/trabajadores.png'} alt="Carousel" />
           </div>
         </div>
       </div>
