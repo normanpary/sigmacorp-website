@@ -124,7 +124,7 @@ const LayoutWrapper = ({ children }) => {
                     <Link
                       key="home"
                       href="/"
-                      className="font-bold lg:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
+                      className="font-bold lg:px-3 xl:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
                     >
                       {t('headerNavLinks:home')}
                     </Link>
@@ -133,7 +133,7 @@ const LayoutWrapper = ({ children }) => {
                     <Link
                       key="about"
                       href="/about"
-                      className="font-bold lg:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
+                      className="font-bold lg:px-3 xl:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
                     >
                       {t('headerNavLinks:about')}
                     </Link>
@@ -142,7 +142,7 @@ const LayoutWrapper = ({ children }) => {
                     <Link
                       key="products"
                       href="#"
-                      className="font-bold lg:px-6 text-gris fill-gris hover:text-rosa hover:fill-rosa hover:font-bold text-lg "
+                      className="font-bold lg:px-3 xl:px-6 text-gris fill-gris hover:text-rosa hover:fill-rosa hover:font-bold text-lg "
                     >
                       {t('headerNavLinks:products')}&nbsp;
                       <svg
@@ -191,7 +191,7 @@ const LayoutWrapper = ({ children }) => {
                     <Link
                       key="maquila"
                       href="/maquila"
-                      className="font-bold lg:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
+                      className="font-bold lg:px-3 xl:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
                     >
                       {t('headerNavLinks:maquila')}
                     </Link>
@@ -200,7 +200,7 @@ const LayoutWrapper = ({ children }) => {
                     <Link
                       key="resources"
                       href="#"
-                      className="font-bold lg:px-6 text-gris fill-gris hover:text-rosa hover:fill-rosa hover:font-bold text-lg "
+                      className="font-bold lg:px-3 xl:px-6 text-gris fill-gris hover:text-rosa hover:fill-rosa hover:font-bold text-lg "
                     >
                       {t('headerNavLinks:resources')}&nbsp;
                       <svg
@@ -248,7 +248,7 @@ const LayoutWrapper = ({ children }) => {
                     <Link
                       key="farmacovigilancia"
                       href="/recursos/farmacovigilancia"
-                      className="font-bold lg:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
+                      className="font-bold lg:px-3 xl:px-6 text-gris hover:text-rosa hover:font-bold text-lg"
                     >
                       {t('headerNavLinks:pharmacovigilance')}
                     </Link>
